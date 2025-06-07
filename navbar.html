@@ -1,0 +1,95 @@
+<!-- 功能表 -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">目錄</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="./"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">今日即時動態運行圖 (測試中)<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href='diagram_realtime.html?lineKind=LINE_WN'>北段 (基隆-竹南)</a></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_WM'>山線 (竹南-彰化)</a></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_WSEA'>海線 (竹南-彰化)</a></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_WS'>南段 (彰化-高雄)</a></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_P'>屏東線 (高雄-枋寮)</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_I'>宜蘭線 (八堵-蘇澳)</a></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_N'>北迴線 (蘇澳新-花蓮)</a></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_T'>台東線 (花蓮-台東)</a></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_S'>南迴線 (台東-枋寮)</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_PX'>平溪深澳線</a></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_NW'>內灣線</a></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_LJ'>六家線</a></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_J'>集集線</a></li>
+                        <li><a href='diagram_realtime.html?lineKind=LINE_SL'>沙崙線</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">運行圖圖庫<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href='lines.html?lineKind=west_link_north'>北段 (基隆-竹南)</a></li>
+                        <li><a href='lines.html?lineKind=west_link_moutain'>山線 (竹南-彰化)</a></li>
+                        <li><a href='lines.html?lineKind=west_link_sea'>海線 (竹南-彰化)</a></li>
+                        <li><a href='lines.html?lineKind=west_link_south'>南段 (彰化-高雄)</a></li>
+                        <li><a href='lines.html?lineKind=pingtung'>屏東線 (高雄-枋寮)</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href='lines.html?lineKind=yilan'>宜蘭線 (八堵-蘇澳)</a></li>
+                        <li><a href='lines.html?lineKind=north_link'>北迴線 (蘇澳新-花蓮)</a></li>
+                        <li><a href='lines.html?lineKind=taitung'>台東線 (花蓮-台東)</a></li>
+                        <li><a href='lines.html?lineKind=south_link'>南迴線 (台東-枋寮)</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href='lines.html?lineKind=pingxi'>平溪深澳線</a></li>
+                        <li><a href='lines.html?lineKind=neiwan'>內灣線</a></li>
+                        <li><a href='lines.html?lineKind=liujia'>六家線</a></li>
+                        <li><a href='lines.html?lineKind=jiji'>集集線</a></li>
+                        <li><a href='lines.html?lineKind=shalun'>沙崙線</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href='lines.html?lineKind=alishan_m1'>阿里山線 (嘉義-阿里山)</a></li>
+                        <li><a href='lines.html?lineKind=alishan_b2'>沼平/祝山線 (阿里山-祝山)</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href='lines.html?lineKind=thsr'>台灣高鐵 (南港-左營)</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">其他功能<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href='special_use.html?'>特殊運用</a></li>
+                        <li><a href='realtime_trains_positions.html'>列車即時位置</a></li>                       
+                        <!-- <li><a href='lines.html?lineKind=thsr'>台灣高鐵</a></li> -->
+                        <li><a href='editor.html'>鐵路運行圖編輯器 (測試中)</a></li>
+                        <li><a href='converter.html'>台鐵公開資料轉運行圖 (測試中)</a></li>
+                    </ul>
+                </li>               
+
+                <!-- <li><a href='http://tradiagram.com/timetable.php'><span class="fa fa-train"></span> 時刻表查詢</a></li> -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">關於<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href='about.html'><span class="fa fa-exclamation-circle"></span> 關於本站</a></li>
+                        <li><a href='style_editor.html'><span class="fa fa-paint-brush"></span> 運行圖預設標色 (測試中)</a></li>
+                        <li><a href='https://github.com/billy1125'><span class="fa fa-github"></span> GitHub</a></li>
+                        <li><a href='https://www.facebook.com/traDiagram/'><span class="fa fa-facebook-official"></span> facebook粉絲頁</a></li>                        
+                        <li><a href='https://tradiagram.com/privacy.html'><span class="fa fa-user-secret"></span> 隱私權政策</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">台鐵運行圖App<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href='https://play.google.com/store/apps/details?id=com.chohsunlu.tradiagram'>Google Play</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>

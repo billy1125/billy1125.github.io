@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <title id="web_name"></title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=" utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="呂卓勳 Cho Husn Lu" />
+
+    <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/web.css">
+</head>
+
+<body style="padding-top:40px;">
+
+    <div id="navbar"></div>
+
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1><b>隱私權政策</b></h1>
+            <p>更新日期：2023年07月5日</p>
+        </div>
+    </div>
+
+    <div class="container bg-1 text-center">
+        <div class="row text-left">
+            <div class="col-md-12 portfolio-item">
+                <p>非常歡迎您光臨台鐵運行圖網站或使用台鐵運行圖APP(以下簡稱本網站與APP)，為了讓您能夠安心的使用本網站與APP的各項服務與資訊，特此向您說明本網站與APP的隱私權保護政策，以保障您的權益，請您詳閱下列內容：</p>
+            </div>
+        </div>
+        <div class="row text-left">
+            <div class="col-md-6 portfolio-item">
+                <h3>一、隱私權保護政策的適用範圍</h3>
+                <p>隱私權保護政策內容，包括本網站與APP如何處理在您使用網站服務時收集到的個人識別資料。</p>
+                <p>隱私權保護政策不適用於本網站與APP以外的相關連結網站 ，也不適用於非本網站與APP所委託或參與管理的人員。</p>
+                <h3>二、資料的蒐集與使用方式</h3>
+                <p>在本網站與APP均無收集您的個人識別資料。</p>
+                <h3>三、資料之保護</h3>
+                <p>在本網站與APP均無收集您的個人識別資料。但本網站與APP主機仍設有防火牆、防毒系統等相關的各項資訊安全設備及必要的安全防護措施，加以保護網站及資料採用嚴格的保護措施，只由經過授權的人員才能接觸與處理網站及資料</p>
+                <h3>四、網站對外的相關連結</h3>
+                <p>本網站與APP的網頁提供其他網站的網路連結，您也可經由本網站與APP所提供的連結，點選進入其他網站。但該連結網站中不適用於本網站與APP的隱私權保護政策，您必須參考該連結網站中的隱私權保護政策。</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <h3>五、與第三人共用個人資料之政策</h3>
+                <p>在本網站與APP均無收集您的個人識別資料。因此不會提供、交換、出租或出售任何您的個人資料給其他個人、團體、私人企業或公務機關</p>
+                <h3>六、Cookie之使用</h3>
+                <p>在本網站與APP均無使用Cookie。</p>
+                <h3>七、Web Storage之使用</h3>
+                <p>為了提供您最佳的服務，在本網站會在您的設備中存取Web Storage，若您不願接受Web Storage的寫入，您可在您使用的瀏覽器功能項中設定隱私權等級為高，即可拒絕Web Storage的寫入，但可能會導致網站某些功能無法正常執行 。</p>
+                <h3>八、隱私權保護政策之修正</h3>
+                <p>本網站與APP隱私權保護政策將因應需求隨時進行修正，修正後的條款將刊登於網站上。</p>
+            </div>
+        </div>
+        </br>
+        <footer class="alert alert-warning" role="alert"></footer>
+    </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="js/web_config.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#web_name').append(web_name)
+        $("meta[name='description']").attr("content", description)
+        $("meta[name='keywords']").attr("content", keywords)
+        $('footer').append(footer)
+        $("#navbar").load("navbar.html")
+    })
+</script>
+
+</html>

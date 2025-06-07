@@ -1,0 +1,186 @@
+﻿<html lang="zh-tw">
+
+<head>
+    <title id="web_name"></title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=" utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="呂卓勳 Cho Husn Lu" />
+
+    <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/web.css">
+</head>
+
+<body>
+
+    <div class="container-fluid text-center">
+        <div class="row content" id="showsvg">
+            <div type="image/svg+xml"></div>
+            <!-- <embed id="showsvg" src=php echo "diagram/" . $file_name  type="image/svg+xml" /> -->
+        </div>
+    </div>
+
+    <div class="popup">
+        <div class="msg">
+            <div class="alert alert-success" role="alert">
+                <a href="#" class="alert-link">
+                    <h1 class=" text-center">鐵路運行圖讀取中...</h1>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="search_form" class="form-inline">
+        <button type="button" class="btn btn-outline-primary" data-toggle="collapse" href="#form_detail" aria-expanded="false" aria-controls="form_detail" id="search_open">開啟搜尋</button>
+        <button class="btn btn-outline-primary" data-toggle="collapse" href="#form_detail" aria-expanded="false" aria-controls="form_detail" id="search_close">關閉搜尋</button>
+        <div class="collapse multi-collapse" id="form_detail" style="min-height: 100%;">
+
+            <div class="card card-body" style="width: 100%;">
+                <form action="#" class="ollapse collapse-horizontal">
+                    <select class="form-control" aria-label="Default select example" id="TrainNoSelect">
+                        <option selected>直接選擇車次</option>
+                    </select>
+                    <input type="text" class="form-control" id="TrainNoSearchText" name="TrainNoSearchText" placeholder="車次搜尋(測試)" autofocus>
+                    <button id="search" type="submit" class="btn btn-primary">搜尋</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/url.min.js"></script>
+<script src="js/web_config.js"></script>
+<script src="js/web.js"></script>
+
+<script>
+    // SVG位置(暫時這樣處理)
+    let line_kind = $.url('?lineKind');
+    let date = $.url('?date');
+    let svg_file_name = 'diagram/' + line_kind + dict_line[line_kind][0] + date + '.svg';
+    // console.log(svg_file_name)
+
+    $(".popup").hide();
+    $("#search_close").hide();
+
+    // 將SVG讀進頁面
+    $(document).ready(function () {
+        $('#web_name').append(web_name)
+
+        $.when(
+            $.ajax({
+                url: svg_file_name,
+                type: "GET",
+                dataType: "html",
+                cache: true,
+                beforeSend: function () {
+                    $(".popup").show()
+                },
+                success: function (data) {
+                    $(".popup").hide()
+                    $("#showsvg").prepend(data)
+                },
+                error: function () {
+                    alert("讀取鐵路運行圖有錯誤!!!");
+                }
+            })
+        ).then(function () {
+            // 取得SVG中所有車次資料
+            var trainIDs = [];
+            $("svg").find("path").each(function () {
+                trainIDs.push(this.id);
+            });
+            trainIDs.sort();
+
+            for (let i = 0; i < trainIDs.length; i++) {
+                let option = document.createElement("option");
+                option.innerHTML = trainIDs[i];
+                option.value = trainIDs[i];
+                $('#TrainNoSelect').append(option);
+            }
+
+            // 設定使用者自訂色系
+            set_user_styles();
+            // 依照現在的時間，將視窗滾動到整點時間，方便使用者閱讀
+            move_to_now_time();
+        });
+    });
+
+    // 輸入列搜尋車次
+    $("#search").click(function () {
+        event.preventDefault();
+        QueryTrainNo($("#TrainNoSearchText").val(), 0)
+        $("#TrainNoSearchText").focus();
+    });
+
+    $("#search_open").click(function () {
+        $("#search_open").hide();
+        $("#search_close").show();
+    });
+
+    $("#search_close").click(function () {
+        $("#search_close").hide();
+        $("#search_open").show();
+    });
+
+    // 清單選擇車次
+    $('select').on('change', function () {
+        QueryTrainNo(this.value, 1);
+    });
+
+    function getFormattedDate() {
+        const today = new Date();
+        const year = today.getFullYear().toString().padStart(4, '0');
+        const month = (today.getMonth() + 1).toString().padStart(2, '0');
+        const day = today.getDate().toString().padStart(2, '0');
+
+        return year + month + day;
+    }
+
+    // 依照現在的時間，將視窗滾動到整點時間，方便使用者閱讀
+    function move_to_now_time() {
+        const now = new Date();
+        const today_date = getFormattedDate();
+        const alishan = ['alishan_m1', 'alishan_b2', 'thsr']
+        if (date == today_date) {
+            const min = screen.width >= 1000 ? 0 : (now.getMinutes() - 10) / 60;
+            let hour_position = now.getHours() + Math.round(min * 100) / 100 - 4;
+            if (hour_position > 0) {
+                if (!alishan.includes(line_kind)) {
+                    hour_position *= 1200;
+                    window.scrollTo(hour_position, 0);
+                }
+            }
+        }
+    }
+
+    // 設定使用者自訂色系
+    function set_user_styles() {
+        const user_data = JSON.parse(localStorage.getItem("user_styles"));
+
+        if (user_data != null) {
+            Object.entries(user_data).forEach(([key, value]) => {
+                Object.entries(value).forEach(([k, v]) => {
+                    const elements = document.getElementsByClassName(k);
+                    for (const iterator of elements) {
+                        if (key == "fills")
+                            iterator.style.fill = v[1];
+                        else if (key == "strokes")
+                            iterator.style.stroke = v[1];
+                    }
+
+                })
+            })
+        }
+    }
+</script>
+
+</html>

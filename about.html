@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <title id="web_name"></title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=" utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="呂卓勳 Cho Husn Lu" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="js/web_config.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#web_name').append(web_name)
+            $("meta[name='description']").attr("content", description)
+            $("meta[name='keywords']").attr("content", keywords)
+            $('footer').append(footer)
+            $("#navbar").load("navbar.html")
+        })
+    </script>
+
+</head>
+
+<body style="padding-top:40px;">
+
+    <div id="navbar"></div>
+
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1><b>關於本站</b></h1>
+            <p>更新日期：2023年07月11日</p>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="row text-left">
+            <div class="col-sm-6">
+                <h3>緣起</h3>
+                <p>鐵道愛好者通常都會使用鐵路運行圖，幫助研究鐵道相關事務，雖然有人會出版紙本台鐵鐵路運行圖，但是當台鐵改點，紙本的資訊參考價值就會變低。</p>
+                <p>所以當我們知道台鐵已經將時刻資訊以 JSON 公開於網路上之後，我們就在思考如何利用這個 Open Data 進行應用，用來繪製台灣鐵路運行圖。</p>
+                <h3>網站內容</h3>
+                <p>本站的運行圖轉檔程式以 Python 與 JavaScript 設計，運行圖格式為 SVG 向量圖形，我們提供即時當天的運行圖，並且標示目前列車的大致位置。除此之外，也提供過去產生的運行圖圖庫，以及未來 60 天內的運行圖。</p>
+                <p>目前網站每天進行一次更新。</p>
+                <p>目前我們也正在發展其他應用，包括即時列車位置顯示、運行圖編輯功能等。</p>
+                <h3>限制</h3>
+                <p>本程式鐵路運行圖均來自於<a href='https://data.gov.tw/'>政府資料開放平臺</a>與<a href='https://tdx.transportdata.tw/'>TDX交通部公共運輸整合資訊流通服務平臺</a>所提供的公開資料進行分析整理與繪製。然而公開資料不等於實際鐵路與軌道系統的運行計畫，僅是旅客所需的列車到站與離站時間資料，列車的待避或會車狀況無法在運行圖中展示，貨運、迴送等非客運車次也多未在公開資料集提供。因此會出現運行圖與實際運行有所差異，以及無法提供非客運車次的運行線。因此<b>實際鐵路運行情況，請以現場、各鐵路與軌道系統的管理單位所公布資訊或鐵路運行實況為準</b>。</p>
+                <h3>版權聲明</h3>
+                <p>本網站以「<b><a href="https://tw.creativecommons.net/home-page/">姓名標示-非商業性-禁止改作</a></b>」CC 授權方式建立資料授權規範，僅允許使用者將本網站的所有素材之後，依原狀態分享出去。使用者必須按照授權者指定的方式表彰其姓名，姓名請使用「<b>台灣鐵路/軌道運行圖</b>」或本網站製作與程式設計者姓名「<b>呂卓勳 Cho-Hun Lu</b>」均可，但不得對著作進行任何方式的改變，或為商業目的之使用。</p>
+                <p><img src='https://tw.creativecommons.net/wp-content/uploads/sites/20/2020/11/by-nc-nd-300x105.png' width='100'></p>
+            </div>
+            <div class="col-sm-6">
+                <div class="well">
+                    <h4>目前我們提供以下台灣鐵路/軌道營運路線的運行圖：</h4>                    
+                    <ul>
+                        <li>西部幹線北段（基隆-竹南）</li>
+                        <li>西部幹線台中線（竹南-彰化，經苗栗）</li>
+                        <li>西部幹線海岸線（竹南-彰化，經大甲）</li>
+                        <li>西部幹線南段（彰化-高雄）</li>
+                        <li>屏東線（高雄-枋寮）</li>
+                        <li>南迴線（枋寮-台東）</li>
+                        <li>台東線（花蓮-台東）</li>
+                        <li>北迴線（蘇澳新-花蓮）</li>
+                        <li>宜蘭線（八堵-蘇澳）</li>
+                        <li>平溪深澳線（八斗子-菁桐）</li>
+                        <li>內灣線（新竹-內灣）</li>
+						<li>六家線（新竹-六家）</li>
+                        <li>集集線（二水-車埕）</li>
+                        <li>沙崙線（中洲-沙崙）</li>
+                        <li>阿里山線 (嘉義-阿里山)</li>
+                        <li>沼平/祝山線 (阿里山-祝山)</li>
+                        <li>台灣高鐵 (南港-左營)</li>
+                    </ul>
+                </div>
+                <h3>本網站製作與程式設計</h3>
+                <p>呂卓勳 Cho-Hun Lu &emsp;
+                <a href="mailto:billy1125@gmail.com" target="_blank"><img src="/images/gmail.png" alt="gmail" width="25"></a>&emsp;
+                <a href="https://www.facebook.com/billy1125" target="_blank"><img src="/images/facebook.png" alt="facebook" width="25"></a>&emsp;
+                <a href="https://github.com/billy1125" target="_blank"><img src="/images/github.png" alt="github" width="25"></a>&emsp;
+                <a href="https://www.instagram.com/chohsunlu" target="_blank"><img src="/images/instagram.png" alt="instagram" width="25"></a>&emsp;
+                <a href="https://sites.google.com/view/chohsunlu" target="_blank"><img src="/images/browser.png" alt="myweb" width="25"></a></p>                
+            </div>
+        </div>
+        <br>
+        <footer class="alert alert-warning" role="alert"></footer>
+    </div>
+</body>
+
+</html>
