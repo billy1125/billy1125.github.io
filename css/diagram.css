@@ -1,0 +1,27 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #00a97f;
+    opacity: 0.5;
+}
+
+.msg {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: auto;
+    z-index: 2;
+    background-color: #ff2c2c;
+    color: white;
+    border-radius: 10px;
+}

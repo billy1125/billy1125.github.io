@@ -1,0 +1,44 @@
+#search_form {
+    z-index: 10;
+    position: fixed;
+    /*固定在網頁上不隨卷軸移動，若要隨卷軸移動用absolute*/
+    bottom: 1%;
+    /*設置垂直位置*/
+    left: 1%;
+    /*設置水平位置，依所放的內容多寡需要自行手動調整*/
+    background: #F9FFE87F;
+    /*背景顏色*/
+    padding: 10px 20px;
+    border-radius: 5px;
+    /*圓角*/
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: 100%;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 16;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+
+
+    background-color: #000000;
+    /* filter: alter(opacity=10); */
+    opacity: 0.5;
+}
+
+.msg {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: auto;
+    z-index: 16;
+
+}
