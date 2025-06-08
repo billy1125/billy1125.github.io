@@ -1,12 +1,12 @@
 const url = new URL(location.href);
 const line_kind = url.searchParams.get('lineKind');
+const formattedDate = url.searchParams.get('formattedDate');
 let date = null;
 let circle_blink = null;
 // 檔案路徑設定
 
 const loadRealtimeParam = url.searchParams.get('realtime');
-let loadRealtimeData = loadRealtimeParam !== 'false'; // 預設 true
-// 如果 URL 中有指定 'realtime=false'，則設定為 false
+let loadRealtimeData = loadRealtimeParam === 'true';
 
 // 定義基本檔案相依性
 const dependencies = [
@@ -44,7 +44,7 @@ function loadScript(file) {
 
 // 讀取所有資料檔
 function initial_data() {
-    date = getFormattedDate();
+    date = formattedDate ? formattedDate : getFormattedDate(); // 如果 URL 中有指定 'formattedDate'，則使用該日期，否則使用今天的日期
 
     const baseFiles = [
         readJSONFile(file1),
