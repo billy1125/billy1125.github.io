@@ -2,6 +2,11 @@ const url = new URL(location.href);
 const line_kind = url.searchParams.get('lineKind');
 let date = null;
 let circle_blink = null;
+// 檔案路徑設定
+
+const loadRealtimeParam = url.searchParams.get('realtime');
+let loadRealtimeData = loadRealtimeParam !== 'false'; // 預設 true
+// 如果 URL 中有指定 'realtime=false'，則設定為 false
 
 // 定義基本檔案相依性
 const dependencies = [
@@ -40,15 +45,21 @@ function loadScript(file) {
 // 讀取所有資料檔
 function initial_data() {
     date = getFormattedDate();
-    Promise.all([
+
+    const baseFiles = [
         readJSONFile(file1),
         readJSONFile(file2),
         readJSONFile(file3),
         readJSONFile(file4),
         readJSONFile(file5),
-        readJSONFile("data/realtime_diagram/" + date + ".json"),
-        readJSONFile("data/realtime_trains.json")
-    ])
+        readJSONFile("data/realtime_diagram/" + date + ".json")
+    ];
+
+    if (loadRealtimeData) {
+        baseFiles.push(readJSONFile("data/realtime_trains.json"));
+    }
+
+    Promise.all(baseFiles)
         .then(function (results) {
             Route = results[0];
             SVG_X_Axis = results[1];
@@ -80,19 +91,25 @@ function execute(json_data, live_json_data) {
     });
 
     try {
-        const all_trains_data = json_to_trains_data(json_data, '', line_kind);  // 將JSON檔案轉換成時間空間資料
-        const realtime_trains = mark_realtime_trains(live_json_data);           // 即時列車位置資料轉換
-        draw_diagram_background(line_kind);                                     // 繪製運行圖底圖(基礎時間與車站線)
-        draw_train_path(all_trains_data, realtime_trains);                      // 繪製每一個車次線
+        const all_trains_data = json_to_trains_data(json_data, '', line_kind);  // 將JSON轉換成時間空間資料
+        let realtime_trains = null;
+
+        if (loadRealtimeData && live_json_data) {
+            realtime_trains = mark_realtime_trains(live_json_data); // 即時列車位置資料轉換
+        }
+
+        draw_diagram_background(line_kind);                         // 繪製運行圖底圖
+        draw_train_path(all_trains_data, realtime_trains);          // 繪製每一個車次線
         set_user_styles();
 
-        // 获取SVG圆形元素
-        circle_blink = document.getElementsByTagName("circle");
-        for (const iterator of circle_blink) {
-            iterator.setAttribute("opacity", "1");
+        if (realtime_trains) {
+            // 開始閃動效果
+            circle_blink = document.getElementsByTagName("circle");
+            for (const iterator of circle_blink) {
+                iterator.setAttribute("opacity", "1");
+            }
+            setInterval(blink, 500);
         }
-        setInterval(blink, 500);
-
     }
     catch (error) {
         console.log(error);
@@ -101,6 +118,7 @@ function execute(json_data, live_json_data) {
         finish_draw();
     }
 }
+
 
 // 標記即時列車位置
 function mark_realtime_trains(live_json_data) {

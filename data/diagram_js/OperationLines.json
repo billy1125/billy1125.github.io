@@ -1,0 +1,86 @@
+{
+    "LINE_WN": {
+        "NAME": "西部幹線北段(基隆-竹南)",
+        "FOLDER": "west_link_north",
+        "PREFIX": "WESTNORTH_",
+        "MAX_X_AXIS": 3000
+    },
+    "LINE_WM": {
+        "NAME": "西部幹線台中線(竹南-彰化，經苗栗)",
+        "FOLDER": "west_link_moutain",
+        "PREFIX": "WESTMOUNTAIN_",
+        "MAX_X_AXIS": 2000
+    },
+    "LINE_WSEA": {
+        "NAME": "西部幹線海岸線(竹南-彰化，經大甲)",
+        "FOLDER": "west_link_sea",
+        "PREFIX": "WESTSEA_",
+        "MAX_X_AXIS": 2000
+    },
+    "LINE_WS": {
+        "NAME": "西部幹線南段(彰化-高雄)",
+        "FOLDER": "west_link_south",
+        "PREFIX": "WESTSOUTH_",
+        "MAX_X_AXIS": 4000
+    },
+    "LINE_P": {
+        "NAME": "屏東線(高雄-枋寮)",
+        "FOLDER": "pingtung",
+        "PREFIX": "PINGTUNG_",
+        "MAX_X_AXIS": 1500
+    },
+    "LINE_S": {
+        "NAME": "南迴線(枋寮-台東)",
+        "FOLDER": "south_link",
+        "PREFIX": "SOUTHLINK_",
+        "MAX_X_AXIS": 2000
+    },
+    "LINE_T": {
+        "NAME": "台東線(花蓮-台東)",
+        "FOLDER": "taitung",
+        "PREFIX": "TAITUNG_",
+        "MAX_X_AXIS": 2000
+    },
+    "LINE_N": {
+        "NAME": "北迴線(蘇澳新-花蓮)",
+        "FOLDER": "north_link",
+        "PREFIX": "NORTHLINK_",
+        "MAX_X_AXIS": 1500
+    },
+    "LINE_I": {
+        "NAME": "宜蘭線(八堵-蘇澳)",
+        "FOLDER": "yilan",
+        "PREFIX": "YILAN_",
+        "MAX_X_AXIS": 2000
+    },
+    "LINE_PX": {
+        "NAME": "平溪深澳線(八斗子-菁桐)",
+        "FOLDER": "pingxi",
+        "PREFIX": "PINGXI_",
+        "MAX_X_AXIS": 1250
+    },
+    "LINE_LJ": {
+        "NAME": "內灣線(新竹-內灣)",
+        "FOLDER": "liujia",
+        "PREFIX": "LIUJIA_",
+        "MAX_X_AXIS": 500
+    },
+    "LINE_NW": {
+        "NAME": "六家線(新竹-六家)",
+        "FOLDER": "neiwan",
+        "PREFIX": "NEIWAN_",
+        "MAX_X_AXIS": 1250
+    },
+    "LINE_J": {
+        "NAME": "集集線(二水-車埕)",
+        "FOLDER": "jiji",
+        "PREFIX": "JIJI_",
+        "MAX_X_AXIS": 1250
+    },
+    "LINE_SL": {
+        "NAME": "沙崙線(中洲-沙崙)",
+        "FOLDER": "shalun",
+        "PREFIX": "SHALUN_",
+        "MAX_X_AXIS": 650
+    }
+}

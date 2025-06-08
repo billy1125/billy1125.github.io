@@ -92,7 +92,7 @@ function draw_train_path(all_trains_data, realtime_trains) {
                 const section_start_value = value.slice(0, uncontinuous_index);
                 const section_end_value = value.slice(uncontinuous_index, value.length);
                 let realtime_data;
-                if (typeof (realtime_trains) != "undefined") {
+                if (typeof (realtime_trains) != "undefined" && realtime_trains != null) {
                     realtime_data = realtime_trains.get(train_no);
                 }
 

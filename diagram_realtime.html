@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即時運行圖</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/diagram.css">
+</head>
+
+<body>
+    <div id="popup" class="popup">
+        <div class="msg">
+            <h1>讀取中，請稍後...</h1>
+        </div>
+    </div>
+</body>
+
+<script src="js/realtime.js" defer></script>
+
+<script>
+    // 倒數計時
+    const startTime = new Date().getTime();
+    const targetSeconds = 180;
+    const timerId = setInterval(function () { timer(startTime); }, 1000);
+
+    const timer = function (startTime) {
+        const currentTime = new Date().getTime();
+        const diffSec = Math.round((currentTime - startTime) / 1000);
+        const remainingTime = targetSeconds - diffSec;
+
+        // console.log(remainingTime);
+
+        if (remainingTime <= 0) {
+            clearInterval(timerId);
+            window.location.reload();
+        }
+    }   
+</script>
+
+</html>

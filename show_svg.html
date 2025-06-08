@@ -65,7 +65,9 @@
     // SVG位置(暫時這樣處理)
     let line_kind = $.url('?lineKind');
     let date = $.url('?date');
-    let svg_file_name = 'diagram/' + line_kind + dict_line[line_kind][0] + date + '.svg';
+    let file_name = $.url('?fileName');
+    // let svg_file_name = 'diagram/' + line_kind + dict_line[line_kind][0] + date + '.svg';
+    let svg_file_name = 'https://raw.githubusercontent.com/billy1125/billy1125.github.io/refs/heads/main/diagram/WESTNORTH_' + file_name +'.svg';
     // console.log(svg_file_name)
 
     $(".popup").hide();
