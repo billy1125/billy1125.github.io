@@ -11,10 +11,10 @@ let circle_blink = null;
 let loadRealtimeData = loadRealtimeParam === 'true';
 let scrollToCurrentTime = scrollToCurrentTimeParam === 'true';
 
-console.log('Line Kind:', line_kind);
-console.log('Formatted Date:', formattedDate);
-console.log('Load Realtime Data:', loadRealtimeData);
-console.log('Scroll To Current Time:', scrollToCurrentTime);
+// console.log('Line Kind:', line_kind);
+// console.log('Formatted Date:', formattedDate);
+// console.log('Load Realtime Data:', loadRealtimeData);
+// console.log('Scroll To Current Time:', scrollToCurrentTime);
 
 // 定義基本檔案相依性
 const dependencies = [

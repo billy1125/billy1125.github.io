@@ -52,15 +52,16 @@
 
 
 <script>
-    const owner = 'billy1125';
-    const repo = 'billy1125.github.io';
-    const path = 'data/realtime_diagram';
-    const url = new URL(location.href);
+    const owner = 'billy1125';                 // GitHub 使用者名稱
+    const repo = 'billy1125.github.io';        // GitHub 倉庫名稱
+    const path = 'data/realtime_diagram';      // GitHub 倉庫中的路徑
+    const url = new URL(location.href);        // 取得當前頁面的 URL
+    const line_kind = $.url('?lineKind');      // 從 URL 取得 lineKind 參數
 
-    let line_kind = $.url('?lineKind');
+    const kind_realtime = dict_line[line_kind][2]; // 取得對應的實時線路類型
 
-    const kine_kind_realtime = dict_line[line_kind][2]
-    $("#main_title").text(dict_line[line_kind][1]);
+    $("#main_title").text(dict_line[line_kind][1]);     // 設定網頁內文主標題
+    $("#web_name").text(dict_line[line_kind][1]);       // 設定網頁標題
 
     async function getGitHubFileNames(owner, repo, path = '') {
         const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
@@ -121,7 +122,7 @@
                 }
 
                 // 如果日期有效，執行 myDateFunction
-                return myDateFunction(this.id, false, kine_kind_realtime);
+                return myDateFunction(this.id, false, kind_realtime);
             }
         });
 
@@ -136,10 +137,10 @@
     //     return true;
     // }
 
-    function myDateFunction(id, fromModal, kine_kind_realtime) {
+    function myDateFunction(id, fromModal, kind_realtime) {
         const date = $("#" + id).data("date");
         const formattedDate = date.replace(/-/g, ''); // 移除所有 "-"，得到 "20250607"
-        const line_kind = kine_kind_realtime;
+        const line_kind = kind_realtime;
         console.log('Formatted Date:', date);
         if (formattedDate) {
             const targetUrl = `diagram_realtime.html?formattedDate=${formattedDate}&lineKind=${line_kind}&realtime=false&scrollToCurrentTime=false`;
