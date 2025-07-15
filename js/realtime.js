@@ -1,11 +1,12 @@
+// GRT參數取得 
 const url = new URL(location.href);
 const line_kind = url.searchParams.get('lineKind');
 const formattedDate = url.searchParams.get('formattedDate');
+const loadRealtimeParam = url.searchParams.get('realtime');
+
+// 公用變數
 let date = null;
 let circle_blink = null;
-// 檔案路徑設定
-
-const loadRealtimeParam = url.searchParams.get('realtime');
 let loadRealtimeData = loadRealtimeParam === 'true';
 
 // 定義基本檔案相依性
@@ -21,14 +22,16 @@ const dependencies = [
 // 開始載入基本檔案
 loadDependencies();
 
-// 異步載入函式
+// 載入所有相依並初始化資料
 async function loadDependencies() {
-    // 迭代相依性並載入它們
-    for (const dependency of dependencies) {
-        await loadScript(dependency);
+    try {
+        for (const dep of dependencies) {
+            await loadScript(dep);
+        }
+        await initial_data();
+    } catch (err) {
+        console.error("載入腳本時發生錯誤:", err);
     }
-    // 所有基本檔案載入完成後，執行其他函式    
-    initial_data();
 }
 
 // 載入 JavaScript 檔案的函式
@@ -43,44 +46,40 @@ function loadScript(file) {
 }
 
 // 讀取所有資料檔
-function initial_data() {
-    date = formattedDate ? formattedDate : getFormattedDate(); // 如果 URL 中有指定 'formattedDate'，則使用該日期，否則使用今天的日期
+async function initial_data() {
+    try {
+        date = formattedDate ? formattedDate : getFormattedDate(); // 如果 URL 中有指定日期則使用，否則用今天
 
-    const baseFiles = [
-        readJSONFile(file1),
-        readJSONFile(file2),
-        readJSONFile(file3),
-        readJSONFile(file4),
-        readJSONFile(file5),
-        readJSONFile("data/realtime_diagram/" + date + ".json")
-    ];
+        const baseFiles = [
+            readJSONFile(file1),
+            readJSONFile(file2),
+            readJSONFile(file3),
+            readJSONFile(file4),
+            readJSONFile(file5),
+            readJSONFile(`data/realtime_diagram/${date}.json`)
+        ];
 
-    if (loadRealtimeData) {
-        baseFiles.push(readJSONFile("data/realtime_trains.json"));
+        if (loadRealtimeData) {
+            baseFiles.push(readJSONFile("data/realtime_trains.json"));
+        }
+
+        const results = await Promise.all(baseFiles);
+
+        Route = results[0];
+        SVG_X_Axis = results[1];
+        initial_line_data(results[2]);
+        OperationLines = results[3];
+        CarKind = results[4];
+
+        const realtimeDiagram = results[5];
+        const realtimeTrains = results[6]; // 可能是 undefined（如果沒載）
+
+        execute(realtimeDiagram, realtimeTrains);
+    } catch (err) {
+        console.error("初始化資料時發生錯誤:", err);
     }
-
-    Promise.all(baseFiles)
-        .then(function (results) {
-            Route = results[0];
-            SVG_X_Axis = results[1];
-            initial_line_data(results[2]);
-            OperationLines = results[3];
-            CarKind = results[4];
-
-            // 等待最後兩個函式完成的Promise物件
-            return Promise.all([
-                results[5],
-                results[6]
-            ]);
-        })
-        .then(function (finalResults) {
-            // 在最後兩個函式完成後執行的程式碼
-            execute(finalResults[0], finalResults[1]);
-        })
-        .catch(function (error) {
-            console.error(error);
-        });
 }
+
 
 // 程式執行函式
 function execute(json_data, live_json_data) {

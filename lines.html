@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="zh-tw">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <title id="web_name"></title>
@@ -29,7 +29,6 @@
         </div>
     </div>
 
-    <!-- calendar -->
     <div class="container text-center">
         <div class="row">
             <div class="col-xs-12">
@@ -39,52 +38,115 @@
         <br>
         <footer class="alert alert-warning" role="alert"></footer>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Zabuto Calendar -->
+    <script src="js/calendar/zabuto_calendar.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/calendar/zabuto_calendar.css">
+    <script src="js/url.min.js"></script>
+    <script src="js/web_config.js"></script>
+
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
 
-<!-- Zabuto Calendar -->
-<script src="js/calendar/zabuto_calendar.min.js"></script>
-<link rel="stylesheet" type="text/css" href="js/calendar/zabuto_calendar.css">
 
-<script src="js/url.min.js"></script>
-<script src="js/web_config.js"></script>
+<script>
+    const owner = 'billy1125';
+    const repo = 'billy1125.github.io';
+    const path = 'data/realtime_diagram';
+    const url = new URL(location.href);
 
-<script type="application/javascript">
     let line_kind = $.url('?lineKind');
 
+    const kine_kind_realtime = dict_line[line_kind][2]
     $("#main_title").text(dict_line[line_kind][1]);
 
-    $(document).ready(function () {
-        $('#web_name').append(web_name)
-        $("meta[name='description']").attr("content", description)
-        $("meta[name='keywords']").attr("content", keywords)
-        $('footer').append(footer)
-        $("#navbar").load("navbar.html")
+    async function getGitHubFileNames(owner, repo, path = '') {
+        const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`GitHub API request failed: ${response.status}`);
+            const data = await response.json();
+            // console.log('Fetched data:', data);
+            const svgFileDates = data
+                .map(item => item.name)
+                .filter(name => /^\d{8}\.json$/.test(name))  // 確保是8碼數字開頭的檔案名
+                .map(name => {
+                    const match = name.match(/^(\d{8})\.json$/);  // 抓取數字部分
+                    // console.log('Match:', match);
+                    if (match) {
+                        const dateStr = match[1];
+                        const y = dateStr.substring(0, 4);
+                        const m = dateStr.substring(4, 6);
+                        const d = dateStr.substring(6, 8);
+                        return `${y}-${m}-${d}`;
+                    }
+                    return null; // 避免出錯
+                })
+                .filter(Boolean); // 過濾掉 null 結果
+
+            // console.log('Filtered SVG file dates:', svgFileDates);
+            const events = svgFileDates.map(date => ({
+                date: date,
+                // badge: true,
+                title: "SVG available",
+                body: `<p>${date}.svg</p>`
+            }));
+
+            return events;
+        } catch (error) {
+            console.error('Error fetching GitHub files:', error);
+            return [];
+        }
+    }
+
+    $(document).ready(async function () {
+        const events = await getGitHubFileNames(owner, repo, path);
 
         $("#my-calendar").zabuto_calendar({
             today: true,
             weekstartson: 0,
             language: "en",
+            data: events, // 直接使用內嵌資料
             action: function () {
-                return myDateFunction(this.title, false);
-            },
-            ajax: {
-                url: "get_diagram.php?lineKind=" + line_kind,
-                modal: false
+                // 取得被點選的日期
+                const date = $(this).data('date'); // zabuto_calendar 會將點選的日期儲存在 data-date 中
+                // 檢查日期是否在 events 中
+                const isValidDate = events.some(event => event.date === date);
+
+                if (!isValidDate) {
+                    // 如果日期不在 events 中，阻止動作
+                    return false;
+                }
+
+                // 如果日期有效，執行 myDateFunction
+                return myDateFunction(this.id, false, kine_kind_realtime);
             }
         });
+
+        $('footer').append(footer)
+        $("#navbar").load("navbar.html")
     });
 
-    function myDateFunction(id, fromModal) {
-        if (id != '') {
-            window.location.href = "show_svg.html?lineKind=" + line_kind + "&date=" + id;
+    // function myDateFunction(id, fromModal) {
+    //     const date = $("#" + id).data("date");
+
+    //     alert("你選擇了日期：" + date);
+    //     return true;
+    // }
+
+    function myDateFunction(id, fromModal, kine_kind_realtime) {
+        const date = $("#" + id).data("date");
+        const formattedDate = date.replace(/-/g, ''); // 移除所有 "-"，得到 "20250607"
+        const line_kind = kine_kind_realtime;
+        console.log('Formatted Date:', date);
+        if (formattedDate) {
+            const targetUrl = `diagram_realtime.html?formattedDate=${formattedDate}&lineKind=${line_kind}&realtime=false`;
+            window.open(targetUrl, '_blank');
+        } else {
+            alert('此日期沒有對應的 SVG 檔案。');
         }
         return true;
     }
-
-    
 </script>
-
-</html>
