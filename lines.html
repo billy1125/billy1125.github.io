@@ -142,7 +142,7 @@
         const line_kind = kine_kind_realtime;
         console.log('Formatted Date:', date);
         if (formattedDate) {
-            const targetUrl = `diagram_realtime.html?formattedDate=${formattedDate}&lineKind=${line_kind}&realtime=false`;
+            const targetUrl = `diagram_realtime.html?formattedDate=${formattedDate}&lineKind=${line_kind}&realtime=false&scrollToCurrentTime=false`;
             window.open(targetUrl, '_blank');
         } else {
             alert('此日期沒有對應的 SVG 檔案。');

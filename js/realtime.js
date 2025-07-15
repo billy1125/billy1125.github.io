@@ -3,11 +3,18 @@ const url = new URL(location.href);
 const line_kind = url.searchParams.get('lineKind');
 const formattedDate = url.searchParams.get('formattedDate');
 const loadRealtimeParam = url.searchParams.get('realtime');
+const scrollToCurrentTimeParam = url.searchParams.get('scrollToCurrentTime');
 
 // 公用變數
 let date = null;
 let circle_blink = null;
 let loadRealtimeData = loadRealtimeParam === 'true';
+let scrollToCurrentTime = scrollToCurrentTimeParam === 'true';
+
+console.log('Line Kind:', line_kind);
+console.log('Formatted Date:', formattedDate);
+console.log('Load Realtime Data:', loadRealtimeData);
+console.log('Scroll To Current Time:', scrollToCurrentTime);
 
 // 定義基本檔案相依性
 const dependencies = [
@@ -74,7 +81,7 @@ async function initial_data() {
         const realtimeDiagram = results[5];
         const realtimeTrains = results[6]; // 可能是 undefined（如果沒載）
 
-        execute(realtimeDiagram, realtimeTrains);
+        execute(realtimeDiagram, realtimeTrains, date);
     } catch (err) {
         console.error("初始化資料時發生錯誤:", err);
     }
@@ -82,7 +89,7 @@ async function initial_data() {
 
 
 // 程式執行函式
-function execute(json_data, live_json_data) {
+function execute(json_data, live_json_data, date) {
     // 清除已有的運行圖    
     const svg = document.querySelectorAll("svg");
     svg.forEach(function (svg) {
@@ -97,7 +104,7 @@ function execute(json_data, live_json_data) {
             realtime_trains = mark_realtime_trains(live_json_data); // 即時列車位置資料轉換
         }
 
-        draw_diagram_background(line_kind);                         // 繪製運行圖底圖
+        draw_diagram_background(line_kind, date);                         // 繪製運行圖底圖
         draw_train_path(all_trains_data, realtime_trains);          // 繪製每一個車次線
         set_user_styles();
 
@@ -136,12 +143,8 @@ function finish_draw() {
     parentObj.removeChild(popup);
 
     // 依照現在的時間，將視窗滾動到整點時間，方便使用者閱讀
-    let now = new Date();
-    let min = screen.width >= 1000 ? 0 : (now.getMinutes() - 10) / 60;
-    let hour_position = now.getHours() + Math.round(min * 100) / 100 - 4;
-    if (hour_position > 0) {
-        hour_position *= 1200;
-        window.scrollTo(hour_position, 0);
+    if (scrollToCurrentTime) {
+        scroll_current_time();
     }
 }
 
@@ -173,5 +176,16 @@ function blink() {
         } else if (iterator.getAttribute("opacity") === "1") {
             iterator.setAttribute("opacity", "0");
         }
+    }
+}
+
+// 捲動圖片到現在的時間
+function scroll_current_time() {
+    let now = new Date();
+    let min = screen.width >= 1000 ? 0 : (now.getMinutes() - 10) / 60;
+    let hour_position = now.getHours() + Math.round(min * 100) / 100 - 4;
+    if (hour_position > 0) {
+        hour_position *= 1200;
+        window.scrollTo(hour_position, 0);
     }
 }

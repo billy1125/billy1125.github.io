@@ -1,15 +1,15 @@
 // 繪製運行圖底圖(基礎時間與車站線)
-function draw_diagram_background(line_kind) {
+function draw_diagram_background(line_kind, date) {
     Object.entries(OperationLines).forEach(([key, value]) => {
         if (key == line_kind) {
             const width = 1200 * (DiagramHours.length - 1) + 100;                // 運行圖長寬
             const height = value['MAX_X_AXIS'];
             const draw = SVG().addTo('body').size(width, height + 75);           // 設定SVG物件
             const text_spacing_factor = 500;
-            const date = Date().toLocaleString();
+            const draw_date = Date().toLocaleString();
             const now_time_x_axis = get_now_time_x_axis(0);
 
-            const title = `${value['NAME']} 。運行圖繪製完成時間：${date}`;        // 運行圖標題文字設定
+            const title = `${value['NAME']} ，日期：${date}，運行圖繪製完成時間：${draw_date}`;        // 運行圖標題文字設定
             add_text(draw, title, 5, 0, null);
 
             // 小時線
