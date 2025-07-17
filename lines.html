@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/web.css">
     <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
 
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3628172690328777" crossorigin="anonymous"></script> -->
@@ -20,7 +21,7 @@
 
 <body style="padding-top:40px;">
 
-    <div id="navbar"></div>
+    <navbar></navbar>
 
     <div class="jumbotron">
         <div class="container text-center">
@@ -39,7 +40,9 @@
         <footer class="alert alert-warning" role="alert"></footer>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!-- Zabuto Calendar -->
     <script src="js/calendar/zabuto_calendar.min.js"></script>
     <link rel="stylesheet" type="text/css" href="js/calendar/zabuto_calendar.css">
@@ -54,14 +57,11 @@
 <script>
     const owner = 'billy1125';                 // GitHub 使用者名稱
     const repo = 'billy1125.github.io';        // GitHub 倉庫名稱
-    const path = 'data/realtime_diagram';      // GitHub 倉庫中的路徑
+    const path = 'data';                       // GitHub 倉庫中的路徑
     const url = new URL(location.href);        // 取得當前頁面的 URL
     const line_kind = $.url('?lineKind');      // 從 URL 取得 lineKind 參數
 
     const kind_realtime = dict_line[line_kind][2]; // 取得對應的實時線路類型
-
-    $("#main_title").text(dict_line[line_kind][1]);     // 設定網頁內文主標題
-    $("#web_name").text(dict_line[line_kind][1]);       // 設定網頁標題
 
     async function getGitHubFileNames(owner, repo, path = '') {
         const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
@@ -126,8 +126,10 @@
             }
         });
 
-        $('footer').append(footer)
-        $("#navbar").load("navbar.html")
+        $("#main_title").text(dict_line[line_kind][1]);     // 設定網頁內文主標題
+        $("#web_name").text(dict_line[line_kind][1]);       // 設定網頁標題
+        $('footer').append(footer);
+        $("navbar").load("navbar.html");
     });
 
     // function myDateFunction(id, fromModal) {
@@ -143,7 +145,7 @@
         const line_kind = kind_realtime;
         console.log('Formatted Date:', date);
         if (formattedDate) {
-            const targetUrl = `diagram_realtime.html?formattedDate=${formattedDate}&lineKind=${line_kind}&realtime=false&scrollToCurrentTime=false`;
+            const targetUrl = `diagram_output.html?formattedDate=${formattedDate}&lineKind=${line_kind}&scrollToCurrentTime=false`;
             window.open(targetUrl, '_blank');
         } else {
             alert('此日期沒有對應的 SVG 檔案。');

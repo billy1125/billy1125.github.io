@@ -20,7 +20,7 @@
 </head>
 
 <body style="padding-top:40px;">
-    <div id="navbar"></div>
+    <navbar></navbar>
 
     <div class="jumbotron">
         <div class="container text-center">
@@ -39,28 +39,28 @@
                 <div class="alert alert-danger" role="alert">今日的運行圖捷徑</div>
                 <h3>西部幹線</h3>
                 <div class="btn-group-vertical btn-block">
-                    <a href='diagram_realtime.html?lineKind=LINE_WN&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">北段 (基隆-竹南)</a>
-                    <a href='diagram_realtime.html?lineKind=LINE_WM&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">山線 (竹南-彰化)</a>
-                    <a href='diagram_realtime.html?lineKind=LINE_WSEA&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">海線 (竹南-彰化)</a>
-                    <a href='diagram_realtime.html?lineKind=LINE_WS&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">南段 (彰化-高雄)</a>
-                    <a href='diagram_realtime.html?lineKind=LINE_P&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">屏東線 (高雄-枋寮)</a>
+                    <a href='diagram_output.html?lineKind=LINE_WN&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">北段 (基隆-竹南)</a>
+                    <a href='diagram_output.html?lineKind=LINE_WM&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">山線 (竹南-彰化)</a>
+                    <a href='diagram_output.html?lineKind=LINE_WSEA&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">海線 (竹南-彰化)</a>
+                    <a href='diagram_output.html?lineKind=LINE_WS&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">南段 (彰化-高雄)</a>
+                    <a href='diagram_output.html?lineKind=LINE_P&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">屏東線 (高雄-枋寮)</a>
                 </div>
 
                 <h3>東部幹線與南迴線</h3>
                 <div class="btn-group-vertical btn-block">
-                    <a href='diagram_realtime.html?lineKind=LINE_I&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">宜蘭線 (八堵-蘇澳)</a>
-                    <a href='diagram_realtime.html?lineKind=LINE_N&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">北迴線 (蘇澳新-花蓮)</a>
-                    <a href='diagram_realtime.html?lineKind=LINE_T&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">台東線 (花蓮-台東)</a>
-                    <a href='diagram_realtime.html?lineKind=LINE_S&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">南迴線 (台東-枋寮)</a>
+                    <a href='diagram_output.html?lineKind=LINE_I&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">宜蘭線 (八堵-蘇澳)</a>
+                    <a href='diagram_output.html?lineKind=LINE_N&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">北迴線 (蘇澳新-花蓮)</a>
+                    <a href='diagram_output.html?lineKind=LINE_T&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">台東線 (花蓮-台東)</a>
+                    <a href='diagram_output.html?lineKind=LINE_S&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">南迴線 (台東-枋寮)</a>
                 </div>
 
                 <h3>支線</h3>
                 <div class="btn-group-vertical btn-block">
-                    <a href='diagram_realtime.html?lineKind=LINE_PX&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">平溪深澳線</a>
-                    <a href='diagram_realtime.html?lineKind=LINE_NW&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">內灣線</a>
-                    <a href='diagram_realtime.html?lineKind=LINE_LJ&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">六家線</a>
-                    <a href='diagram_realtime.html?lineKind=LINE_J&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">集集線</a>
-                    <a href='diagram_realtime.html?lineKind=LINE_SL&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">沙崙線</a>
+                    <a href='diagram_output.html?lineKind=LINE_PX&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">平溪深澳線</a>
+                    <a href='diagram_output.html?lineKind=LINE_NW&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">內灣線</a>
+                    <a href='diagram_output.html?lineKind=LINE_LJ&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">六家線</a>
+                    <a href='diagram_output.html?lineKind=LINE_J&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">集集線</a>
+                    <a href='diagram_output.html?lineKind=LINE_SL&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">沙崙線</a>
                 </div>
             </div>
             <div class="col-md-4 portfolio-item">
@@ -126,15 +126,17 @@
     </div>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script src="js/web_config.js" defer></script>
-<script src="js/web.js" defer></script>
+<script src="js/web_config.js"></script>
+<script src="js/util.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     const diagram_data = localStorage.getItem('is_confirmed');
+    const today_date = getTodayFormattedDate();
+
     if (diagram_data == null || typeof (diagram_data) == "undefined" || diagram_data !== "ok") {
         Swal.fire({
             title: '本網站聲明',
@@ -163,35 +165,7 @@
         $("meta[name='description']").attr("content", description)
         $("meta[name='keywords']").attr("content", keywords)
         $('footer').append(footer)
-        $("#navbar").load("navbar.html")
-
-        $.getJSON("data/alert.json", function (data) {
-            bolIsJam = true
-            var strJamKind = ""
-            //console.log(data.UpdateTime); // Prints: Harry
-
-            switch (Number(data.Alerts[0].Status)) {
-                case 0:
-                    strJamKind += "<div class='container-fluid bg-danger text-white text-center'>台鐵全線營運停止，更新時間：" + data.UpdateTime + "<br>"
-                    strJamKind += data.Alerts[0].Description + "</div>"
-                    break
-                case 1:
-                    strJamKind += "<div class='container-fluid bg-success text-white text-center'>台鐵全線營運正常，更新時間：" + data.UpdateTime + "</div>"
-                    break
-                case 2:
-                    strJamKind += "<div class='container-fluid bg-info text-white text-center'>更新時間：" + data.UpdateTime + "<br>"
-                    strJamKind += data.Alerts[0].Description + "</div>"
-                    break
-                default:
-                    break
-            }
-
-            $('#status_now').append(strJamKind)
-
-        }).fail(function () {
-            console.log("An error has occurred. 發生錯誤")
-        })
-
+        $("navbar").load("navbar.html")
     })
 </script>
 
