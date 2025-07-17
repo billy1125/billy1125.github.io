@@ -47,7 +47,7 @@
     <script src="js/calendar/zabuto_calendar.min.js"></script>
     <link rel="stylesheet" type="text/css" href="js/calendar/zabuto_calendar.css">
     <script src="js/url.min.js"></script>
-    <script src="js/web_config.js"></script>
+    <script src="js/config.js"></script>
 
 </body>
 
@@ -61,7 +61,7 @@
     const url = new URL(location.href);        // 取得當前頁面的 URL
     const line_kind = $.url('?lineKind');      // 從 URL 取得 lineKind 參數
 
-    const kind_realtime = dict_line[line_kind][2]; // 取得對應的實時線路類型
+    const kind_realtime = dict_line[line_kind]; // 取得對應的實時線路類型
 
     async function getGitHubFileNames(owner, repo, path = '') {
         const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
@@ -121,29 +121,22 @@
                     return false;
                 }
 
-                // 如果日期有效，執行 myDateFunction
-                return myDateFunction(this.id, false, kind_realtime);
+                // 如果日期有效，執行 showDiagram 函數
+                return showDiagram(this.id, false, line_kind);
             }
         });
 
-        $("#main_title").text(dict_line[line_kind][1]);     // 設定網頁內文主標題
-        $("#web_name").text(dict_line[line_kind][1]);       // 設定網頁標題
+        $("#main_title").text(dict_line[line_kind]);     // 設定網頁內文主標題
+        $("#web_name").text(dict_line[line_kind]);       // 設定網頁標題
         $('footer').append(footer);
         $("navbar").load("navbar.html");
     });
 
-    // function myDateFunction(id, fromModal) {
-    //     const date = $("#" + id).data("date");
-
-    //     alert("你選擇了日期：" + date);
-    //     return true;
-    // }
-
-    function myDateFunction(id, fromModal, kind_realtime) {
+    function showDiagram(id, fromModal, line_kind) {
         const date = $("#" + id).data("date");
         const formattedDate = date.replace(/-/g, ''); // 移除所有 "-"，得到 "20250607"
-        const line_kind = kind_realtime;
-        console.log('Formatted Date:', date);
+
+        // console.log('Formatted Date:', date);
         if (formattedDate) {
             const targetUrl = `diagram_output.html?formattedDate=${formattedDate}&lineKind=${line_kind}&scrollToCurrentTime=false`;
             window.open(targetUrl, '_blank');
