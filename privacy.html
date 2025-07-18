@@ -19,7 +19,7 @@
 
 <body style="padding-top:40px;">
 
-    <div id="navbar"></div>
+    <navbar></navbar>
 
     <div class="jumbotron">
         <div class="container text-center">
@@ -66,7 +66,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script src="js/web_config.js"></script>
+<script src="js/config.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -74,7 +74,7 @@
         $("meta[name='description']").attr("content", description)
         $("meta[name='keywords']").attr("content", keywords)
         $('footer').append(footer)
-        $("#navbar").load("navbar.html")
+        $("navbar").load("navbar.html")
     })
 </script>
 
