@@ -346,8 +346,8 @@ function get_now_time_x_axis(minus_time) {
     currentTime.setMinutes(currentTime.getMinutes() - minus_time);
 
     // 取得減去10分鐘後的台北時間
-    var options = { timeZone: 'Asia/Taipei', hour12: false };
-    var newTime = currentTime.toLocaleString('en-US', options);
+    let options = { timeZone: 'Asia/Taipei', hour12: false };
+    let newTime = currentTime.toLocaleString('en-US', options);
 
     let hours = currentTime.getHours().toString().padStart(2, '0');
     let minutes = currentTime.getMinutes().toString().padStart(2, '0');

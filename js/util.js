@@ -1,3 +1,4 @@
+// 讀取 JSON 檔案
 function readJSONFile(file) {
     return new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();
@@ -17,6 +18,7 @@ function readJSONFile(file) {
     });
 }
 
+// 初始化線路資料
 function initial_line_data(file) {
     Object.entries(file).forEach(([key, value]) => {
         let stations_loc = {};
@@ -55,6 +57,7 @@ function download_file() {
     }
 }
 
+// 取得今天的日期，格式為 YYYY-MM-DD 或 YYYYMMDD
 function getTodayFormattedDate(format = 'dash') {
     const today = new Date();
     const year = today.getFullYear();

@@ -116,7 +116,7 @@ function execute(json_data, live_json_data, date) {
 
 function finish_draw() {
     // 移除讀取中的文字標示
-    var popup = document.getElementById("popup");
+    let popup = document.getElementById("popup");
     const parentObj = popup.parentNode;
     parentObj.removeChild(popup);
 
