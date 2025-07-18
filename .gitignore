@@ -1,0 +1,38 @@
+# 忽略生成的文件和文件夾
+dist/
+build/
+out/
+bundle.js
+
+# 忽略依賴管理工具的文件夾
+node_modules/
+bower_components/
+
+# 忽略本地開發服務器的配置文件
+.env
+
+# 忽略編輯器配置文件
+.vscode/
+.idea/
+
+# 忽略臨時文件
+*.tmp
+*.bak
+temp/
+
+# 忽略日志文件
+*.log
+
+# 忽略備份文件
+*.bak
+*.swp
+*~
+
+# 忽略系統文件
+.DS_Store
+Thumbs.db
+
+# 忽略特定檔案
+*.svg
+*.txt
+*.zip
