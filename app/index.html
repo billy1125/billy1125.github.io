@@ -155,12 +155,12 @@
     Swal.fire({
         title: '請修正本站的網址',
         icon: 'warning',
-        text: '您好，請將本站網址修改為「https://tradiagram.com」，以便正常使用本站服務。',
+        text: '您好，請將本站網址修改為「https://tradiagram.com」，以便正常使用本站服務。請按「跳轉到正確網址」，將會幫助您跳轉到正確網址。',
         width: 500,
         heightAuto: true,
         padding: '3em',
         backdrop: `rgba(255, 255, 0, 0.2) no-repeat`,
-        confirmButtonText: '我了解了',
+        confirmButtonText: '跳轉到正確網址',
     }).then((result) => {
         window.location.href = "https://tradiagram.com";
     })
