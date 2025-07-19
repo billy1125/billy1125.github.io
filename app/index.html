@@ -153,9 +153,9 @@
     const today_date = getTodayFormattedDate();
 
     Swal.fire({
-        title: '請修正本站的網址',
+        title: '請將您的書籤網址修正',
         icon: 'warning',
-        text: '您好，請將本站網址修改為「https://tradiagram.com」，以便正常使用本站服務。請按「跳轉到正確網址」，將會幫助您跳轉到正確網址。',
+        text: '您好，請將您的書籤中的本站網址修改為「https://tradiagram.com」，以便正常使用本站服務。請按「跳轉到正確網址」，將會幫助您跳轉到正確網址。或者五秒後將會帶您到正確網址。',
         width: 500,
         heightAuto: true,
         padding: '3em',
@@ -172,7 +172,12 @@
         $("meta[name='keywords']").attr("content", keywords)
         $('footer').append(footer)
         $("navbar").load("../navbar.html")
+        setTimeout(jumpToPage, 5000);
     })
+
+    function jumpToPage() {
+        window.location.href = "https://tradiagram.com";
+    }    
 </script>
 
 </html>
