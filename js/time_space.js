@@ -1,16 +1,39 @@
-// JSON檔處理，將JSON檔案轉換成時間空間資料
+// JSON檔處理，將JSON檔案轉換成時間空間資料，可指定車次
 function json_to_trains_data(json_data, train_no_input, line_kind) {
-    let train = null;
     let all_trains_data = [];
     let train_no = "";
 
+    if (!json_data || !Array.isArray(json_data['TrainInfos'])) {
+        console.warn("JSON資料格式錯誤，無法處理");
+        return all_trains_data;
+    }
+
     for (let i = 0; i < json_data['TrainInfos'].length; i++) {
-        train_no_input.length === 0 ? train_no = json_data['TrainInfos'][i]['Train'] : train_no = train_no_input;
-        // console.log(train_no)
-        if (json_data['TrainInfos'][i].Train == train_no) {
-            train = json_data['TrainInfos'][i];
-            train_data = calculate_space_time(train, line_kind);  // 車次資料處理，轉換成時間空間資料
-            all_trains_data.push(train_data);
+        try {
+            let trainInfo = json_data['TrainInfos'][i];
+
+            // 確保資料存在
+            if (!trainInfo || typeof trainInfo['Train'] === "undefined") {
+                console.warn(`TrainInfos[${i}] 缺少 Train 欄位，已跳過`);
+                continue;
+            }
+
+            // 決定要處理的車次編號
+            train_no = (train_no_input.length === 0) ? trainInfo['Train'] : train_no_input;
+
+            // 過濾：只處理目標車次
+            if (trainInfo['Train'] == train_no) {
+                let train_data = calculate_space_time(trainInfo, line_kind);  // 車次資料處理，轉換成時間空間資料
+
+                if (train_data && Array.isArray(train_data)) {
+                    all_trains_data.push(train_data);
+                } else {
+                    console.warn(`train_no=${train_no} 的空間時間資料無效，已跳過`);
+                }
+            }
+        } catch (e) {
+            console.error(`車次：${train_no} 資料處理失敗，已跳過，錯誤訊息：`, e);
+            continue;
         }
     }
 
@@ -29,7 +52,9 @@ function calculate_space_time(train, line_kind) {
 
     let timetable_dict = {};                         // 暫存車次時刻表物件
     let _trains_data = [];                           // 時刻表轉換後的時間空間資料，包括各個營運路線
-    
+
+    console.log(train_id, car_class, line, line_dir); // 偵錯用，將車次的時刻表資料輸出到主控台 
+
     for (let TimeInfos of train.TimeInfos) {
         timetable_dict[TimeInfos.Station] = [TimeInfos.ARRTime, TimeInfos.DEPTime, TimeInfos.Station, TimeInfos.Order];
     }
@@ -298,8 +323,8 @@ function time_space_to_operation_lines(estimate_time_space, line_kind) {
     Object.entries(estimate_time_space).forEach(([key, value]) => {
         Object.entries(LinesStations).forEach(([key1, value1]) => {
             if (key1 == line_kind)
-                if (value[0] in value1) 
-                _operation_lines[key1].push([value[1], value[0], value[3], LinesStations[key1][value[0]]['SVGYAXIS'], value[4], parseInt(key)]);
+                if (value[0] in value1)
+                    _operation_lines[key1].push([value[1], value[0], value[3], LinesStations[key1][value[0]]['SVGYAXIS'], value[4], parseInt(key)]);
         })
     })
 
