@@ -53,7 +53,7 @@ function calculate_space_time(train, line_kind) {
     let timetable_dict = {};                         // 暫存車次時刻表物件
     let _trains_data = [];                           // 時刻表轉換後的時間空間資料，包括各個營運路線
 
-    console.log(train_id, car_class, line, line_dir); // 偵錯用，將車次的時刻表資料輸出到主控台 
+    // console.log(train_id, car_class, line, line_dir); // 偵錯用，將車次的時刻表資料輸出到主控台 
 
     for (let TimeInfos of train.TimeInfos) {
         timetable_dict[TimeInfos.Station] = [TimeInfos.ARRTime, TimeInfos.DEPTime, TimeInfos.Station, TimeInfos.Order];
