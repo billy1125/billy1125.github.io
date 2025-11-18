@@ -11,10 +11,10 @@
     <meta name="robots" content="index,follow" />
     <meta name="author" content="呂卓勳 Cho Husn Lu" />
 
-    <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />    
+    <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/web.css">    
+    <link rel="stylesheet" href="css/web.css">
 
 </head>
 
@@ -24,8 +24,8 @@
     <div class="jumbotron">
         <div class="container text-center">
             <h1><b>台灣鐵路/軌道運行圖</b></h1>
-            <h2>臨時簡易版<small> 建構於GitHub</small></h2>
-            <h2>本網站到2026.09.23網域租賃期滿為止</h2>
+            <h2>⚠️本網站到2026.09.23網域租賃期滿為止⚠️</h2>
+            <h3>未來若要繼續參考運行圖，請自行至<a href="https://github.com/billy1125/billy1125.github.io" target="_blank">GitHub專案頁面</a>找尋，感謝您的支持與愛護！</h3>
             <h3>今天日期：<span id="today_date"></span></h3>
         </div>
     </div>
@@ -34,36 +34,50 @@
         <div id="status_now"></div>
 
         <div class="row">
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-6 portfolio-item">
                 <h2><b>今日運行圖</b></h2>
                 <div class="alert alert-danger" role="alert">今日的運行圖捷徑</div>
                 <h3>西部幹線</h3>
                 <div class="btn-group-vertical btn-block">
-                    <a href='diagram_output.html?lineKind=LINE_WN&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">北段 (基隆-竹南)</a>
-                    <a href='diagram_output.html?lineKind=LINE_WM&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">山線 (竹南-彰化)</a>
-                    <a href='diagram_output.html?lineKind=LINE_WSEA&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">海線 (竹南-彰化)</a>
-                    <a href='diagram_output.html?lineKind=LINE_WS&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">南段 (彰化-高雄)</a>
-                    <a href='diagram_output.html?lineKind=LINE_P&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">屏東線 (高雄-枋寮)</a>
+                    <a href='diagram_output.html?lineKind=LINE_WN&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">北段 (基隆-竹南)</a>
+                    <a href='diagram_output.html?lineKind=LINE_WM&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">山線 (竹南-彰化)</a>
+                    <a href='diagram_output.html?lineKind=LINE_WSEA&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">海線 (竹南-彰化)</a>
+                    <a href='diagram_output.html?lineKind=LINE_WS&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">南段 (彰化-高雄)</a>
+                    <a href='diagram_output.html?lineKind=LINE_P&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">屏東線 (高雄-枋寮)</a>
                 </div>
 
                 <h3>東部幹線與南迴線</h3>
                 <div class="btn-group-vertical btn-block">
-                    <a href='diagram_output.html?lineKind=LINE_I&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">宜蘭線 (八堵-蘇澳)</a>
-                    <a href='diagram_output.html?lineKind=LINE_N&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">北迴線 (蘇澳新-花蓮)</a>
-                    <a href='diagram_output.html?lineKind=LINE_T&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">台東線 (花蓮-台東)</a>
-                    <a href='diagram_output.html?lineKind=LINE_S&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">南迴線 (台東-枋寮)</a>
+                    <a href='diagram_output.html?lineKind=LINE_I&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">宜蘭線 (八堵-蘇澳)</a>
+                    <a href='diagram_output.html?lineKind=LINE_N&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">北迴線 (蘇澳新-花蓮)</a>
+                    <a href='diagram_output.html?lineKind=LINE_T&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">台東線 (花蓮-台東)</a>
+                    <a href='diagram_output.html?lineKind=LINE_S&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">南迴線 (台東-枋寮)</a>
                 </div>
 
                 <h3>支線</h3>
                 <div class="btn-group-vertical btn-block">
-                    <a href='diagram_output.html?lineKind=LINE_PX&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">平溪深澳線</a>
-                    <a href='diagram_output.html?lineKind=LINE_NW&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">內灣線</a>
-                    <a href='diagram_output.html?lineKind=LINE_LJ&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">六家線</a>
-                    <a href='diagram_output.html?lineKind=LINE_J&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">集集線</a>
-                    <a href='diagram_output.html?lineKind=LINE_SL&scrollToCurrentTime=true' class="btn btn-success btn-lg" role="button">沙崙線</a>
+                    <a href='diagram_output.html?lineKind=LINE_PX&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">平溪深澳線</a>
+                    <a href='diagram_output.html?lineKind=LINE_NW&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">內灣線</a>
+                    <a href='diagram_output.html?lineKind=LINE_LJ&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">六家線</a>
+                    <a href='diagram_output.html?lineKind=LINE_J&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">集集線</a>
+                    <a href='diagram_output.html?lineKind=LINE_SL&scrollToCurrentTime=true'
+                        class="btn btn-success btn-lg" role="button">沙崙線</a>
                 </div>
             </div>
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-6 portfolio-item">
                 <h2><b>台鐵運行圖圖庫</b></h2>
                 <div class="alert alert-danger" role="alert">提供未來60天內的台鐵靜態運行圖</a></div>
                 <h3>西部幹線</h3>
@@ -90,8 +104,8 @@
                     <a href='lines.html?lineKind=LINE_SL' class="btn btn-primary btn-lg" role="button">沙崙線</a>
                 </div>
             </div>
-            <div class="col-md-4 portfolio-item">
-                <!-- <h2><b>其他鐵路運行圖圖庫</b></h2>
+            <!-- <div class="col-md-4 portfolio-item">
+                <h2><b>其他鐵路運行圖圖庫</b></h2>
                 <div class="alert alert-danger" role="alert">提供其他軌道運輸的靜態運行圖</a></div>
                 <h3>阿里山森林鐵路</h3>
                 <div class="btn-group-vertical btn-block">
@@ -117,9 +131,9 @@
                     <a href='https://github.com/billy1125' class="btn btn-info btn-lg" role="button">GitHub</a>
                     <a href='https://www.facebook.com/traDiagram/' class="btn btn-info btn-lg" role="button">facebook粉絲頁</a>
                     <a href='privacy.html' class="btn btn-info btn-lg" role="button">隱私權政策</a>
-                   <a href='https://play.google.com/store/apps/details?id=com.chohsunlu.tradiagram' class="btn btn-info btn-lg" role="button">台鐵運行圖App(Google Play)</a>
-                </div> -->
-            </div>
+                    <a href='https://play.google.com/store/apps/details?id=com.chohsunlu.tradiagram' class="btn btn-info btn-lg" role="button">台鐵運行圖App(Google Play)</a>
+                </div>
+            </div> -->
         </div>
         <br>
         <footer class="alert alert-warning" role="alert"></footer>
@@ -137,27 +151,39 @@
     const diagram_data = localStorage.getItem('is_confirmed');
     const today_date = getTodayFormattedDate();
 
-    if (diagram_data == null || typeof (diagram_data) == "undefined" || diagram_data !== "ok") {
-        Swal.fire({
-            title: '本網站聲明',
-            icon: 'warning',
-            text: '本網站做到2026.09.23網域租賃期滿為止，敬請見諒！本站所提供的資料，僅供參考，實際鐵路運行情況，請以現場、各鐵路與軌道系統的管理單位所公布資訊或實際鐵路運作為準',
-            width: 500,
-            heightAuto: true,
-            padding: '3em',
-            backdrop: `rgba(255, 255, 0, 0.2) no-repeat`,
-            showDenyButton: true,
-            confirmButtonText: '我了解了',
-            denyButtonText: '我不同意',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire('您將開始瀏覽本網站，本聲明將不再出現', '', 'success');
-                window.localStorage.setItem("is_confirmed", "ok");
-            } else if (result.isDenied) {
-                window.localStorage.setItem("is_confirmed", "nook");
-            }
-        })
-    }
+    Swal.fire({
+        title: '本網站做到2026.09.23網域名稱租賃期滿為止，敬請見諒！',
+        icon: 'warning',
+        text: '未來若要繼續參考運行圖，請自行至GitHub專案頁面找尋，感謝您的支持與愛護！',
+        width: 500,
+        heightAuto: true,
+        padding: '3em',
+        backdrop: `rgba(255, 255, 0, 0.2) no-repeat`,
+        confirmButtonText: '我了解了',
+
+    }).then((result) => {
+        if (diagram_data == null || typeof (diagram_data) == "undefined" || diagram_data !== "ok") {
+            Swal.fire({
+                title: '本網站聲明',
+                icon: 'warning',
+                text: '本站所提供的資料，僅供參考，實際鐵路運行情況，請以現場、各鐵路與軌道系統的管理單位所公布資訊或實際鐵路運作為準',
+                width: 500,
+                heightAuto: true,
+                padding: '3em',
+                backdrop: `rgba(255, 255, 0, 0.2) no-repeat`,
+                showDenyButton: true,
+                confirmButtonText: '我了解了',
+                denyButtonText: '我不同意',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('您將開始瀏覽本網站，本聲明將不再出現', '', 'success');
+                    window.localStorage.setItem("is_confirmed", "ok");
+                } else if (result.isDenied) {
+                    window.localStorage.setItem("is_confirmed", "nook");
+                }
+            })
+        }
+    })
 
     $(document).ready(function () {
         $('#web_name').append(web_name)
@@ -169,6 +195,7 @@
     })
 </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3628172690328777" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3628172690328777"
+    crossorigin="anonymous"></script>
 
 </html>
