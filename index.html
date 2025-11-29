@@ -25,7 +25,8 @@
         <div class="container text-center">
             <h1><b>台灣鐵路/軌道運行圖</b></h1>
             <h2>⚠️本網站到2026.09.23網域租賃期滿為止⚠️</h2>
-            <h3>未來若要繼續參考運行圖，請自行至<a href="https://github.com/billy1125/billy1125.github.io" target="_blank">GitHub專案頁面</a>找尋，感謝您的支持與愛護！</h3>
+            <h3>未來若要繼續參考運行圖，請自行至<a href="https://github.com/billy1125/billy1125.github.io"
+                    target="_blank">GitHub專案頁面</a>找尋，感謝您的支持與愛護！</h3>
             <h3>今天日期：<span id="today_date"></span></h3>
         </div>
     </div>
@@ -150,19 +151,19 @@
 <script>
     const diagram_data = localStorage.getItem('is_confirmed');
     const today_date = getTodayFormattedDate();
+    if (diagram_data == null || typeof (diagram_data) == "undefined" || diagram_data !== "ok") {
+        Swal.fire({
+            title: '本網站做到2026.09.23網域名稱租賃期滿為止，敬請見諒！',
+            icon: 'warning',
+            text: '未來若要繼續參考運行圖，請自行至GitHub專案頁面找尋，感謝您的支持與愛護！',
+            width: 500,
+            heightAuto: true,
+            padding: '3em',
+            backdrop: `rgba(255, 255, 0, 0.2) no-repeat`,
+            confirmButtonText: '我了解了',
 
-    Swal.fire({
-        title: '本網站做到2026.09.23網域名稱租賃期滿為止，敬請見諒！',
-        icon: 'warning',
-        text: '未來若要繼續參考運行圖，請自行至GitHub專案頁面找尋，感謝您的支持與愛護！',
-        width: 500,
-        heightAuto: true,
-        padding: '3em',
-        backdrop: `rgba(255, 255, 0, 0.2) no-repeat`,
-        confirmButtonText: '我了解了',
+        }).then((result) => {
 
-    }).then((result) => {
-        if (diagram_data == null || typeof (diagram_data) == "undefined" || diagram_data !== "ok") {
             Swal.fire({
                 title: '本網站聲明',
                 icon: 'warning',
@@ -182,8 +183,8 @@
                     window.localStorage.setItem("is_confirmed", "nook");
                 }
             })
-        }
-    })
+        })
+    }
 
     $(document).ready(function () {
         $('#web_name').append(web_name)
