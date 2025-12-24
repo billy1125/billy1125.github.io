@@ -40,21 +40,25 @@ def download_and_optimize():
                     except Exception as je:
                         print(f"JSON 處理失敗 {file_name}: {je}")
 
-        # 2. 清理過期檔案 (防止 Repo 爆炸)
-        print("清理舊檔案中...")
+# 2. 清理過期檔案
+        print("--- 開始清理過期檔案 ---")
         now = datetime.now()
+        threshold_date = now - timedelta(days=retention_days)
+        print(f"目前時間: {now}, 刪除門檻: {threshold_date}")
+
         for filename in os.listdir(save_dir):
             if filename.endswith(".json"):
-                # 假設檔名是 20260222.json，取前 8 碼轉為日期
                 try:
                     file_date_str = filename[:8]
                     file_date = datetime.strptime(file_date_str, "%Y%m%d")
-                    # 如果檔案日期早於 (今天 - retention_days)，就刪除
-                    if file_date < (now - timedelta(days=retention_days)):
+                    
+                    if file_date < threshold_date:
                         os.remove(os.path.join(save_dir, filename))
-                        print(f"刪除過期檔案: {filename}")
-                except:
-                    pass # 若檔名格式不符則跳過
+                        print(f"成功刪除過期檔案: {filename} (檔案日期: {file_date})")
+                    else:
+                        print(f"保留檔案: {filename} (尚未過期)")
+                except Exception as e:
+                    print(f"跳過檔案 {filename}: 無法解析日期 ({e})")
 
     except Exception as e:
         print(f"執行發生錯誤: {e}")
