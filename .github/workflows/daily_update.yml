@@ -1,0 +1,43 @@
+name: Daily Train Schedule Update
+
+on:
+  schedule:
+    # 每天 UTC 時間 20:00 (台灣時間 04:00) 執行，因為台鐵通常在半夜更新
+    - cron: '0 20 * * *'
+  workflow_dispatch: # 允許手動點擊按鈕執行
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 允許 Action 提交檔案回倉庫
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Run download script
+        run: python update_data.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/*.json
+          # 檢查是否有變動，有的話才 commit
+          if git diff --staged --quiet; then
+            echo "No changes in train data. Skipping commit."
+          else
+            git commit -m "Auto-update train schedule: $(date +'%Y-%m-%d')"
+            git push
+          fi
