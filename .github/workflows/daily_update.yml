@@ -1,10 +1,18 @@
 name: Daily Train Schedule Update
 
+# 目前觸發 action 的條件是有 push 時
 on:
-  schedule:
-    # 每天 UTC 時間 20:00 (台灣時間 04:00) 執行，因為台鐵通常在半夜更新
-    - cron: '0 20 * * *'
-  workflow_dispatch: # 允許手動點擊按鈕執行
+  push:
+    branches:
+      - script-for-直接抓網路資料＋壓縮整理成一行         
+  workflow_dispatch:  # 保留這個，手動按鈕才會在
+
+# 以下定時的功能需推送到 main 之後才能啟用
+#on:
+#  schedule:
+#    # 每天 UTC 時間 20:00 (台灣時間 04:00) 執行，因為台鐵通常在半夜更新
+#    - cron: '0 20 * * *'
+#  workflow_dispatch: # 允許手動點擊按鈕執行
 
 jobs:
   update-data:
