@@ -54,55 +54,45 @@
 
 
 <script>
-    const owner = 'billy1125';                 // GitHub 使用者名稱
-    const repo = 'billy1125.github.io';        // GitHub 倉庫名稱
-    const path = 'data';                       // GitHub 倉庫中的路徑
     const url = new URL(location.href);        // 取得當前頁面的 URL
     const line_kind = $.url('?lineKind');      // 從 URL 取得 lineKind 參數
 
     const kind_realtime = dict_line[line_kind]; // 取得對應的實時線路類型
 
-    async function getGitHubFileNames(owner, repo, path = '') {
-        const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+    // [修改] 改為讀取本地 index.json 索引檔
+    async function getAvailableDates() {
+        const url = 'data/index.json';
         try {
             const response = await fetch(url);
-            if (!response.ok) throw new Error(`GitHub API request failed: ${response.status}`);
-            const data = await response.json();
-            // console.log('Fetched data:', data);
-            const svgFileDates = data
-                .map(item => item.name)
-                .filter(name => /^\d{8}\.json$/.test(name))  // 確保是8碼數字開頭的檔案名
-                .map(name => {
-                    const match = name.match(/^(\d{8})\.json$/);  // 抓取數字部分
-                    // console.log('Match:', match);
-                    if (match) {
-                        const dateStr = match[1];
-                        const y = dateStr.substring(0, 4);
-                        const m = dateStr.substring(4, 6);
-                        const d = dateStr.substring(6, 8);
-                        return `${y}-${m}-${d}`;
-                    }
-                    return null; // 避免出錯
-                })
-                .filter(Boolean); // 過濾掉 null 結果
-
-            // console.log('Filtered SVG file dates:', svgFileDates);
-            const events = svgFileDates.map(date => ({
-                date: date,
-                // badge: true,
-                title: "SVG available",
-                body: `<p>${date}.svg</p>`
-            }));
+            if (!response.ok) throw new Error(`Index file request failed: ${response.status}`);
+            const dateList = await response.json();
+            
+            // 將 YYYYMMDD 轉換為 YYYY-MM-DD 格式
+            const events = dateList.map(dateStr => {
+                if (dateStr.length === 8) {
+                    const y = dateStr.substring(0, 4);
+                    const m = dateStr.substring(4, 6);
+                    const d = dateStr.substring(6, 8);
+                    const formattedDate = `${y}-${m}-${d}`;
+                    
+                    return {
+                        date: formattedDate,
+                        title: "Data available",
+                        body: `<p>${dateStr}.json</p>`
+                    };
+                }
+                return null;
+            }).filter(Boolean);
 
             return events;
         } catch (error) {
-            console.error('Error fetching GitHub files:', error);
+            console.error('Error fetching index.json:', error);
             return [];
         }
     }
 
     $(document).ready(async function () {
-        const events = await getGitHubFileNames(owner, repo, path);
+        const events = await getAvailableDates();
 
         $("#my-calendar").zabuto_calendar({
             today: true,
@@ -146,4 +136,3 @@
     }
 </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3628172690328777" crossorigin="anonymous"></script>
