@@ -1,13 +1,13 @@
 /* Bootstrap 5 移除了 .jumbotron，補回相同樣式 */
 .jumbotron {
-    padding: 2rem 1rem;
+    padding: 4rem 2rem;
     margin-bottom: 2rem;
     background-color: #e9ecef;
     border-radius: 0.3rem;
 }
 @media (min-width: 576px) {
     .jumbotron {
-        padding: 4rem 6rem;
+        padding: 6rem 6rem;
     }
 }
 
