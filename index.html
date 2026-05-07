@@ -12,8 +12,8 @@
     <meta name="author" content="呂卓勳 Cho Husn Lu" />
 
     <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/web.css">
 
 </head>
@@ -39,7 +39,7 @@
                 <h2><b>今日運行圖</b></h2>
                 <div class="alert alert-danger" role="alert">今日的運行圖捷徑</div>
                 <h3>西部幹線</h3>
-                <div class="btn-group-vertical btn-block">
+                <div class="d-grid gap-1">
                     <a href='diagram_output.html?lineKind=LINE_WN&scrollToCurrentTime=true'
                         class="btn btn-success btn-lg" role="button">北段 (基隆-竹南)</a>
                     <a href='diagram_output.html?lineKind=LINE_WM&scrollToCurrentTime=true'
@@ -53,7 +53,7 @@
                 </div>
 
                 <h3>東部幹線與南迴線</h3>
-                <div class="btn-group-vertical btn-block">
+                <div class="d-grid gap-1">
                     <a href='diagram_output.html?lineKind=LINE_I&scrollToCurrentTime=true'
                         class="btn btn-success btn-lg" role="button">宜蘭線 (八堵-蘇澳)</a>
                     <a href='diagram_output.html?lineKind=LINE_N&scrollToCurrentTime=true'
@@ -65,7 +65,7 @@
                 </div>
 
                 <h3>支線</h3>
-                <div class="btn-group-vertical btn-block">
+                <div class="d-grid gap-1">
                     <a href='diagram_output.html?lineKind=LINE_PX&scrollToCurrentTime=true'
                         class="btn btn-success btn-lg" role="button">平溪深澳線</a>
                     <a href='diagram_output.html?lineKind=LINE_NW&scrollToCurrentTime=true'
@@ -82,7 +82,7 @@
                 <h2><b>台鐵運行圖圖庫</b></h2>
                 <div class="alert alert-danger" role="alert">提供未來60天內的台鐵靜態運行圖</a></div>
                 <h3>西部幹線</h3>
-                <div class="btn-group-vertical btn-block">
+                <div class="d-grid gap-1">
                     <a href='lines.html?lineKind=LINE_WN' class="btn btn-primary btn-lg" role="button">北段 (基隆-竹南)</a>
                     <a href='lines.html?lineKind=LINE_WM' class="btn btn-primary btn-lg" role="button">山線 (竹南-彰化)</a>
                     <a href='lines.html?lineKind=LINE_WSEA' class="btn btn-primary btn-lg" role="button">海線 (竹南-彰化)</a>
@@ -90,14 +90,14 @@
                     <a href='lines.html?lineKind=LINE_P' class="btn btn-primary btn-lg" role="button">屏東線 (高雄-枋寮)</a>
                 </div>
                 <h3>東部幹線與南迴線</h3>
-                <div class="btn-group-vertical btn-block">
+                <div class="d-grid gap-1">
                     <a href='lines.html?lineKind=LINE_I' class="btn btn-primary btn-lg" role="button">宜蘭線 (八堵-蘇澳)</a>
                     <a href='lines.html?lineKind=LINE_N' class="btn btn-primary btn-lg" role="button">北迴線 (蘇澳新-花蓮)</a>
                     <a href='lines.html?lineKind=LINE_T' class="btn btn-primary btn-lg" role="button">台東線 (花蓮-台東)</a>
                     <a href='lines.html?lineKind=LINE_S' class="btn btn-primary btn-lg" role="button">南迴線 (台東-枋寮)</a>
                 </div>
                 <h3>支線</h3>
-                <div class="btn-group-vertical btn-block">
+                <div class="d-grid gap-1">
                     <a href='lines.html?lineKind=LINE_PX' class="btn btn-primary btn-lg" role="button">平溪深澳線</a>
                     <a href='lines.html?lineKind=LINE_NW' class="btn btn-primary btn-lg" role="button">內灣線</a>
                     <a href='lines.html?lineKind=LINE_LJ' class="btn btn-primary btn-lg" role="button">六家線</a>
@@ -109,16 +109,16 @@
                 <h2><b>其他鐵路運行圖圖庫</b></h2>
                 <div class="alert alert-danger" role="alert">提供其他軌道運輸的靜態運行圖</a></div>
                 <h3>阿里山森林鐵路</h3>
-                <div class="btn-group-vertical btn-block">
+                <div class="d-grid gap-1">
                     <a href='lines.html?lineKind=alishan_m1' class="btn btn-primary btn-lg" role="button">阿里山線 (嘉義-阿里山)</a>
                     <a href='lines.html?lineKind=alishan_b2' class="btn btn-primary btn-lg" role="button">沼平/祝山線 (阿里山-祝山)</a>
                 </div>
                 <h3>台灣高鐵</h3>
-                <div class="btn-group-vertical btn-block">
+                <div class="d-grid gap-1">
                     <a href='lines.html?lineKind=thsr' class="btn btn-primary btn-lg" role="button">台灣高鐵 (南港-左營)</a>
                 </div>
                 <h2><b>其他功能</b></h2>
-                <div class="btn-group-vertical btn-block">
+                <div class="d-grid gap-1">
                     <a href='special_use.html' class="btn btn-danger btn-lg" role="button">特殊運用(如:蒸汽火車)</a>
                     <a href='realtime_trains_positions.html' class="btn btn-danger btn-lg" role="button">列車即時位置</a>
                     <a href='editor.html' class="btn btn-danger btn-lg" role="button">鐵路運行圖編輯器 <span class="badge">測試中</span></a>
@@ -126,7 +126,7 @@
                 </div>
                 <h2><b>關於</b></h2>
                 <div class="alert alert-danger" role="alert">本站說明</a></div>
-                <div class="btn-group-vertical btn-block">
+                <div class="d-grid gap-1">
                     <a href='about.html' class="btn btn-info btn-lg" role="button">關於本站</a>
                     <a href='style_editor.html' class="btn btn-info btn-lg" role="button">運行圖預設標色 <span class="badge">測試中</span></a>
                     <a href='https://github.com/billy1125' class="btn btn-info btn-lg" role="button">GitHub</a>
@@ -142,7 +142,7 @@
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="js/config.js"></script>
 <script src="js/util.js"></script>
