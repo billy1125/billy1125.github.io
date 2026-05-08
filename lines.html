@@ -18,6 +18,73 @@
             padding: 3.5rem 1rem;
             background: linear-gradient(160deg, #e8f0fe 0%, #d2e3fc 100%);
         }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: #6c757d;
+            text-transform: uppercase;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #dee2e6;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            max-width: 50%;
+            margin: 0 auto 0.5rem;
+        }
+
+        .cal-weekday {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #6c757d;
+            text-align: center;
+            padding: 4px 0 8px;
+        }
+
+        .cal-day {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1;
+        }
+
+        .cal-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 78%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: #d2e3fc;
+            color: #1a73e8;
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .cal-link:hover {
+            background: #5a9bf5;
+            color: #fff;
+        }
+
+        .cal-no-data {
+            font-size: 0.88rem;
+            color: #ced4da;
+        }
     </style>
 </head>
 
@@ -28,125 +95,142 @@
     <div class="hero-section">
         <div class="container text-center">
             <h1 class="fw-bold mb-1" id="main_title"></h1>
-            <p class="text-muted mb-0">請直接點選要閱讀的日期，若無底色代表無資料。</p>
+            <p class="text-muted mb-0">點選有底色的日期開啟對應的運行圖。</p>
         </div>
     </div>
 
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-12">
-                <div id="my-calendar"></div>
+    <div class="container py-3 pb-5">
+        <div id="date-list">
+            <div class="text-center text-muted py-5">
+                <i class="fa-solid fa-spinner fa-spin me-2"></i>載入中…
             </div>
         </div>
-        <br>
-        <footer class="alert alert-warning" role="alert"></footer>
+        <footer class="alert alert-warning mt-4" role="alert"></footer>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Zabuto Calendar -->
-    <script src="js/calendar/zabuto_calendar.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="js/calendar/zabuto_calendar.css">
-    <script src="js/url.min.js"></script>
-    <script src="js/config.js"></script>
 
 </body>
 
-</html>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/config.js"></script>
 
 <script>
-    const owner = 'billy1125';                 // GitHub 使用者名稱
-    const repo = 'billy1125.github.io';        // GitHub 倉庫名稱
-    const path = 'data';                       // GitHub 倉庫中的路徑
-    const url = new URL(location.href);        // 取得當前頁面的 URL
-    const line_kind = $.url('?lineKind');      // 從 URL 取得 lineKind 參數
+    const owner = 'billy1125';
+    const repo = 'billy1125.github.io';
+    const dataPath = 'data';
+    const line_kind = new URLSearchParams(location.search).get('lineKind');
+    const WEEKDAY_NAMES = ['日', '一', '二', '三', '四', '五', '六'];
 
-    const kind_realtime = dict_line[line_kind]; // 取得對應的實時線路類型
-
-    async function getGitHubFileNames(owner, repo, path = '') {
-        const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+    async function getAvailableDates(owner, repo, dataPath) {
+        const url = `https://api.github.com/repos/${owner}/${repo}/contents/${dataPath}`;
         try {
             const response = await fetch(url);
-            if (!response.ok) throw new Error(`GitHub API request failed: ${response.status}`);
+            if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
             const data = await response.json();
-            // console.log('Fetched data:', data);
-            const svgFileDates = data
+            return data
                 .map(item => item.name)
-                .filter(name => /^\d{8}\.json$/.test(name))  // 確保是8碼數字開頭的檔案名
+                .filter(name => /^\d{8}\.json$/.test(name))
                 .map(name => {
-                    const match = name.match(/^(\d{8})\.json$/);  // 抓取數字部分
-                    // console.log('Match:', match);
-                    if (match) {
-                        const dateStr = match[1];
-                        const y = dateStr.substring(0, 4);
-                        const m = dateStr.substring(4, 6);
-                        const d = dateStr.substring(6, 8);
-                        return `${y}-${m}-${d}`;
-                    }
-                    return null; // 避免出錯
+                    const s = name.slice(0, 8);
+                    return `${s.slice(0, 4)}-${s.slice(4, 6)}-${s.slice(6, 8)}`;
                 })
-                .filter(Boolean); // 過濾掉 null 結果
-
-            // console.log('Filtered SVG file dates:', svgFileDates);
-            const events = svgFileDates.map(date => ({
-                date: date,
-                // badge: true,
-                title: "SVG available",
-                body: `<p>${date}.svg</p>`
-            }));
-
-            return events;
+                .sort(); // ascending: oldest first
         } catch (error) {
             console.error('Error fetching GitHub files:', error);
             return [];
         }
     }
 
-    $(document).ready(async function () {
-        const events = await getGitHubFileNames(owner, repo, path);
+    function groupByMonth(dates) {
+        const groups = new Map();
+        for (const date of dates) {
+            const key = date.slice(0, 7);
+            if (!groups.has(key)) groups.set(key, new Set());
+            groups.get(key).add(date.slice(8, 10)); // store DD only
+        }
+        return groups;
+    }
 
-        $("#my-calendar").zabuto_calendar({
-            today: true,
-            weekstartson: 0,
-            language: "en",
-            data: events, // 直接使用內嵌資料
-            action: function () {
-                // 取得被點選的日期
-                const date = $(this).data('date'); // zabuto_calendar 會將點選的日期儲存在 data-date 中
-                // 檢查日期是否在 events 中
-                const isValidDate = events.some(event => event.date === date);
+    function buildMonthCalendar(monthKey, ddSet, line_kind) {
+        const [y, m] = monthKey.split('-').map(Number);
+        const firstDow = new Date(y, m - 1, 1).getDay();
+        const daysInMonth = new Date(y, m, 0).getDate();
 
-                if (!isValidDate) {
-                    // 如果日期不在 events 中，阻止動作
-                    return false;
-                }
+        const grid = document.createElement('div');
+        grid.className = 'calendar-grid';
 
-                // 如果日期有效，執行 showDiagram 函數
-                return showDiagram(this.id, false, line_kind);
+        // Weekday headers
+        for (const name of WEEKDAY_NAMES) {
+            const cell = document.createElement('div');
+            cell.className = 'cal-weekday';
+            cell.textContent = name;
+            grid.appendChild(cell);
+        }
+
+        // Leading empty cells
+        for (let i = 0; i < firstDow; i++) {
+            grid.appendChild(document.createElement('div'));
+        }
+
+        // Day cells
+        for (let d = 1; d <= daysInMonth; d++) {
+            const dd = String(d).padStart(2, '0');
+            const cell = document.createElement('div');
+            cell.className = 'cal-day';
+
+            if (ddSet.has(dd)) {
+                const a = document.createElement('a');
+                a.href = `diagram_output.html?formattedDate=${y}${String(m).padStart(2, '0')}${dd}&lineKind=${line_kind}&scrollToCurrentTime=false`;
+                a.target = '_blank';
+                a.className = 'cal-link';
+                a.textContent = d;
+                cell.appendChild(a);
+            } else {
+                const span = document.createElement('span');
+                span.className = 'cal-no-data';
+                span.textContent = d;
+                cell.appendChild(span);
             }
-        });
 
-        $("#main_title").text(dict_line[line_kind]);     // 設定網頁內文主標題
-        $("#web_name").text(dict_line[line_kind]);       // 設定網頁標題
+            grid.appendChild(cell);
+        }
+
+        return grid;
+    }
+
+    function renderDates(groups, line_kind) {
+        const container = document.getElementById('date-list');
+        container.innerHTML = '';
+
+        if (groups.size === 0) {
+            container.innerHTML = '<p class="text-center text-muted py-4">目前無可用資料。</p>';
+            return;
+        }
+
+        for (const monthKey of [...groups.keys()].sort()) {
+            const [y, m] = monthKey.split('-').map(Number);
+
+            const heading = document.createElement('div');
+            heading.className = 'section-heading';
+            heading.textContent = `${y}年${m}月`;
+            container.appendChild(heading);
+
+            container.appendChild(buildMonthCalendar(monthKey, groups.get(monthKey), line_kind));
+        }
+    }
+
+    $(document).ready(async function () {
+        const availableDates = await getAvailableDates(owner, repo, dataPath);
+        const groups = groupByMonth(availableDates);
+        renderDates(groups, line_kind);
+
+        $("#main_title").text(dict_line[line_kind]);
+        $("#web_name").text(dict_line[line_kind]);
         $('footer').append(footer);
         $("navbar").load("navbar.html");
     });
-
-    function showDiagram(id, fromModal, line_kind) {
-        const date = $("#" + id).data("date");
-        const formattedDate = date.replace(/-/g, ''); // 移除所有 "-"，得到 "20250607"
-
-        // console.log('Formatted Date:', date);
-        if (formattedDate) {
-            const targetUrl = `diagram_output.html?formattedDate=${formattedDate}&lineKind=${line_kind}&scrollToCurrentTime=false`;
-            window.open(targetUrl, '_blank');
-        } else {
-            alert('此日期沒有對應的 SVG 檔案。');
-        }
-        return true;
-    }
 </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3628172690328777" crossorigin="anonymous"></script>
+
+</html>
