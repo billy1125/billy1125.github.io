@@ -61,6 +61,24 @@
             font-size: 0.88rem;
             color: #ced4da;
         }
+
+        .cal-link.is-today {
+            background: #198754;
+            color: #fff;
+        }
+
+        .cal-no-data.is-today {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #198754;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.88rem;
+        }
     </style>
 </head>
 
@@ -96,6 +114,10 @@
     const dataPath = 'data';
     const line_kind = new URLSearchParams(location.search).get('lineKind');
     const WEEKDAY_NAMES = ['日', '一', '二', '三', '四', '五', '六'];
+    const _today = new Date();
+    const TODAY_Y = _today.getFullYear();
+    const TODAY_M = _today.getMonth() + 1;
+    const TODAY_D = _today.getDate();
 
     async function getAvailableDates(owner, repo, dataPath) {
         const url = `https://api.github.com/repos/${owner}/${repo}/contents/${dataPath}`;
@@ -151,6 +173,7 @@
         // Day cells
         for (let d = 1; d <= daysInMonth; d++) {
             const dd = String(d).padStart(2, '0');
+            const isToday = (y === TODAY_Y && m === TODAY_M && d === TODAY_D);
             const cell = document.createElement('div');
             cell.className = 'cal-day';
 
@@ -158,12 +181,12 @@
                 const a = document.createElement('a');
                 a.href = `diagram_output.html?formattedDate=${y}${String(m).padStart(2, '0')}${dd}&lineKind=${line_kind}&scrollToCurrentTime=false`;
                 a.target = '_blank';
-                a.className = 'cal-link';
+                a.className = 'cal-link' + (isToday ? ' is-today' : '');
                 a.textContent = d;
                 cell.appendChild(a);
             } else {
                 const span = document.createElement('span');
-                span.className = 'cal-no-data';
+                span.className = 'cal-no-data' + (isToday ? ' is-today' : '');
                 span.textContent = d;
                 cell.appendChild(span);
             }
