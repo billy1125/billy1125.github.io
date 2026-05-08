@@ -14,35 +14,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/web.css">
     <style>
-        .hero-section {
-            padding: 3.5rem 1rem;
-            background: linear-gradient(160deg, #e8f0fe 0%, #d2e3fc 100%);
-        }
-
-        .section-heading {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: #6c757d;
-            text-transform: uppercase;
-            margin: 2rem 0 0.75rem;
-        }
-
-        .section-heading::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: #dee2e6;
-        }
-
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 4px;
-            max-width: 50%;
+            max-width: 420px;
             margin: 0 auto 0.5rem;
         }
 
@@ -58,15 +34,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            aspect-ratio: 1;
+            height: 52px;
         }
 
         .cal-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 78%;
-            aspect-ratio: 1;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             background: #d2e3fc;
             color: #1a73e8;

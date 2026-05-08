@@ -1,3 +1,28 @@
+.hero-section {
+    padding: 3.5rem 1rem;
+    margin-top: 1.5rem;
+    background: linear-gradient(160deg, #e8f0fe 0%, #d2e3fc 100%);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #6c757d;
+    text-transform: uppercase;
+    margin: 2rem 0 0.75rem;
+}
+
+.section-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #dee2e6;
+}
+
 /* Bootstrap 5 移除了 .jumbotron，補回相同樣式 */
 .jumbotron {
     padding: 4rem 2rem;
