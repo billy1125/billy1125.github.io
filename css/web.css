@@ -1,9 +1,53 @@
 .hero-section {
     padding: 3.5rem 1rem;
     margin-top: 1.5rem;
-    background: linear-gradient(160deg, #e8f0fe 0%, #d2e3fc 100%);
+    background: #14213d;
 }
 
+.hero-section h1 {
+    color: #ffffff;
+}
+
+.hero-section .text-muted {
+    color: #e5e5e5 !important;
+}
+
+/* ── Navbar ── */
+.navbar.navbar-dark {
+    background-color: #14213d !important;
+}
+
+.navbar .navbar-brand {
+    color: #fca311 !important;
+    font-weight: 700;
+}
+
+.navbar .navbar-brand:hover {
+    color: #e09200 !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: rgba(252, 163, 17, 0.12);
+    color: #14213d;
+}
+
+.dropdown-menu {
+    border-color: #e5e5e5;
+}
+
+hr.dropdown-divider {
+    border-color: #e5e5e5;
+}
+
+/* ── Footer alert ── */
+footer.alert-warning {
+    background-color: rgba(252, 163, 17, 0.1);
+    border-color: #fca311;
+    color: #14213d;
+}
+
+/* ── Section heading ── */
 .section-heading {
     display: flex;
     align-items: center;
@@ -11,7 +55,7 @@
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: #6c757d;
+    color: #14213d;
     text-transform: uppercase;
     margin: 2rem 0 0.75rem;
 }
@@ -20,7 +64,7 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: #dee2e6;
+    background: #e5e5e5;
 }
 
 /* Bootstrap 5 移除了 .jumbotron，補回相同樣式 */

@@ -21,7 +21,7 @@
             font-size: 0.9rem;
             font-weight: 700;
             letter-spacing: 0.05em;
-            color: #6c757d;
+            color: #14213d;
             text-transform: uppercase;
             margin: 2rem 0 0.75rem;
         }
@@ -30,11 +30,11 @@
             content: '';
             flex: 1;
             height: 1px;
-            background: #dee2e6;
+            background: #e5e5e5;
         }
 
         .line-card {
-            border: 1px solid #e9ecef;
+            border: 1px solid #e5e5e5;
             border-radius: 10px;
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
             transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -43,7 +43,7 @@
 
         .line-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 18px rgba(20, 33, 61, 0.15);
         }
 
         .line-card .card-body {
@@ -54,7 +54,7 @@
             font-weight: 600;
             font-size: 0.95rem;
             margin-bottom: 0.15rem;
-            color: #212529;
+            color: #14213d;
         }
 
         .line-stations {
@@ -65,7 +65,7 @@
 
         .line-card .card-footer {
             background: transparent;
-            border-top: 1px solid #f0f0f0;
+            border-top: 1px solid #e5e5e5;
             padding: 0.6rem 0.85rem;
             display: flex;
             gap: 0.4rem;
@@ -74,11 +74,29 @@
         .btn-today {
             font-size: 0.8rem;
             padding: 0.3rem 0;
+            background-color: #fca311;
+            border-color: #fca311;
+            color: #000000;
+        }
+
+        .btn-today:hover, .btn-today:focus {
+            background-color: #e09200;
+            border-color: #e09200;
+            color: #000000;
         }
 
         .btn-archive {
             font-size: 0.8rem;
             padding: 0.3rem 0;
+            background-color: transparent;
+            border-color: #14213d;
+            color: #14213d;
+        }
+
+        .btn-archive:hover, .btn-archive:focus {
+            background-color: #14213d;
+            border-color: #14213d;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -90,12 +108,13 @@
         <div class="container text-center">
             <h1 class="fw-bold mb-1">台灣鐵路/軌道運行圖</h1>
             <p class="text-muted mb-3">今天日期：<span id="today_date"></span></p>
-            <div class="alert alert-warning d-inline-flex align-items-center gap-2 py-2 px-3 mb-0 rounded-3"
+            <div class="d-inline-flex align-items-center gap-2 py-2 px-3 mb-0 rounded-3"
+                style="background-color: rgba(252,163,17,0.15); border: 1px solid #fca311; color: #e5e5e5;"
                 role="alert">
-                <i class="fa-solid fa-triangle-exclamation"></i>
+                <i class="fa-solid fa-triangle-exclamation" style="color: #fca311;"></i>
                 <span>本網站到 2026.09.23 網域租賃期滿為止。未來請至
                     <a href="https://github.com/billy1125/billy1125.github.io" target="_blank"
-                        class="fw-semibold">GitHub 專案頁面</a>
+                        class="fw-semibold" style="color: #fca311;">GitHub 專案頁面</a>
                     查閱運行圖。</span>
             </div>
         </div>
@@ -105,8 +124,8 @@
 
         <!-- 操作說明 -->
         <div class="d-flex gap-3 justify-content-center my-3 text-muted small">
-            <span><span class="badge bg-success me-1">今日</span>直接開啟今天的運行圖</span>
-            <span><span class="badge bg-primary me-1">圖庫</span>選擇日期查看歷史運行圖</span>
+            <span><span class="badge me-1" style="background-color: #fca311; color: #000000;">今日</span>直接開啟今天的運行圖</span>
+            <span><span class="badge me-1" style="background-color: #14213d; color: #ffffff;">圖庫</span>選擇日期查看歷史運行圖</span>
         </div>
 
         <!-- 西部幹線 -->
@@ -120,9 +139,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_WN&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_WN"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -134,9 +153,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_WM&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_WM"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -148,9 +167,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_WSEA&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_WSEA"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -162,9 +181,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_WS&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_WS"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -176,9 +195,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_P&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_P"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -195,9 +214,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_I&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_I"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -209,9 +228,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_N&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_N"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -223,9 +242,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_T&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_T"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -237,9 +256,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_S&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_S"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -256,9 +275,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_PX&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_PX"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -270,9 +289,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_NW&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_NW"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -284,9 +303,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_LJ&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_LJ"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -298,9 +317,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_J&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_J"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>
@@ -312,9 +331,9 @@
                     </div>
                     <div class="card-footer">
                         <a href="diagram_output.html?lineKind=LINE_SL&scrollToCurrentTime=true"
-                            class="btn btn-success btn-today flex-fill">今日</a>
+                            class="btn btn-today flex-fill">今日</a>
                         <a href="lines.html?lineKind=LINE_SL"
-                            class="btn btn-outline-primary btn-archive flex-fill">圖庫</a>
+                            class="btn btn-archive flex-fill">圖庫</a>
                     </div>
                 </div>
             </div>

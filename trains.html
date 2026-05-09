@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>目前所有可讀取的台鐵時刻資料 TRA JSON Parser</title>
+    <link rel="stylesheet" href="css/trains.css" />
+</head>
+
+<body>
+
+    <header>
+        <h1>目前所有可讀取的台鐵時刻資料 TRA JSON Parser</h1>
+        <span class="subtitle" id="status"><span class="loading-dots">載入中</span></span>
+    </header>
+
+    <div class="workspace">
+
+        <!-- Column 1: file list -->
+        <div class="panel panel-files">
+            <div class="panel-head">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                </svg>
+                日期檔案
+            </div>
+            <div class="panel-body" id="file-list">
+                <div class="panel-empty"><span class="loading-dots">載入中</span></div>
+            </div>
+        </div>
+
+        <!-- Column 2: type filter -->
+        <div class="panel panel-filter">
+            <div class="panel-head">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+                </svg>
+                車種過濾
+            </div>
+            <div class="panel-body" id="type-filter">
+                <div class="panel-empty">—</div>
+            </div>
+        </div>
+
+        <!-- Column 3: train list -->
+        <div class="panel panel-trains">
+            <div class="panel-head">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <path d="M4 12h16M12 4v16" />
+                </svg>
+                車次清單
+            </div>
+            <div class="panel-body" id="train-list">
+                <div class="panel-empty">請先選擇日期</div>
+            </div>
+        </div>
+
+        <!-- Column 4: detail -->
+        <div class="panel-detail">
+            <div class="detail-scroll" id="detail-scroll">
+                <div class="placeholder" id="placeholder">
+                    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <path d="M3 9h18M9 21V9" />
+                    </svg>
+                    <p>選擇左側日期 → 車次以顯示詳情</p>
+                </div>
+                <div id="detail" style="display:none;"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ── Templates ── -->
+
+    <template id="tpl-filter-item">
+        <div class="filter-item">
+            <span class="f-name"></span>
+            <span class="f-count"></span>
+        </div>
+    </template>
+
+    <template id="tpl-train-item">
+        <div class="train-item">
+            <span class="t-num"></span>
+            <span class="t-meta"></span>
+        </div>
+    </template>
+
+    <template id="tpl-detail-card">
+        <div class="detail-card">
+            <div class="card-header">
+                <span class="train-id">車次 <span class="train-num"></span></span>
+                <span class="type-badge"></span>
+            </div>
+            <table class="info-table">
+                <tbody></tbody>
+            </table>
+        </div>
+    </template>
+
+    <template id="tpl-info-row">
+        <tr>
+            <td class="info-key"></td>
+            <td class="info-val"></td>
+        </tr>
+    </template>
+
+    <template id="tpl-time-section">
+        <div class="time-section">
+            <div class="section-title"></div>
+            <div class="time-table-wrap">
+                <table class="time-table">
+                    <thead>
+                        <tr>
+                            <th>順序</th>
+                            <th>車站名稱</th>
+                            <th>到站</th>
+                            <th>出發</th>
+                            <th>路線</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </template>
+
+    <template id="tpl-time-row">
+        <tr>
+            <td class="order"></td>
+            <td class="station"></td>
+            <td class="time arr"></td>
+            <td class="time dep"></td>
+            <td class="route"></td>
+        </tr>
+    </template>
+
+    <script src="js/trains.js"></script>
+</body>
+
+</html>
