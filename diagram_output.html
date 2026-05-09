@@ -6,12 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/diagram.css">
+    <style>
+        /* D3 互動版：SVG 撐滿視窗，關閉頁面捲動（由 d3.zoom 接管導覽） */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+        }
+        .d3-diagram-svg {
+            display: block;
+            cursor: grab;
+            user-select: none;
+        }
+        .d3-diagram-svg:active {
+            cursor: grabbing;
+        }
+    </style>
+    <!-- D3.js v7（實驗版本使用，原有 diagram_output.html 不受影響） -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <!-- 在 diagram_output.js（defer）執行前設定 D3 渲染旗標 -->
+    <script>window._useD3Renderer = true;</script>
 </head>
 
 <body>
     <div id="popup" class="popup">
         <div class="msg">
-            <h1>讀取中，請稍後...</h1>
+            <h1>讀取中，請稍後<span id="loading-dots">.</span></h1>
         </div>
     </div>
 </body>

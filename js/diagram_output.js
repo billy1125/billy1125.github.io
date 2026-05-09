@@ -1,27 +1,34 @@
-// GRT參數取得 
+// GRT參數取得
 const url = new URL(location.href);
 const line_kind = url.searchParams.get('lineKind');
 const formattedDate = url.searchParams.get('formattedDate');
 const loadRealtimeParam = url.searchParams.get('realtime');
 const scrollToCurrentTimeParam = url.searchParams.get('scrollToCurrentTime');
 
+// 渲染器選擇：diagram_output_new.htm 會在載入本檔案前設定 window._useD3Renderer = true
+const _useD3 = (typeof window._useD3Renderer !== 'undefined' && window._useD3Renderer === true);
+
 // 公用變數
 let date = null;
 let circle_blink = null;
 let scrollToCurrentTime = scrollToCurrentTimeParam === 'true';
 
+// 讀取中小數點動畫
+const _dotsEl = document.getElementById("loading-dots");
+let _dotsCount = 1;
+const _dotsInterval = setInterval(function () {
+    _dotsCount = (_dotsCount % 4) + 1;
+    _dotsEl.textContent = '.'.repeat(_dotsCount);
+}, 400);
+
 // console.log('Line Kind:', line_kind);
 // console.log('Formatted Date:', formattedDate);
 // console.log('Scroll To Current Time:', scrollToCurrentTime);
 
-// 定義基本檔案相依性
-const dependencies = [
-    'js/svg.js/svg.min.js',
-    'js/config.js',
-    'js/util.js',
-    'js/time_space.js',
-    'js/diagram.js'
-];
+// 定義基本檔案相依性（D3 模式不載入 svg.js 與 diagram.js，改用 diagram_d3.js）
+const dependencies = _useD3
+    ? ['js/config.js', 'js/util.js', 'js/time_space.js', 'js/diagram_d3.js']
+    : ['js/svg.js/svg.min.js', 'js/config.js', 'js/util.js', 'js/time_space.js', 'js/diagram.js'];
 
 // 開始載入基本檔案
 loadDependencies();
@@ -74,7 +81,7 @@ async function initial_data() {
         const realtimeDiagram = results[5];
         const realtimeTrains = results[6]; // 可能是 undefined（如果沒載）
 
-        execute(realtimeDiagram, realtimeTrains, date);
+        execute(realtimeDiagram, realtimeTrains, date, _useD3 ? 'd3' : 'svgjs');
     } catch (err) {
         console.error("初始化資料時發生錯誤:", err);
     }
@@ -82,7 +89,8 @@ async function initial_data() {
 
 
 // 程式執行函式
-function execute(json_data, live_json_data, date) {
+// renderer: 'svgjs'（預設，使用 diagram.js）或 'd3'（使用 diagram_d3.js）
+function execute(json_data, live_json_data, date, renderer = 'svgjs') {
     // 清除已有的運行圖    
     const svg = document.querySelectorAll("svg");
     svg.forEach(function (svg) {
@@ -115,6 +123,8 @@ function execute(json_data, live_json_data, date) {
 }
 
 function finish_draw() {
+    clearInterval(_dotsInterval);
+
     // 移除讀取中的文字標示
     let popup = document.getElementById("popup");
     const parentObj = popup.parentNode;
