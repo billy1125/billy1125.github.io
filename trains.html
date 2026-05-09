@@ -11,52 +11,57 @@
 <body>
 
     <header>
-        <h1>目前所有可讀取的台鐵時刻資料 TRA JSON Parser</h1>
+        <h1><span class="title-full">目前所有可讀取的台鐵時刻資料 </span>TRA JSON Parser</h1>
         <span class="subtitle" id="status"><span class="loading-dots">載入中</span></span>
     </header>
 
     <div class="workspace">
 
-        <!-- Column 1: file list -->
-        <div class="panel panel-files">
-            <div class="panel-head">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14 2 14 8 20 8" />
-                </svg>
-                日期檔案
-            </div>
-            <div class="panel-body" id="file-list">
-                <div class="panel-empty"><span class="loading-dots">載入中</span></div>
-            </div>
-        </div>
+        <!-- Columns 1–3: grouped for mobile stacking -->
+        <div class="panel-group">
 
-        <!-- Column 2: type filter -->
-        <div class="panel panel-filter">
-            <div class="panel-head">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-                </svg>
-                車種過濾
+            <!-- Column 1: file list -->
+            <div class="panel panel-files">
+                <div class="panel-head">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                    </svg>
+                    日期檔案
+                </div>
+                <div class="panel-body" id="file-list">
+                    <div class="panel-empty"><span class="loading-dots">載入中</span></div>
+                </div>
             </div>
-            <div class="panel-body" id="type-filter">
-                <div class="panel-empty">—</div>
-            </div>
-        </div>
 
-        <!-- Column 3: train list -->
-        <div class="panel panel-trains">
-            <div class="panel-head">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <rect x="4" y="4" width="16" height="16" rx="2" />
-                    <path d="M4 12h16M12 4v16" />
-                </svg>
-                車次清單
+            <!-- Column 2: type filter -->
+            <div class="panel panel-filter">
+                <div class="panel-head">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+                    </svg>
+                    車種過濾
+                </div>
+                <div class="panel-body" id="type-filter">
+                    <div class="panel-empty">—</div>
+                </div>
             </div>
-            <div class="panel-body" id="train-list">
-                <div class="panel-empty">請先選擇日期</div>
+
+            <!-- Column 3: train list -->
+            <div class="panel panel-trains">
+                <div class="panel-head">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                        <path d="M4 12h16M12 4v16" />
+                    </svg>
+                    車次清單
+                </div>
+                <div class="panel-body" id="train-list">
+                    <div class="panel-empty">請先選擇日期</div>
+                </div>
             </div>
-        </div>
+
+        </div><!-- /.panel-group -->
 
         <!-- Column 4: detail -->
         <div class="panel-detail">
