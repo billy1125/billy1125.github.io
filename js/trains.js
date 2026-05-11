@@ -149,7 +149,8 @@ let currentTrains = [];
 
 async function loadFile(filename) {
     if (cache[filename]) return cache[filename];
-    const res = await fetch(`https://raw.githubusercontent.com/billy1125/billy1125.github.io/main/data/${filename}`);
+    // const res = await fetch(`https://raw.githubusercontent.com/billy1125/billy1125.github.io/main/data/${filename}`);
+    const res = await fetch(`data/${filename}`);
     const data = await res.json();
     cache[filename] = data.TrainInfos || [];
     return cache[filename];
