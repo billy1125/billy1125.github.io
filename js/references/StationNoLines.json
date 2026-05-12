@@ -1,0 +1,962 @@
+{
+  "1827": {
+    "KIND": "LINE_I",
+    "DSC": "蘇澳"
+  },
+  "1826": {
+    "KIND": "LINE_N",
+    "DSC": "蘇澳新"
+  },
+  "1825": {
+    "KIND": "LINE_I",
+    "DSC": "新馬"
+  },
+  "1824": {
+    "KIND": "LINE_I",
+    "DSC": "冬山"
+  },
+  "1823": {
+    "KIND": "LINE_I",
+    "DSC": "羅東"
+  },
+  "1822": {
+    "KIND": "LINE_I",
+    "DSC": "中里"
+  },
+  "1821": {
+    "KIND": "LINE_I",
+    "DSC": "二結"
+  },
+  "1820": {
+    "KIND": "LINE_I",
+    "DSC": "宜蘭"
+  },
+  "1819": {
+    "KIND": "LINE_I",
+    "DSC": "四城"
+  },
+  "1818": {
+    "KIND": "LINE_I",
+    "DSC": "礁溪"
+  },
+  "1817": {
+    "KIND": "LINE_I",
+    "DSC": "頂埔"
+  },
+  "1816": {
+    "KIND": "LINE_I",
+    "DSC": "頭城"
+  },
+  "1815": {
+    "KIND": "LINE_I",
+    "DSC": "外澳"
+  },
+  "1814": {
+    "KIND": "LINE_I",
+    "DSC": "龜山"
+  },
+  "1813": {
+    "KIND": "LINE_I",
+    "DSC": "大溪"
+  },
+  "1812": {
+    "KIND": "LINE_I",
+    "DSC": "大里"
+  },
+  "1811": {
+    "KIND": "LINE_I",
+    "DSC": "石城"
+  },
+  "1810": {
+    "KIND": "LINE_I",
+    "DSC": "福隆"
+  },
+  "1809": {
+    "KIND": "LINE_I",
+    "DSC": "貢寮"
+  },
+  "1808": {
+    "KIND": "LINE_I",
+    "DSC": "雙溪"
+  },
+  "1807": {
+    "KIND": "LINE_I",
+    "DSC": "牡丹"
+  },
+  "1806": {
+    "KIND": "LINE_PX",
+    "DSC": "三貂嶺"
+  },
+  "1805": {
+    "KIND": "LINE_PX",
+    "DSC": "侯硐"
+  },
+  "1804": {
+    "KIND": "LINE_PX",
+    "DSC": "瑞芳"
+  },
+  "1803": {
+    "KIND": "LINE_I",
+    "DSC": "四腳亭"
+  },
+  "1802": {
+    "KIND": "LINE_I",
+    "DSC": "暖暖"
+  },
+  "1002": {
+    "KIND": "LINE_WN",
+    "DSC": "八堵"
+  },
+  "1207": {
+    "KIND": "LINE_WS",
+    "DSC": "二水"
+  },
+  "2702": {
+    "KIND": "LINE_J",
+    "DSC": "源泉"
+  },
+  "2703": {
+    "KIND": "LINE_J",
+    "DSC": "濁水"
+  },
+  "2704": {
+    "KIND": "LINE_J",
+    "DSC": "龍泉"
+  },
+  "2705": {
+    "KIND": "LINE_J",
+    "DSC": "集集"
+  },
+  "2706": {
+    "KIND": "LINE_J",
+    "DSC": "水里"
+  },
+  "2707": {
+    "KIND": "LINE_J",
+    "DSC": "車埕"
+  },
+  "1715": {
+    "KIND": "LINE_T",
+    "DSC": "花蓮"
+  },
+  "1714": {
+    "KIND": "LINE_N",
+    "DSC": "北埔"
+  },
+  "1713": {
+    "KIND": "LINE_N",
+    "DSC": "景美"
+  },
+  "1712": {
+    "KIND": "LINE_N",
+    "DSC": "新城"
+  },
+  "1711": {
+    "KIND": "LINE_N",
+    "DSC": "崇德"
+  },
+  "1710": {
+    "KIND": "LINE_N",
+    "DSC": "和仁"
+  },
+  "1709": {
+    "KIND": "LINE_N",
+    "DSC": "和平"
+  },
+  "1708": {
+    "KIND": "LINE_N",
+    "DSC": "漢本"
+  },
+  "nan": {
+    "KIND": "LINE_WS",
+    "DSC": "南臺南"
+  },
+  "1706": {
+    "KIND": "LINE_N",
+    "DSC": "武塔"
+  },
+  "1705": {
+    "KIND": "LINE_N",
+    "DSC": "南澳"
+  },
+  "1704": {
+    "KIND": "LINE_N",
+    "DSC": "東澳"
+  },
+  "1703": {
+    "KIND": "LINE_N",
+    "DSC": "永樂"
+  },
+  "1025": {
+    "KIND": "LINE_WN",
+    "DSC": "新竹"
+  },
+  "1024": {
+    "KIND": "LINE_WN",
+    "DSC": "北新竹"
+  },
+  "2212": {
+    "KIND": "LINE_NW",
+    "DSC": "千甲"
+  },
+  "2213": {
+    "KIND": "LINE_NW",
+    "DSC": "新莊"
+  },
+  "2203": {
+    "KIND": "LINE_NW",
+    "DSC": "竹中"
+  },
+  "2204": {
+    "KIND": "LINE_NW",
+    "DSC": "上員"
+  },
+  "2211": {
+    "KIND": "LINE_NW",
+    "DSC": "榮華"
+  },
+  "2205": {
+    "KIND": "LINE_NW",
+    "DSC": "竹東"
+  },
+  "2206": {
+    "KIND": "LINE_NW",
+    "DSC": "橫山"
+  },
+  "2207": {
+    "KIND": "LINE_NW",
+    "DSC": "九讚頭"
+  },
+  "2208": {
+    "KIND": "LINE_NW",
+    "DSC": "合興"
+  },
+  "2209": {
+    "KIND": "LINE_NW",
+    "DSC": "富貴"
+  },
+  "2210": {
+    "KIND": "LINE_NW",
+    "DSC": "內灣"
+  },
+  "1238": {
+    "KIND": "LINE_WS",
+    "DSC": "高雄"
+  },
+  "1419": {
+    "KIND": "LINE_P",
+    "DSC": "民族"
+  },
+  "1420": {
+    "KIND": "LINE_P",
+    "DSC": "科工館"
+  },
+  "1421": {
+    "KIND": "LINE_P",
+    "DSC": "正義"
+  },
+  "1402": {
+    "KIND": "LINE_P",
+    "DSC": "鳳山"
+  },
+  "1403": {
+    "KIND": "LINE_P",
+    "DSC": "後庄"
+  },
+  "1404": {
+    "KIND": "LINE_P",
+    "DSC": "九曲堂"
+  },
+  "1405": {
+    "KIND": "LINE_P",
+    "DSC": "六塊厝"
+  },
+  "1406": {
+    "KIND": "LINE_P",
+    "DSC": "屏東 "
+  },
+  "1407": {
+    "KIND": "LINE_P",
+    "DSC": "歸來 "
+  },
+  "1408": {
+    "KIND": "LINE_P",
+    "DSC": "麟洛 "
+  },
+  "1409": {
+    "KIND": "LINE_P",
+    "DSC": "西勢 "
+  },
+  "1410": {
+    "KIND": "LINE_P",
+    "DSC": "竹田 "
+  },
+  "1411": {
+    "KIND": "LINE_P",
+    "DSC": "潮州 "
+  },
+  "1412": {
+    "KIND": "LINE_P",
+    "DSC": "崁頂 "
+  },
+  "1413": {
+    "KIND": "LINE_P",
+    "DSC": "南州 "
+  },
+  "1414": {
+    "KIND": "LINE_P",
+    "DSC": "鎮安 "
+  },
+  "1415": {
+    "KIND": "LINE_P",
+    "DSC": "林邊 "
+  },
+  "1416": {
+    "KIND": "LINE_P",
+    "DSC": "佳冬 "
+  },
+  "1417": {
+    "KIND": "LINE_P",
+    "DSC": "東海 "
+  },
+  "1418": {
+    "KIND": "LINE_S",
+    "DSC": "枋寮"
+  },
+  "2003": {
+    "KIND": "LINE_PX",
+    "DSC": "八斗子"
+  },
+  "6103": {
+    "KIND": "LINE_PX",
+    "DSC": "海科館"
+  },
+  "1903": {
+    "KIND": "LINE_PX",
+    "DSC": "大華"
+  },
+  "1904": {
+    "KIND": "LINE_PX",
+    "DSC": "十分"
+  },
+  "1905": {
+    "KIND": "LINE_PX",
+    "DSC": "望古"
+  },
+  "1906": {
+    "KIND": "LINE_PX",
+    "DSC": "嶺腳"
+  },
+  "1907": {
+    "KIND": "LINE_PX",
+    "DSC": "平溪"
+  },
+  "1908": {
+    "KIND": "LINE_PX",
+    "DSC": "菁桐"
+  },
+  "1502": {
+    "KIND": "LINE_S",
+    "DSC": "加祿"
+  },
+  "1503": {
+    "KIND": "LINE_S",
+    "DSC": "內獅"
+  },
+  "1504": {
+    "KIND": "LINE_S",
+    "DSC": "枋山"
+  },
+  "1505": {
+    "KIND": "LINE_S",
+    "DSC": "枋野"
+  },
+  "1508": {
+    "KIND": "LINE_S",
+    "DSC": "大武"
+  },
+  "1510": {
+    "KIND": "LINE_S",
+    "DSC": "瀧溪"
+  },
+  "1512": {
+    "KIND": "LINE_S",
+    "DSC": "金崙"
+  },
+  "1514": {
+    "KIND": "LINE_S",
+    "DSC": "太麻里"
+  },
+  "1516": {
+    "KIND": "LINE_S",
+    "DSC": "知本"
+  },
+  "1517": {
+    "KIND": "LINE_S",
+    "DSC": "康樂"
+  },
+  "1632": {
+    "KIND": "LINE_T",
+    "DSC": "台東"
+  },
+  "1631": {
+    "KIND": "LINE_T",
+    "DSC": "山里"
+  },
+  "1630": {
+    "KIND": "LINE_T",
+    "DSC": "鹿野"
+  },
+  "1629": {
+    "KIND": "LINE_T",
+    "DSC": "瑞源"
+  },
+  "1628": {
+    "KIND": "LINE_T",
+    "DSC": "瑞和"
+  },
+  "1626": {
+    "KIND": "LINE_T",
+    "DSC": "關山"
+  },
+  "1625": {
+    "KIND": "LINE_T",
+    "DSC": "海端"
+  },
+  "1624": {
+    "KIND": "LINE_T",
+    "DSC": "池上"
+  },
+  "1623": {
+    "KIND": "LINE_T",
+    "DSC": "富里"
+  },
+  "1622": {
+    "KIND": "LINE_T",
+    "DSC": "東竹"
+  },
+  "1621": {
+    "KIND": "LINE_T",
+    "DSC": "東里"
+  },
+  "1619": {
+    "KIND": "LINE_T",
+    "DSC": "玉里"
+  },
+  "1617": {
+    "KIND": "LINE_T",
+    "DSC": "三民"
+  },
+  "1616": {
+    "KIND": "LINE_T",
+    "DSC": "瑞穗"
+  },
+  "1614": {
+    "KIND": "LINE_T",
+    "DSC": "富源"
+  },
+  "1613": {
+    "KIND": "LINE_T",
+    "DSC": "大富"
+  },
+  "1612": {
+    "KIND": "LINE_T",
+    "DSC": "光復"
+  },
+  "1611": {
+    "KIND": "LINE_T",
+    "DSC": "萬榮"
+  },
+  "1610": {
+    "KIND": "LINE_T",
+    "DSC": "鳳林"
+  },
+  "1609": {
+    "KIND": "LINE_T",
+    "DSC": "南平"
+  },
+  "7007": {
+    "KIND": "LINE_T",
+    "DSC": "林榮"
+  },
+  "1607": {
+    "KIND": "LINE_T",
+    "DSC": "豐田"
+  },
+  "1606": {
+    "KIND": "LINE_T",
+    "DSC": "壽豐"
+  },
+  "1605": {
+    "KIND": "LINE_T",
+    "DSC": "平和"
+  },
+  "1604": {
+    "KIND": "LINE_T",
+    "DSC": "志學"
+  },
+  "1602": {
+    "KIND": "LINE_T",
+    "DSC": "吉安"
+  },
+  "1028": {
+    "KIND": "LINE_WSEA",
+    "DSC": "竹南"
+  },
+  "1302": {
+    "KIND": "LINE_WM",
+    "DSC": "造橋 "
+  },
+  "1304": {
+    "KIND": "LINE_WM",
+    "DSC": "豐富 "
+  },
+  "1305": {
+    "KIND": "LINE_WM",
+    "DSC": "苗栗 "
+  },
+  "1307": {
+    "KIND": "LINE_WM",
+    "DSC": "南勢 "
+  },
+  "1308": {
+    "KIND": "LINE_WM",
+    "DSC": "銅鑼 "
+  },
+  "1310": {
+    "KIND": "LINE_WM",
+    "DSC": "三義 "
+  },
+  "1314": {
+    "KIND": "LINE_WM",
+    "DSC": "泰安 "
+  },
+  "1315": {
+    "KIND": "LINE_WM",
+    "DSC": "后里 "
+  },
+  "1317": {
+    "KIND": "LINE_WM",
+    "DSC": "豐原 "
+  },
+  "1325": {
+    "KIND": "LINE_WM",
+    "DSC": "栗林"
+  },
+  "1318": {
+    "KIND": "LINE_WM",
+    "DSC": "潭子 "
+  },
+  "1326": {
+    "KIND": "LINE_WM",
+    "DSC": "頭家厝"
+  },
+  "1327": {
+    "KIND": "LINE_WM",
+    "DSC": "松竹"
+  },
+  "1323": {
+    "KIND": "LINE_WM",
+    "DSC": "太原 "
+  },
+  "1328": {
+    "KIND": "LINE_WM",
+    "DSC": "精武"
+  },
+  "1319": {
+    "KIND": "LINE_WM",
+    "DSC": "臺中 "
+  },
+  "1329": {
+    "KIND": "LINE_WM",
+    "DSC": "五權"
+  },
+  "1322": {
+    "KIND": "LINE_WM",
+    "DSC": "大慶 "
+  },
+  "1320": {
+    "KIND": "LINE_WM",
+    "DSC": "烏日 "
+  },
+  "1324": {
+    "KIND": "LINE_WM",
+    "DSC": "新烏日 "
+  },
+  "1321": {
+    "KIND": "LINE_WM",
+    "DSC": "成功 "
+  },
+  "1120": {
+    "KIND": "LINE_WSEA",
+    "DSC": "彰化 "
+  },
+  "1001": {
+    "KIND": "LINE_WN",
+    "DSC": "基隆"
+  },
+  "1029": {
+    "KIND": "LINE_WN",
+    "DSC": "三坑"
+  },
+  "1003": {
+    "KIND": "LINE_WN",
+    "DSC": "七堵"
+  },
+  "1030": {
+    "KIND": "LINE_WN",
+    "DSC": "百福"
+  },
+  "1004": {
+    "KIND": "LINE_WN",
+    "DSC": "五堵"
+  },
+  "1005": {
+    "KIND": "LINE_WN",
+    "DSC": "汐止"
+  },
+  "1031": {
+    "KIND": "LINE_WN",
+    "DSC": "汐科"
+  },
+  "1006": {
+    "KIND": "LINE_WN",
+    "DSC": "南港"
+  },
+  "1007": {
+    "KIND": "LINE_WN",
+    "DSC": "松山"
+  },
+  "1008": {
+    "KIND": "LINE_WN",
+    "DSC": "臺北"
+  },
+  "1009": {
+    "KIND": "LINE_WN",
+    "DSC": "萬華"
+  },
+  "1011": {
+    "KIND": "LINE_WN",
+    "DSC": "板橋"
+  },
+  "1032": {
+    "KIND": "LINE_WN",
+    "DSC": "浮洲"
+  },
+  "1012": {
+    "KIND": "LINE_WN",
+    "DSC": "樹林"
+  },
+  "1034": {
+    "KIND": "LINE_WN",
+    "DSC": "南樹林"
+  },
+  "1013": {
+    "KIND": "LINE_WN",
+    "DSC": "山佳"
+  },
+  "1014": {
+    "KIND": "LINE_WN",
+    "DSC": "鶯歌"
+  },
+  "1015": {
+    "KIND": "LINE_WN",
+    "DSC": "桃園"
+  },
+  "1016": {
+    "KIND": "LINE_WN",
+    "DSC": "內壢"
+  },
+  "1017": {
+    "KIND": "LINE_WN",
+    "DSC": "中壢"
+  },
+  "1018": {
+    "KIND": "LINE_WN",
+    "DSC": "埔心"
+  },
+  "1019": {
+    "KIND": "LINE_WN",
+    "DSC": "楊梅"
+  },
+  "1020": {
+    "KIND": "LINE_WN",
+    "DSC": "富岡"
+  },
+  "1036": {
+    "KIND": "LINE_WN",
+    "DSC": "新富"
+  },
+  "1033": {
+    "KIND": "LINE_WN",
+    "DSC": "北湖"
+  },
+  "1021": {
+    "KIND": "LINE_WN",
+    "DSC": "湖口"
+  },
+  "1022": {
+    "KIND": "LINE_WN",
+    "DSC": "新豐"
+  },
+  "1023": {
+    "KIND": "LINE_WN",
+    "DSC": "竹北"
+  },
+  "1035": {
+    "KIND": "LINE_WN",
+    "DSC": "三姓橋"
+  },
+  "1026": {
+    "KIND": "LINE_WN",
+    "DSC": "香山"
+  },
+  "1027": {
+    "KIND": "LINE_WN",
+    "DSC": "崎頂"
+  },
+  "1202": {
+    "KIND": "LINE_WS",
+    "DSC": "花壇"
+  },
+  "1240": {
+    "KIND": "LINE_WS",
+    "DSC": "大村"
+  },
+  "1203": {
+    "KIND": "LINE_WS",
+    "DSC": "員林"
+  },
+  "1204": {
+    "KIND": "LINE_WS",
+    "DSC": "永靖"
+  },
+  "1205": {
+    "KIND": "LINE_WS",
+    "DSC": "社頭"
+  },
+  "1206": {
+    "KIND": "LINE_WS",
+    "DSC": "田中"
+  },
+  "1208": {
+    "KIND": "LINE_WS",
+    "DSC": "林內"
+  },
+  "1209": {
+    "KIND": "LINE_WS",
+    "DSC": "石榴"
+  },
+  "1210": {
+    "KIND": "LINE_WS",
+    "DSC": "斗六"
+  },
+  "1211": {
+    "KIND": "LINE_WS",
+    "DSC": "斗南"
+  },
+  "1212": {
+    "KIND": "LINE_WS",
+    "DSC": "石龜"
+  },
+  "1213": {
+    "KIND": "LINE_WS",
+    "DSC": "大林"
+  },
+  "1214": {
+    "KIND": "LINE_WS",
+    "DSC": "民雄"
+  },
+  "1241": {
+    "KIND": "LINE_WS",
+    "DSC": "嘉北"
+  },
+  "1215": {
+    "KIND": "LINE_WS",
+    "DSC": "嘉義"
+  },
+  "1217": {
+    "KIND": "LINE_WS",
+    "DSC": "水上"
+  },
+  "1218": {
+    "KIND": "LINE_WS",
+    "DSC": "南靖"
+  },
+  "1219": {
+    "KIND": "LINE_WS",
+    "DSC": "後壁"
+  },
+  "1220": {
+    "KIND": "LINE_WS",
+    "DSC": "新營"
+  },
+  "1221": {
+    "KIND": "LINE_WS",
+    "DSC": "柳營"
+  },
+  "1222": {
+    "KIND": "LINE_WS",
+    "DSC": "林鳳營"
+  },
+  "1223": {
+    "KIND": "LINE_WS",
+    "DSC": "隆田"
+  },
+  "1224": {
+    "KIND": "LINE_WS",
+    "DSC": "拔林"
+  },
+  "1225": {
+    "KIND": "LINE_WS",
+    "DSC": "善化"
+  },
+  "1244": {
+    "KIND": "LINE_WS",
+    "DSC": "南科"
+  },
+  "1226": {
+    "KIND": "LINE_WS",
+    "DSC": "新市"
+  },
+  "1227": {
+    "KIND": "LINE_WS",
+    "DSC": "永康"
+  },
+  "1239": {
+    "KIND": "LINE_WS",
+    "DSC": "大橋"
+  },
+  "1228": {
+    "KIND": "LINE_WS",
+    "DSC": "台南"
+  },
+  "1229": {
+    "KIND": "LINE_WS",
+    "DSC": "保安"
+  },
+  "1243": {
+    "KIND": "LINE_WS",
+    "DSC": "仁德"
+  },
+  "1230": {
+    "KIND": "LINE_SL",
+    "DSC": "中洲"
+  },
+  "1231": {
+    "KIND": "LINE_WS",
+    "DSC": "大湖"
+  },
+  "1232": {
+    "KIND": "LINE_WS",
+    "DSC": "路竹"
+  },
+  "1233": {
+    "KIND": "LINE_WS",
+    "DSC": "岡山"
+  },
+  "1234": {
+    "KIND": "LINE_WS",
+    "DSC": "橋頭"
+  },
+  "1235": {
+    "KIND": "LINE_WS",
+    "DSC": "楠梓"
+  },
+  "1242": {
+    "KIND": "LINE_WS",
+    "DSC": "新左營"
+  },
+  "1236": {
+    "KIND": "LINE_WS",
+    "DSC": "左營"
+  },
+  "1245": {
+    "KIND": "LINE_WS",
+    "DSC": "內惟"
+  },
+  "1246": {
+    "KIND": "LINE_WS",
+    "DSC": "美術館"
+  },
+  "1237": {
+    "KIND": "LINE_WS",
+    "DSC": "鼓山"
+  },
+  "1247": {
+    "KIND": "LINE_WS",
+    "DSC": "三塊厝"
+  },
+  "1102": {
+    "KIND": "LINE_WSEA",
+    "DSC": "談文 "
+  },
+  "1104": {
+    "KIND": "LINE_WSEA",
+    "DSC": "大山 "
+  },
+  "1105": {
+    "KIND": "LINE_WSEA",
+    "DSC": "後龍 "
+  },
+  "1106": {
+    "KIND": "LINE_WSEA",
+    "DSC": "龍港 "
+  },
+  "1107": {
+    "KIND": "LINE_WSEA",
+    "DSC": "白沙屯 "
+  },
+  "1108": {
+    "KIND": "LINE_WSEA",
+    "DSC": "新埔 "
+  },
+  "1109": {
+    "KIND": "LINE_WSEA",
+    "DSC": "通霄 "
+  },
+  "1110": {
+    "KIND": "LINE_WSEA",
+    "DSC": "苑裡 "
+  },
+  "1111": {
+    "KIND": "LINE_WSEA",
+    "DSC": "日南 "
+  },
+  "1112": {
+    "KIND": "LINE_WSEA",
+    "DSC": "大甲 "
+  },
+  "1113": {
+    "KIND": "LINE_WSEA",
+    "DSC": "臺中港 "
+  },
+  "1114": {
+    "KIND": "LINE_WSEA",
+    "DSC": "清水 "
+  },
+  "1115": {
+    "KIND": "LINE_WSEA",
+    "DSC": "沙鹿 "
+  },
+  "1116": {
+    "KIND": "LINE_WSEA",
+    "DSC": "龍井 "
+  },
+  "1117": {
+    "KIND": "LINE_WSEA",
+    "DSC": "大肚 "
+  },
+  "1118": {
+    "KIND": "LINE_WSEA",
+    "DSC": "追分 "
+  },
+  "5101": {
+    "KIND": "LINE_SL",
+    "DSC": "長榮大學"
+  },
+  "5102": {
+    "KIND": "LINE_SL",
+    "DSC": "沙崙"
+  }
+}

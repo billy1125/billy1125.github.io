@@ -328,17 +328,20 @@ function draw_diagram_background(line_kind, date) {
            .on('mousemove.dragtrack', () => { _wasDragged = true; })
            .on('click.deselect', () => { if (!_wasDragged) _clearHighlight(); });
 
-        // X 軸定位在現在時刻（若有 scrollToCurrentTime）
+        // X 軸定位在現在時刻（若有 scrollToCurrentTime），Y 軸定位到指定車站（若有 stationAxisY）
         // d3 zoom transform 公式：screen_x = origin_x * k + tx，translate(dx,dy) 後 tx = k*dx
         const initialScale = 1;
         let initDx = 0;
+        let initDy = 0;
         if (typeof scrollToCurrentTime !== 'undefined' && scrollToCurrentTime) {
-            // 讓 now_time_x_axis 顯示在畫面中央
             initDx = vw / (2 * initialScale) - now_time_x_axis;
+        }
+        if (typeof stationAxisY !== 'undefined' && stationAxisY !== null) {
+            initDy = vh / (2 * initialScale) - (parseInt(stationAxisY) + 50);
         }
         svg.call(
             zoom.transform,
-            d3.zoomIdentity.scale(initialScale).translate(initDx, 0)
+            d3.zoomIdentity.scale(initialScale).translate(initDx, initDy)
         );
 
         // ── 繪製標題 ──

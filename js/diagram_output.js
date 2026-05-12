@@ -4,6 +4,7 @@ const line_kind = url.searchParams.get('lineKind');
 const formattedDate = url.searchParams.get('formattedDate');
 const loadRealtimeParam = url.searchParams.get('realtime');
 const scrollToCurrentTimeParam = url.searchParams.get('scrollToCurrentTime');
+const stationAxisY = url.searchParams.get('stationAxisY');
 
 // 渲染器選擇：diagram_output_new.htm 會在載入本檔案前設定 window._useD3Renderer = true
 const _useD3 = (typeof window._useD3Renderer !== 'undefined' && window._useD3Renderer === true);
@@ -129,11 +130,6 @@ function finish_draw() {
     let popup = document.getElementById("popup");
     const parentObj = popup.parentNode;
     parentObj.removeChild(popup);
-
-    // 依照現在的時間，將視窗滾動到整點時間，方便使用者閱讀
-    if (scrollToCurrentTime) {
-        scroll_current_time();
-    }
 }
 
 // 設定使用者自訂色系
@@ -167,13 +163,3 @@ function blink() {
     }
 }
 
-// 捲動圖片到現在的時間
-function scroll_current_time() {
-    let now = new Date();
-    let min = screen.width >= 1000 ? 0 : (now.getMinutes() - 10) / 60;
-    let hour_position = now.getHours() + Math.round(min * 100) / 100 - 4;
-    if (hour_position > 0) {
-        hour_position *= 1200;
-        window.scrollTo(hour_position, 0);
-    }
-}

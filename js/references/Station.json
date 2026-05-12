@@ -1,0 +1,1628 @@
+[
+  {
+    "ID": 1,
+    "STATIONID": "7120",
+    "STATIONNAME": "蘇澳",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 2,
+    "STATIONID": "7130",
+    "STATIONNAME": "蘇澳新",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 3,
+    "STATIONID": "7140",
+    "STATIONNAME": "新馬",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 4,
+    "STATIONID": "7150",
+    "STATIONNAME": "冬山",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 5,
+    "STATIONID": "7160",
+    "STATIONNAME": "羅東",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 6,
+    "STATIONID": "7170",
+    "STATIONNAME": "中里",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 7,
+    "STATIONID": "7180",
+    "STATIONNAME": "二結",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 8,
+    "STATIONID": "7190",
+    "STATIONNAME": "宜蘭",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 9,
+    "STATIONID": "7200",
+    "STATIONNAME": "四城",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 10,
+    "STATIONID": "7210",
+    "STATIONNAME": "礁溪",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 11,
+    "STATIONID": "7220",
+    "STATIONNAME": "頂埔",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 12,
+    "STATIONID": "7230",
+    "STATIONNAME": "頭城",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 13,
+    "STATIONID": "7240",
+    "STATIONNAME": "外澳",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 14,
+    "STATIONID": "7250",
+    "STATIONNAME": "龜山",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 15,
+    "STATIONID": "7260",
+    "STATIONNAME": "大溪",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 16,
+    "STATIONID": "7270",
+    "STATIONNAME": "大里",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 17,
+    "STATIONID": "7280",
+    "STATIONNAME": "石城",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 18,
+    "STATIONID": "7290",
+    "STATIONNAME": "福隆",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 19,
+    "STATIONID": "7300",
+    "STATIONNAME": "貢寮",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 20,
+    "STATIONID": "7310",
+    "STATIONNAME": "雙溪",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 21,
+    "STATIONID": "7320",
+    "STATIONNAME": "牡丹",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 22,
+    "STATIONID": "7330",
+    "STATIONNAME": "三貂嶺",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 23,
+    "STATIONID": "7350",
+    "STATIONNAME": "侯硐",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 24,
+    "STATIONID": "7360",
+    "STATIONNAME": "瑞芳",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 25,
+    "STATIONID": "7380",
+    "STATIONNAME": "四腳亭",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 26,
+    "STATIONID": "7390",
+    "STATIONNAME": "暖暖",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 27,
+    "STATIONID": "0920",
+    "STATIONNAME": "八堵",
+    "LINE": "LINE_I"
+  },
+  {
+    "ID": 28,
+    "STATIONID": "3430",
+    "STATIONNAME": "二水",
+    "LINE": "LINE_J"
+  },
+  {
+    "ID": 29,
+    "STATIONID": "3431",
+    "STATIONNAME": "源泉",
+    "LINE": "LINE_J"
+  },
+  {
+    "ID": 30,
+    "STATIONID": "3432",
+    "STATIONNAME": "濁水",
+    "LINE": "LINE_J"
+  },
+  {
+    "ID": 31,
+    "STATIONID": "3433",
+    "STATIONNAME": "龍泉",
+    "LINE": "LINE_J"
+  },
+  {
+    "ID": 32,
+    "STATIONID": "3434",
+    "STATIONNAME": "集集",
+    "LINE": "LINE_J"
+  },
+  {
+    "ID": 33,
+    "STATIONID": "3435",
+    "STATIONNAME": "水里",
+    "LINE": "LINE_J"
+  },
+  {
+    "ID": 34,
+    "STATIONID": "3436",
+    "STATIONNAME": "車埕",
+    "LINE": "LINE_J"
+  },
+  {
+    "ID": 35,
+    "STATIONID": "7000",
+    "STATIONNAME": "花蓮",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 36,
+    "STATIONID": "7010",
+    "STATIONNAME": "北埔",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 37,
+    "STATIONID": "7020",
+    "STATIONNAME": "景美",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 38,
+    "STATIONID": "7030",
+    "STATIONNAME": "新城",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 39,
+    "STATIONID": "7040",
+    "STATIONNAME": "崇德",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 40,
+    "STATIONID": "7050",
+    "STATIONNAME": "和仁",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 41,
+    "STATIONID": "7060",
+    "STATIONNAME": "和平",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 42,
+    "STATIONID": "7070",
+    "STATIONNAME": "漢本",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 43,
+    "STATIONID": "NA",
+    "STATIONNAME": "觀音號誌",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 44,
+    "STATIONID": "7080",
+    "STATIONNAME": "武塔",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 45,
+    "STATIONID": "7090",
+    "STATIONNAME": "南澳",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 46,
+    "STATIONID": "7100",
+    "STATIONNAME": "東澳",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 47,
+    "STATIONID": "7110",
+    "STATIONNAME": "永樂",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 48,
+    "STATIONID": "NA",
+    "STATIONNAME": "永春",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 49,
+    "STATIONID": "7130",
+    "STATIONNAME": "蘇澳新",
+    "LINE": "LINE_N"
+  },
+  {
+    "ID": 50,
+    "STATIONID": "1210",
+    "STATIONNAME": "新竹",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 51,
+    "STATIONID": "1190",
+    "STATIONNAME": "北新竹",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 52,
+    "STATIONID": "1191",
+    "STATIONNAME": "千甲",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 53,
+    "STATIONID": "1192",
+    "STATIONNAME": "新莊",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 54,
+    "STATIONID": "1193",
+    "STATIONNAME": "竹中",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 55,
+    "STATIONID": "1201",
+    "STATIONNAME": "上員",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 56,
+    "STATIONID": "1202",
+    "STATIONNAME": "榮華",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 57,
+    "STATIONID": "1203",
+    "STATIONNAME": "竹東",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 58,
+    "STATIONID": "1204",
+    "STATIONNAME": "橫山",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 59,
+    "STATIONID": "1205",
+    "STATIONNAME": "九讚頭",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 60,
+    "STATIONID": "1206",
+    "STATIONNAME": "合興",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 61,
+    "STATIONID": "1207",
+    "STATIONNAME": "富貴",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 62,
+    "STATIONID": "1208",
+    "STATIONNAME": "內灣",
+    "LINE": "LINE_NW"
+  },
+  {
+    "ID": 63,
+    "STATIONID": "4400",
+    "STATIONNAME": "高雄",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 64,
+    "STATIONID": "4410",
+    "STATIONNAME": "民族",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 65,
+    "STATIONID": "4420",
+    "STATIONNAME": "科工館",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 66,
+    "STATIONID": "4430",
+    "STATIONNAME": "正義",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 67,
+    "STATIONID": "4440",
+    "STATIONNAME": "鳳山",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 68,
+    "STATIONID": "4450",
+    "STATIONNAME": "後庄",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 69,
+    "STATIONID": "4460",
+    "STATIONNAME": "九曲堂",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 70,
+    "STATIONID": "4470",
+    "STATIONNAME": "六塊厝",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 71,
+    "STATIONID": "5000",
+    "STATIONNAME": "屏東 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 72,
+    "STATIONID": "5010",
+    "STATIONNAME": "歸來 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 73,
+    "STATIONID": "5020",
+    "STATIONNAME": "麟洛 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 74,
+    "STATIONID": "5030",
+    "STATIONNAME": "西勢 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 75,
+    "STATIONID": "5040",
+    "STATIONNAME": "竹田 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 76,
+    "STATIONID": "5050",
+    "STATIONNAME": "潮州 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 77,
+    "STATIONID": "5060",
+    "STATIONNAME": "崁頂 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 78,
+    "STATIONID": "5070",
+    "STATIONNAME": "南州 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 79,
+    "STATIONID": "5080",
+    "STATIONNAME": "鎮安 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 80,
+    "STATIONID": "5090",
+    "STATIONNAME": "林邊 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 81,
+    "STATIONID": "5100",
+    "STATIONNAME": "佳冬 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 82,
+    "STATIONID": "5110",
+    "STATIONNAME": "東海 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 83,
+    "STATIONID": "5120",
+    "STATIONNAME": "枋寮 ",
+    "LINE": "LINE_P"
+  },
+  {
+    "ID": 84,
+    "STATIONID": "7362",
+    "STATIONNAME": "八斗子",
+    "LINE": "LINE_PX"
+  },
+  {
+    "ID": 85,
+    "STATIONID": "7361",
+    "STATIONNAME": "海科館",
+    "LINE": "LINE_PX"
+  },
+  {
+    "ID": 86,
+    "STATIONID": "7360",
+    "STATIONNAME": "瑞芳",
+    "LINE": "LINE_PX"
+  },
+  {
+    "ID": 87,
+    "STATIONID": "7350",
+    "STATIONNAME": "侯硐",
+    "LINE": "LINE_PX"
+  },
+  {
+    "ID": 88,
+    "STATIONID": "7330",
+    "STATIONNAME": "三貂嶺",
+    "LINE": "LINE_PX"
+  },
+  {
+    "ID": 89,
+    "STATIONID": "7331",
+    "STATIONNAME": "大華",
+    "LINE": "LINE_PX"
+  },
+  {
+    "ID": 90,
+    "STATIONID": "7332",
+    "STATIONNAME": "十分",
+    "LINE": "LINE_PX"
+  },
+  {
+    "ID": 91,
+    "STATIONID": "7333",
+    "STATIONNAME": "望古",
+    "LINE": "LINE_PX"
+  },
+  {
+    "ID": 92,
+    "STATIONID": "7334",
+    "STATIONNAME": "嶺腳",
+    "LINE": "LINE_PX"
+  },
+  {
+    "ID": 93,
+    "STATIONID": "7335",
+    "STATIONNAME": "平溪",
+    "LINE": "LINE_PX"
+  },
+  {
+    "ID": 94,
+    "STATIONID": "7336",
+    "STATIONNAME": "菁桐",
+    "LINE": "LINE_PX"
+  },
+  {
+    "ID": 95,
+    "STATIONID": "5120",
+    "STATIONNAME": "枋寮",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 96,
+    "STATIONID": "5130",
+    "STATIONNAME": "加祿",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 97,
+    "STATIONID": "5140",
+    "STATIONNAME": "內獅",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 98,
+    "STATIONID": "5160",
+    "STATIONNAME": "枋山",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 99,
+    "STATIONID": "5170",
+    "STATIONNAME": "枋野",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 100,
+    "STATIONID": "NA",
+    "STATIONNAME": "中央號誌",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 101,
+    "STATIONID": "NA",
+    "STATIONNAME": "菩安號誌",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 102,
+    "STATIONID": "NA",
+    "STATIONNAME": "古莊號誌",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 103,
+    "STATIONID": "5190",
+    "STATIONNAME": "大武",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 104,
+    "STATIONID": "NA",
+    "STATIONNAME": "富山號誌",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 105,
+    "STATIONID": "5200",
+    "STATIONNAME": "瀧溪",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 106,
+    "STATIONID": "NA",
+    "STATIONNAME": "多良",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 107,
+    "STATIONID": "5210",
+    "STATIONNAME": "金崙",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 108,
+    "STATIONID": "NA",
+    "STATIONNAME": "香蘭",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 109,
+    "STATIONID": "NA",
+    "STATIONNAME": "三和",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 110,
+    "STATIONID": "5220",
+    "STATIONNAME": "太麻里",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 111,
+    "STATIONID": "5230",
+    "STATIONNAME": "知本",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 112,
+    "STATIONID": "5240",
+    "STATIONNAME": "康樂",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 113,
+    "STATIONID": "6000",
+    "STATIONNAME": "台東",
+    "LINE": "LINE_S"
+  },
+  {
+    "ID": 114,
+    "STATIONID": "6000",
+    "STATIONNAME": "台東",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 115,
+    "STATIONID": "6010",
+    "STATIONNAME": "山里",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 116,
+    "STATIONID": "6020",
+    "STATIONNAME": "鹿野",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 117,
+    "STATIONID": "6030",
+    "STATIONNAME": "瑞源",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 118,
+    "STATIONID": "6040",
+    "STATIONNAME": "瑞和",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 119,
+    "STATIONID": "6050",
+    "STATIONNAME": "關山",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 120,
+    "STATIONID": "6060",
+    "STATIONNAME": "海端",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 121,
+    "STATIONID": "6070",
+    "STATIONNAME": "池上",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 122,
+    "STATIONID": "6080",
+    "STATIONNAME": "富里",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 123,
+    "STATIONID": "6090",
+    "STATIONNAME": "東竹",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 124,
+    "STATIONID": "6100",
+    "STATIONNAME": "東里",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 125,
+    "STATIONID": "6110",
+    "STATIONNAME": "玉里",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 126,
+    "STATIONID": "NA",
+    "STATIONNAME": "大禹",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 127,
+    "STATIONID": "6120",
+    "STATIONNAME": "三民",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 128,
+    "STATIONID": "6130",
+    "STATIONNAME": "瑞穗",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 129,
+    "STATIONID": "NA",
+    "STATIONNAME": "瑞北",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 130,
+    "STATIONID": "6140",
+    "STATIONNAME": "富源",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 131,
+    "STATIONID": "6150",
+    "STATIONNAME": "大富",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 132,
+    "STATIONID": "6160",
+    "STATIONNAME": "光復",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 133,
+    "STATIONID": "6170",
+    "STATIONNAME": "萬榮",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 134,
+    "STATIONID": "6180",
+    "STATIONNAME": "鳳林",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 135,
+    "STATIONID": "6190",
+    "STATIONNAME": "南平",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 136,
+    "STATIONID": 7007.0,
+    "STATIONNAME": "林榮",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 137,
+    "STATIONID": "6210",
+    "STATIONNAME": "豐田",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 138,
+    "STATIONID": "6220",
+    "STATIONNAME": "壽豐",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 139,
+    "STATIONID": "6230",
+    "STATIONNAME": "平和",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 140,
+    "STATIONID": "6240",
+    "STATIONNAME": "志學",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 141,
+    "STATIONID": "NA",
+    "STATIONNAME": "干城",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 142,
+    "STATIONID": "6250",
+    "STATIONNAME": "吉安",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 143,
+    "STATIONID": "NA",
+    "STATIONNAME": "田浦",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 144,
+    "STATIONID": "7000",
+    "STATIONNAME": "花蓮",
+    "LINE": "LINE_T"
+  },
+  {
+    "ID": 145,
+    "STATIONID": "1250",
+    "STATIONNAME": "竹南 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 146,
+    "STATIONID": "3140",
+    "STATIONNAME": "造橋 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 147,
+    "STATIONID": "3150",
+    "STATIONNAME": "豐富 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 148,
+    "STATIONID": "3160",
+    "STATIONNAME": "苗栗 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 149,
+    "STATIONID": "3170",
+    "STATIONNAME": "南勢 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 150,
+    "STATIONID": "3180",
+    "STATIONNAME": "銅鑼 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 151,
+    "STATIONID": "3190",
+    "STATIONNAME": "三義 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 152,
+    "STATIONID": "3210",
+    "STATIONNAME": "泰安 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 153,
+    "STATIONID": "3220",
+    "STATIONNAME": "后里 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 154,
+    "STATIONID": "3230",
+    "STATIONNAME": "豐原 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 155,
+    "STATIONID": "3240",
+    "STATIONNAME": "栗林",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 156,
+    "STATIONID": "3250",
+    "STATIONNAME": "潭子 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 157,
+    "STATIONID": "3260",
+    "STATIONNAME": "頭家厝",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 158,
+    "STATIONID": "3270",
+    "STATIONNAME": "松竹",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 159,
+    "STATIONID": "3280",
+    "STATIONNAME": "太原 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 160,
+    "STATIONID": "3290",
+    "STATIONNAME": "精武",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 161,
+    "STATIONID": "3300",
+    "STATIONNAME": "臺中 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 162,
+    "STATIONID": "3310",
+    "STATIONNAME": "五權",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 163,
+    "STATIONID": "3320",
+    "STATIONNAME": "大慶 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 164,
+    "STATIONID": "3330",
+    "STATIONNAME": "烏日 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 165,
+    "STATIONID": "3340",
+    "STATIONNAME": "新烏日 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 166,
+    "STATIONID": "3350",
+    "STATIONNAME": "成功 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 167,
+    "STATIONID": "3360",
+    "STATIONNAME": "彰化 ",
+    "LINE": "LINE_WM"
+  },
+  {
+    "ID": 168,
+    "STATIONID": "0900",
+    "STATIONNAME": "基隆",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 169,
+    "STATIONID": "0910",
+    "STATIONNAME": "三坑",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 170,
+    "STATIONID": "0920",
+    "STATIONNAME": "八堵",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 171,
+    "STATIONID": "0930",
+    "STATIONNAME": "七堵",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 172,
+    "STATIONID": "0940",
+    "STATIONNAME": "百福",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 173,
+    "STATIONID": "0950",
+    "STATIONNAME": "五堵",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 174,
+    "STATIONID": "0960",
+    "STATIONNAME": "汐止",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 175,
+    "STATIONID": "0970",
+    "STATIONNAME": "汐科",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 176,
+    "STATIONID": "0980",
+    "STATIONNAME": "南港",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 177,
+    "STATIONID": "0990",
+    "STATIONNAME": "松山",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 178,
+    "STATIONID": "1000",
+    "STATIONNAME": "臺北",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 179,
+    "STATIONID": "1010",
+    "STATIONNAME": "萬華",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 180,
+    "STATIONID": "1020",
+    "STATIONNAME": "板橋",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 181,
+    "STATIONID": "1030",
+    "STATIONNAME": "浮洲",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 182,
+    "STATIONID": "1040",
+    "STATIONNAME": "樹林",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 183,
+    "STATIONID": "1050",
+    "STATIONNAME": "南樹林",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 184,
+    "STATIONID": "1060",
+    "STATIONNAME": "山佳",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 185,
+    "STATIONID": "1070",
+    "STATIONNAME": "鶯歌",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 186,
+    "STATIONID": "1080",
+    "STATIONNAME": "桃園",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 187,
+    "STATIONID": "1090",
+    "STATIONNAME": "內壢",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 188,
+    "STATIONID": "1100",
+    "STATIONNAME": "中壢",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 189,
+    "STATIONID": "1110",
+    "STATIONNAME": "埔心",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 190,
+    "STATIONID": "1120",
+    "STATIONNAME": "楊梅",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 191,
+    "STATIONID": "1130",
+    "STATIONNAME": "富岡",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 192,
+    "STATIONID": "1140",
+    "STATIONNAME": "新富",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 193,
+    "STATIONID": "1150",
+    "STATIONNAME": "北湖",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 194,
+    "STATIONID": "1160",
+    "STATIONNAME": "湖口",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 195,
+    "STATIONID": "1170",
+    "STATIONNAME": "新豐",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 196,
+    "STATIONID": "1180",
+    "STATIONNAME": "竹北",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 197,
+    "STATIONID": "1190",
+    "STATIONNAME": "北新竹",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 198,
+    "STATIONID": "1210",
+    "STATIONNAME": "新竹",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 199,
+    "STATIONID": "1220",
+    "STATIONNAME": "三姓橋",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 200,
+    "STATIONID": "1230",
+    "STATIONNAME": "香山",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 201,
+    "STATIONID": "1240",
+    "STATIONNAME": "崎頂",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 202,
+    "STATIONID": "1250",
+    "STATIONNAME": "竹南",
+    "LINE": "LINE_WN"
+  },
+  {
+    "ID": 203,
+    "STATIONID": "3360",
+    "STATIONNAME": "彰化",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 204,
+    "STATIONID": "3370",
+    "STATIONNAME": "花壇",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 205,
+    "STATIONID": "3380",
+    "STATIONNAME": "大村",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 206,
+    "STATIONID": "3390",
+    "STATIONNAME": "員林",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 207,
+    "STATIONID": "3400",
+    "STATIONNAME": "永靖",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 208,
+    "STATIONID": "3410",
+    "STATIONNAME": "社頭",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 209,
+    "STATIONID": "3420",
+    "STATIONNAME": "田中",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 210,
+    "STATIONID": "3430",
+    "STATIONNAME": "二水",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 211,
+    "STATIONID": "3450",
+    "STATIONNAME": "林內",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 212,
+    "STATIONID": "3460",
+    "STATIONNAME": "石榴",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 213,
+    "STATIONID": "3470",
+    "STATIONNAME": "斗六",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 214,
+    "STATIONID": "3480",
+    "STATIONNAME": "斗南",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 215,
+    "STATIONID": "3490",
+    "STATIONNAME": "石龜",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 216,
+    "STATIONID": "4050",
+    "STATIONNAME": "大林",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 217,
+    "STATIONID": "4060",
+    "STATIONNAME": "民雄",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 218,
+    "STATIONID": "4070",
+    "STATIONNAME": "嘉北",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 219,
+    "STATIONID": "4080",
+    "STATIONNAME": "嘉義",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 220,
+    "STATIONID": "NA",
+    "STATIONNAME": "北回",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 221,
+    "STATIONID": "4090",
+    "STATIONNAME": "水上",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 222,
+    "STATIONID": "4100",
+    "STATIONNAME": "南靖",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 223,
+    "STATIONID": "4110",
+    "STATIONNAME": "後壁",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 224,
+    "STATIONID": "4120",
+    "STATIONNAME": "新營",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 225,
+    "STATIONID": "4130",
+    "STATIONNAME": "柳營",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 226,
+    "STATIONID": "4140",
+    "STATIONNAME": "林鳳營",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 227,
+    "STATIONID": "4150",
+    "STATIONNAME": "隆田",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 228,
+    "STATIONID": "4160",
+    "STATIONNAME": "拔林",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 229,
+    "STATIONID": "4170",
+    "STATIONNAME": "善化",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 230,
+    "STATIONID": "4180",
+    "STATIONNAME": "南科",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 231,
+    "STATIONID": "4190",
+    "STATIONNAME": "新市",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 232,
+    "STATIONID": "4200",
+    "STATIONNAME": "永康",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 233,
+    "STATIONID": "4210",
+    "STATIONNAME": "大橋",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 234,
+    "STATIONID": "4220",
+    "STATIONNAME": "台南",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 235,
+    "STATIONID": "NA",
+    "STATIONNAME": "南臺南",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 236,
+    "STATIONID": "4250",
+    "STATIONNAME": "保安",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 237,
+    "STATIONID": "4260",
+    "STATIONNAME": "仁德",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 238,
+    "STATIONID": "4270",
+    "STATIONNAME": "中洲",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 239,
+    "STATIONID": "4290",
+    "STATIONNAME": "大湖",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 240,
+    "STATIONID": "4300",
+    "STATIONNAME": "路竹",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 241,
+    "STATIONID": "4310",
+    "STATIONNAME": "岡山",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 242,
+    "STATIONID": "4320",
+    "STATIONNAME": "橋頭",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 243,
+    "STATIONID": "4330",
+    "STATIONNAME": "楠梓",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 244,
+    "STATIONID": "4340",
+    "STATIONNAME": "新左營",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 245,
+    "STATIONID": "4350",
+    "STATIONNAME": "左營",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 246,
+    "STATIONID": "4360",
+    "STATIONNAME": "內惟",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 247,
+    "STATIONID": "4370",
+    "STATIONNAME": "美術館",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 248,
+    "STATIONID": "4380",
+    "STATIONNAME": "鼓山",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 249,
+    "STATIONID": "4390",
+    "STATIONNAME": "三塊厝",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 250,
+    "STATIONID": "4400",
+    "STATIONNAME": "高雄",
+    "LINE": "LINE_WS"
+  },
+  {
+    "ID": 251,
+    "STATIONID": "1250",
+    "STATIONNAME": "竹南",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 252,
+    "STATIONID": "2110",
+    "STATIONNAME": "談文 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 253,
+    "STATIONID": "2120",
+    "STATIONNAME": "大山 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 254,
+    "STATIONID": "2130",
+    "STATIONNAME": "後龍 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 255,
+    "STATIONID": "2140",
+    "STATIONNAME": "龍港 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 256,
+    "STATIONID": "2150",
+    "STATIONNAME": "白沙屯 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 257,
+    "STATIONID": "2160",
+    "STATIONNAME": "新埔 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 258,
+    "STATIONID": "2170",
+    "STATIONNAME": "通霄 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 259,
+    "STATIONID": "2180",
+    "STATIONNAME": "苑裡 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 260,
+    "STATIONID": "2190",
+    "STATIONNAME": "日南 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 261,
+    "STATIONID": "2200",
+    "STATIONNAME": "大甲 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 262,
+    "STATIONID": "2210",
+    "STATIONNAME": "臺中港 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 263,
+    "STATIONID": "2220",
+    "STATIONNAME": "清水 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 264,
+    "STATIONID": "2230",
+    "STATIONNAME": "沙鹿 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 265,
+    "STATIONID": "2240",
+    "STATIONNAME": "龍井 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 266,
+    "STATIONID": "2250",
+    "STATIONNAME": "大肚 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 267,
+    "STATIONID": "2260",
+    "STATIONNAME": "追分 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 268,
+    "STATIONID": "3360",
+    "STATIONNAME": "彰化 ",
+    "LINE": "LINE_WSEA"
+  },
+  {
+    "ID": 269,
+    "STATIONID": "4270",
+    "STATIONNAME": "中洲",
+    "LINE": "LINE_SL"
+  },
+  {
+    "ID": 270,
+    "STATIONID": "4271",
+    "STATIONNAME": "長榮大學",
+    "LINE": "LINE_SL"
+  },
+  {
+    "ID": 271,
+    "STATIONID": "4272",
+    "STATIONNAME": "沙崙",
+    "LINE": "LINE_SL"
+  }
+]
