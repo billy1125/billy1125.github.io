@@ -59,16 +59,7 @@ function download_file() {
 
 // 取得今天的日期，格式為 YYYY-MM-DD 或 YYYYMMDD
 function getTodayFormattedDate(format = 'dash') {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
-
-    if (format === 'dash') {
-        return `${year}-${month}-${day}`;
-    } else if (format === 'nodash') {
-        return `${year}${month}${day}`;
-    } else {
-        return 'Invalid format. Use "dash" or "nodash".';
-    }
+    const parts = new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' })
+        .format(new Date());
+    return format === 'nodash' ? parts.replace(/-/g, '') : parts;
 }

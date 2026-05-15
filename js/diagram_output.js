@@ -5,6 +5,7 @@ const formattedDate = url.searchParams.get('formattedDate');
 const loadRealtimeParam = url.searchParams.get('realtime');
 const scrollToCurrentTimeParam = url.searchParams.get('scrollToCurrentTime');
 const stationAxisY = url.searchParams.get('stationAxisY');
+const trainNoParam = url.searchParams.get('trainNo');
 
 // 渲染器選擇：diagram_output_new.htm 會在載入本檔案前設定 window._useD3Renderer = true
 const _useD3 = (typeof window._useD3Renderer !== 'undefined' && window._useD3Renderer === true);
@@ -130,6 +131,16 @@ function finish_draw() {
     let popup = document.getElementById("popup");
     const parentObj = popup.parentNode;
     parentObj.removeChild(popup);
+
+    if (trainNoParam && typeof _trainDataMap !== 'undefined') {
+        for (const [pathId, data] of _trainDataMap) {
+            if (data.train_no === String(trainNoParam)) {
+                _highlight(pathId);
+                _panToTrain(pathId);
+                break;
+            }
+        }
+    }
 }
 
 // 設定使用者自訂色系
