@@ -19,6 +19,34 @@ const _state = {
     lastSearchQuery: null,      // 上次渲染搜尋結果的 query
 };
 
+// 車種 CSS class → 中文顯示名稱
+const _carKindLabel = {
+    taroko:           '太魯閣',
+    puyuma:           '普悠瑪',
+    tze_chiang:       '自強號',
+    tze_chiang_diesel:'自強（柴）',
+    emu1200:          '自強 EMU1200',
+    emu300:           '自強 EMU300',
+    emu3000:          '自強 EMU3000',
+    kuaimu:           '快哩慕',
+    zhongxing:        '中興號',
+    direct:           '直快',
+    chu_kuang:        '莒光號',
+    chushan1:         '曙山（早）',
+    chushan2:         '曙山（晚）',
+    local:            '區間車',
+    local_express:    '區間快',
+    fu_hsing:         '復興號',
+    ordinary:         '普快',
+    skip_stop:        '跳停',
+    alishan:          '阿里山',
+    alishan_local:    '阿里山區間',
+    all_stop:         '普通車',
+    theme:            '主題列車',
+    special:          '特殊',
+    others:           '其他',
+};
+
 // 清除所有模組狀態，供 execute() 重新呼叫時重置
 function _resetState() {
     _state.trainDataMap.clear();
@@ -174,7 +202,7 @@ function _init_search_panel() {
     const panel = document.createElement('div');
     panel.id = 'd3-search-panel';
     Object.assign(panel.style, {
-        position: 'fixed', bottom: '24px', right: '24px',
+        position: 'fixed', bottom: 'max(24px, calc(env(safe-area-inset-bottom) + 16px))', right: '24px',
         zIndex: '1500', display: 'flex', flexDirection: 'column',
         alignItems: 'flex-end', gap: '8px', pointerEvents: 'all',
     });
@@ -257,34 +285,6 @@ function _init_search_panel() {
     input.addEventListener('input', () => _renderSearchResults(input.value.trim(), results));
     input.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePanel(); });
 }
-
-// 車種 CSS class → 中文顯示名稱
-const _carKindLabel = {
-    taroko:           '太魯閣',
-    puyuma:           '普悠瑪',
-    tze_chiang:       '自強號',
-    tze_chiang_diesel:'自強（柴）',
-    emu1200:          '自強 EMU1200',
-    emu300:           '自強 EMU300',
-    emu3000:          '自強 EMU3000',
-    kuaimu:           '快哩慕',
-    zhongxing:        '中興號',
-    direct:           '直快',
-    chu_kuang:        '莒光號',
-    chushan1:         '曙山（早）',
-    chushan2:         '曙山（晚）',
-    local:            '區間車',
-    local_express:    '區間快',
-    fu_hsing:         '復興號',
-    ordinary:         '普快',
-    skip_stop:        '跳停',
-    alishan:          '阿里山',
-    alishan_local:    '阿里山區間',
-    all_stop:         '普通車',
-    theme:            '主題列車',
-    special:          '特殊',
-    others:           '其他',
-};
 
 // ax1 值（每格 30 秒）轉 HH:MM 字串
 function _ax1_to_timestr(ax1) {
