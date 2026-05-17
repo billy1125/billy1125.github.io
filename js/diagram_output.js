@@ -2,17 +2,15 @@
 const url = new URL(location.href);
 const line_kind = url.searchParams.get('lineKind');
 const formattedDate = url.searchParams.get('formattedDate');
-const loadRealtimeParam = url.searchParams.get('realtime');
 const scrollToCurrentTimeParam = url.searchParams.get('scrollToCurrentTime');
 const stationAxisY = url.searchParams.get('stationAxisY');
 const trainNoParam = url.searchParams.get('trainNo');
 
-// 渲染器選擇：diagram_output_new.htm 會在載入本檔案前設定 window._useD3Renderer = true
+// 渲染器選擇：diagram_output.html 會在載入本檔案前設定 window._useD3Renderer = true
 const _useD3 = (typeof window._useD3Renderer !== 'undefined' && window._useD3Renderer === true);
 
 // 公用變數
 let date = null;
-let circle_blink = null;
 let scrollToCurrentTime = scrollToCurrentTimeParam === 'true';
 
 // 讀取中小數點動畫
@@ -22,10 +20,6 @@ const _dotsInterval = setInterval(function () {
     _dotsCount = (_dotsCount % 4) + 1;
     _dotsEl.textContent = '.'.repeat(_dotsCount);
 }, 400);
-
-// console.log('Line Kind:', line_kind);
-// console.log('Formatted Date:', formattedDate);
-// console.log('Scroll To Current Time:', scrollToCurrentTime);
 
 // 定義基本檔案相依性（D3 模式不載入 svg.js 與 diagram.js，改用 diagram_d3.js）
 const dependencies = _useD3
@@ -61,65 +55,44 @@ function loadScript(file) {
 // 讀取所有資料檔
 async function initial_data() {
     try {
-        date = formattedDate ? formattedDate : getTodayFormattedDate('nodash'); // 如果 URL 中有指定日期則使用，否則用今天
+        date = formattedDate ? formattedDate : getTodayFormattedDate('nodash');
 
-        const baseFiles = [
-            readJSONFile(file1),
-            readJSONFile(file2),
-            readJSONFile(file3),
-            readJSONFile(file4),
-            readJSONFile(file5),
-            readJSONFile(`data/${date}.json`)
-        ];
+        const [routeData, xAxisData, lineData, opLinesData, carKindData, trainData] =
+            await Promise.all([
+                readJSONFile(file1),
+                readJSONFile(file2),
+                readJSONFile(file3),
+                readJSONFile(file4),
+                readJSONFile(file5),
+                readJSONFile(`data/${date}.json`),
+            ]);
 
-        const results = await Promise.all(baseFiles);
+        Route = routeData;
+        SVG_X_Axis = xAxisData;
+        initial_line_data(lineData);
+        OperationLines = opLinesData;
+        CarKind = carKindData;
 
-        Route = results[0];
-        SVG_X_Axis = results[1];
-        initial_line_data(results[2]);
-        OperationLines = results[3];
-        CarKind = results[4];
-
-        const realtimeDiagram = results[5];
-        const realtimeTrains = results[6]; // 可能是 undefined（如果沒載）
-
-        execute(realtimeDiagram, realtimeTrains, date, _useD3 ? 'd3' : 'svgjs');
+        execute(trainData, date);
     } catch (err) {
         console.error("初始化資料時發生錯誤:", err);
     }
 }
 
-
 // 程式執行函式
-// renderer: 'svgjs'（預設，使用 diagram.js）或 'd3'（使用 diagram_d3.js）
-function execute(json_data, live_json_data, date, renderer = 'svgjs') {
-    // 清除已有的運行圖    
-    const svg = document.querySelectorAll("svg");
-    svg.forEach(function (svg) {
-        svg.remove();
-    });
+function execute(json_data, date) {
+    if (typeof _resetState === 'function') _resetState();
+
+    document.querySelectorAll("svg").forEach(s => s.remove());
 
     try {
-        const all_trains_data = json_to_trains_data(json_data, '', line_kind);  // 將JSON轉換成時間空間資料
-        let realtime_trains = null
-
-        draw_diagram_background(line_kind, date);                         // 繪製運行圖底圖
-        draw_train_path(all_trains_data, realtime_trains);          // 繪製每一個車次線
+        const all_trains_data = json_to_trains_data(json_data, '', line_kind);
+        draw_diagram_background(line_kind, date);
+        draw_train_path(all_trains_data, null);
         set_user_styles();
-
-        if (realtime_trains) {
-            // 開始閃動效果
-            circle_blink = document.getElementsByTagName("circle");
-            for (const iterator of circle_blink) {
-                iterator.setAttribute("opacity", "1");
-            }
-            setInterval(blink, 500);
-        }
-    }
-    catch (error) {
+    } catch (error) {
         console.log(error);
-    }
-    finally {
+    } finally {
         finish_draw();
     }
 }
@@ -127,13 +100,11 @@ function execute(json_data, live_json_data, date, renderer = 'svgjs') {
 function finish_draw() {
     clearInterval(_dotsInterval);
 
-    // 移除讀取中的文字標示
-    let popup = document.getElementById("popup");
-    const parentObj = popup.parentNode;
-    parentObj.removeChild(popup);
+    const popup = document.getElementById("popup");
+    popup.parentNode.removeChild(popup);
 
-    if (trainNoParam && typeof _trainDataMap !== 'undefined') {
-        for (const [pathId, data] of _trainDataMap) {
+    if (trainNoParam && typeof _state !== 'undefined' && _state.trainDataMap) {
+        for (const [pathId, data] of _state.trainDataMap) {
             if (data.train_no === String(trainNoParam)) {
                 _highlight(pathId);
                 _panToTrain(pathId);
@@ -157,20 +128,7 @@ function set_user_styles() {
                     else if (key == "strokes")
                         iterator.style.stroke = v[1];
                 }
-
-            })
-        })
+            });
+        });
     }
 }
-
-// 列車位置閃動
-function blink() {
-    for (const iterator of circle_blink) {
-        if (iterator.getAttribute("opacity") === "0") {
-            iterator.setAttribute("opacity", "1");
-        } else if (iterator.getAttribute("opacity") === "1") {
-            iterator.setAttribute("opacity", "0");
-        }
-    }
-}
-

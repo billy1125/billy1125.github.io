@@ -31,6 +31,13 @@ const dict_line = {
     'LINE_N': '北迴線'
 };
 
+// 版面配置常數
+const MARGIN      = 50;    // SVG 邊距（px）
+const PX_PER_HOUR = 1200;  // 每小時寬度（px）
+const PX_PER_10MIN = 200;  // 每 10 分鐘寬度（px）
+const PX_PER_AX1  = 10;    // 每 ax1 單位（30 秒）寬度（px）
+const NEXT_DAY_AX1 = 2880; // 隔日 ax1 起始值（24h × 120 ax1/h）
+
 // 資料檔路徑
 const file1 = "js/references/Route.json";
 const file2 = "js/references/SVG_X_Axis.json";
