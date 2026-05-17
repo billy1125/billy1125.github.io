@@ -79,46 +79,24 @@ function find_passing_stations(timetable, line, line_dir) {
     let station = start_station;
     let km = 0.0;
 
-    let cheng_zhui = false;
-
     let roundabout_train = false;
     if (end_station == '1001') {
         end_station = start_station;
         roundabout_train = true;
     }
 
-    let stations = [];
-    for (let item of timetable) {
-        stations.push(item['Station']);
-    }
-
-    if (line == "3") {
-        cheng_zhui = true;
-    } else if (stations.includes('2260') && stations.includes('3350')) {
-        cheng_zhui = true;
-    }
-
-    let neiwan = false;
-    if (stations.includes('1194') || stations.includes('1203')) {
-        neiwan = true;
-    }
-
-    let pingxi = false;
-    if (stations.includes('7332')) {
-        pingxi = true;
-    }
-
-    let jiji = false;
-    if (stations.includes('3432') || stations.includes('3431')) {
-        jiji = true;
-    }
-
-    let shalun = false;
-    if (stations.includes('4272')) {
-        shalun = true;
-    }
+    const stations = timetable.map(item => item['Station']);
+    const cheng_zhui = line === '3' || (stations.includes('2260') && stations.includes('3350'));
+    const neiwan = stations.includes('1194') || stations.includes('1203');
+    const pingxi = stations.includes('7332');
+    const jiji   = stations.includes('3432') || stations.includes('3431');
+    const shalun = stations.includes('4272');
 
     while (true) {
+        if (!Route[station]) {
+            console.warn(`Route 缺少站 ID：${station}，中止走訪`);
+            break;
+        }
         _passing_stations.push([String(station), Route[station].DSC, Route[station].KM, km]);
 
         if (line_dir == '2') {
@@ -240,6 +218,7 @@ function find_passing_stations(timetable, line, line_dir) {
         }
 
         if (_passing_stations.length > 200) {
+            console.warn(`find_passing_stations 超過 200 站上限，強制中止（起站：${start_station}）`);
             break;
         }
     }
@@ -256,16 +235,19 @@ function estimate_timeSpace(timetable, passing_stations) {
     // 將起終點中間歷經的停靠與通過車站均找出
     for (const [StationId, StationName, LocationKM, KM] of passing_stations) {
         if (timetable_stations.includes(StationId)) {
-            let ARRTime = parseFloat(SVG_X_Axis[timetable[StationId][0]].ax1);
-            let DEPTime = parseFloat(SVG_X_Axis[timetable[StationId][1]].ax1);
-            let Order = parseInt(timetable[StationId][3]);
-
-            _estimate_time_space[index] = [StationId, StationName, parseFloat(KM), ARRTime, Order];
-            _estimate_time_space[index += 1] = [StationId, StationName, parseFloat(KM), DEPTime, Order];
-            index += 1;
+            const arrKey = timetable[StationId][0];
+            const depKey = timetable[StationId][1];
+            if (!SVG_X_Axis[arrKey] || !SVG_X_Axis[depKey]) {
+                console.warn(`車站 ${StationId} 時間 ${arrKey}/${depKey} 查不到 SVG_X_Axis，跳過`);
+                continue;
+            }
+            const ARRTime = parseFloat(SVG_X_Axis[arrKey].ax1);
+            const DEPTime = parseFloat(SVG_X_Axis[depKey].ax1);
+            const Order = parseInt(timetable[StationId][3]);
+            _estimate_time_space[index++] = [StationId, StationName, parseFloat(KM), ARRTime, Order];
+            _estimate_time_space[index++] = [StationId, StationName, parseFloat(KM), DEPTime, Order];
         } else {
-            _estimate_time_space[index] = [StationId, StationName, parseFloat(KM), NaN, -1];
-            index += 1;
+            _estimate_time_space[index++] = [StationId, StationName, parseFloat(KM), NaN, -1];
         }
     }
 
@@ -274,39 +256,41 @@ function estimate_timeSpace(timetable, passing_stations) {
     let last_time_value = -1;
 
     Object.entries(_estimate_time_space).forEach(([key, value]) => {
-        // 環島車次處理
         if (value[0] == "1001") {
             value[0] = "1000";
         }
-        // 跨午夜車次處理(一般車次所有的時間都是越來越大，但跨午夜車次會有一筆資料時間開始變小，這裡要找出是哪一筆資料？)
         if (!isNaN(value[3])) {
             if (value[3] < last_time_value) {
                 after_midnight_row_index = parseInt(key);
             }
             last_time_value = value[3];
         }
-    })
+    });
 
-    // 跨午夜車次處理：將超過午夜的時間一律加上 2880
-    if (after_midnight_row_index != -1) {
+    // 跨午夜車次處理：將超過午夜的有效時間加上 2880（NaN 通過站由後續插補處理）
+    if (after_midnight_row_index !== -1) {
         Object.entries(_estimate_time_space).forEach(([key, value]) => {
-            if (parseInt(key) >= after_midnight_row_index) {
+            if (parseInt(key) >= after_midnight_row_index && !isNaN(value[3])) {
                 value[3] += 2880;
             }
-        })
+        });
     }
 
-    // 將所有停靠與通過車站的時間都存到暫存陣列
-    let interpolate = []
-    Object.entries(_estimate_time_space).forEach(([key, value]) => {
-        interpolate.push(value[3]);
-    })
-
-    // 計算沒有時間的通過車站插補資料，計算插補資料的原因主要是為了各路線端點車站可能列車會直接通過，譬如北迴線有的列車會直接通過蘇澳新，必須要計算出大致的通過時間
-    const interpolatedArray = linearInterpolation(interpolate);
-    Object.entries(_estimate_time_space).forEach(([key, value]) => {
-        value[3] = interpolatedArray[key];
-    })
+    // 以里程插補通過車站的預估時間
+    const entries = Object.values(_estimate_time_space);
+    for (let i = 0; i < entries.length; i++) {
+        if (!isNaN(entries[i][3])) continue;
+        let prevTime, prevKM, nextTime, nextKM;
+        for (let j = i - 1; j >= 0; j--) {
+            if (!isNaN(entries[j][3])) { prevTime = entries[j][3]; prevKM = entries[j][2]; break; }
+        }
+        for (let j = i + 1; j < entries.length; j++) {
+            if (!isNaN(entries[j][3])) { nextTime = entries[j][3]; nextKM = entries[j][2]; break; }
+        }
+        const kmSpan = nextKM - prevKM;
+        entries[i][3] = kmSpan === 0 ? prevTime
+            : prevTime + (entries[i][2] - prevKM) / kmSpan * (nextTime - prevTime);
+    }
 
     return _estimate_time_space;
 }
@@ -329,44 +313,4 @@ function time_space_to_operation_lines(estimate_time_space, line_kind) {
     })
 
     return _operation_lines;
-}
-
-// 計算陣列資料插補的函式
-function linearInterpolation(array) {
-    for (let i = 0; i < array.length; i++) {
-        if (isNaN(array[i])) {
-            let prevValue;
-            let nextValue;
-            let prevIndex;
-            let nextIndex;
-
-            // 找到前一個非NaN元素
-            for (let j = i - 1; j >= 0; j--) {
-                if (!isNaN(array[j])) {
-                    prevValue = array[j];
-                    prevIndex = j;
-                    break;
-                }
-            }
-
-            // 找到後一個非NaN元素
-            for (let j = i + 1; j < array.length; j++) {
-                if (!isNaN(array[j])) {
-                    nextValue = array[j];
-                    nextIndex = j;
-                    break;
-                }
-            }
-
-            // 計算索引差距和數值差距
-            const indexDiff = nextIndex - prevIndex;
-            const valueDiff = nextValue - prevValue;
-
-            // 線性插補
-            const interpolatedValue = prevValue + (valueDiff / indexDiff) * (i - prevIndex);
-            array[i] = interpolatedValue;
-        }
-    }
-
-    return array;
 }
