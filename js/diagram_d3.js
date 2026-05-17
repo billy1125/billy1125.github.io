@@ -93,6 +93,8 @@ function _refreshSearchResults() {
 }
 
 // 渲染搜尋結果到指定容器
+// 空查詢時顯示提示字樣（不列出車次，避免因插入順序偏差而只顯示區間車）
+// 有輸入時顯示所有符合車次，不設上限
 // 只在 query 改變時重建 DOM；選取狀態改變時只更新各項目的背景色，避免整列重建
 function _renderSearchResults(query, container) {
     const q = query.toLowerCase();
@@ -101,12 +103,20 @@ function _renderSearchResults(query, container) {
         _state.lastSearchQuery = q;
         _state.searchItems.clear();
         container.innerHTML = '';
-        let count = 0;
 
+        if (!q) {
+            const hint = document.createElement('div');
+            Object.assign(hint.style, { color: '#888', padding: '4px 8px' });
+            hint.textContent = '請輸入車次號碼';
+            container.appendChild(hint);
+            return;
+        }
+
+        let count = 0;
         for (const [pathId, data] of _state.trainDataMap) {
             if (data.train_no.endsWith('-End')) continue;
-            if (q && !data.train_no.toLowerCase().includes(q)) continue;
-            if (++count > 40) break;
+            if (!data.train_no.toLowerCase().includes(q)) continue;
+            count++;
 
             const item = document.createElement('div');
             Object.assign(item.style, {
