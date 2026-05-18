@@ -81,12 +81,12 @@ docker run -p 8080:80 taiwan-railway
 | 檔案 | 內容 |
 |---|---|
 | `Route.json` | 完整車站路網圖：每站含 `CW`/`CCW`（順/逆行下一站 ID）、`CW_KM`/`CCW_KM`，以及山線/海線/支線的分支欄位 |
-| `SVG_X_Axis.json` | 將每個 HH:MM 時間字串對應至 SVG x 軸像素值 |
+| `SVG_X_Axis.json` | 將每個 `HH:MM:SS` 時間字串對應至 `{ ax1: number }` 物件（ax1 為 30 秒單位；1 分鐘 = 2 ax1，1 小時 = 120 ax1） |
 | `SVG_Y_Axis.json` | 將每條路線代碼對應至各站的 `SVGYAXIS` 像素值陣列 |
 | `OperationLines.json` | 各路線的元資料：顯示名稱、SVG 最大高度（`MAX_X_AXIS`） |
 | `Station.json` | 車站與路線的對應關係（用於搜尋：站名 → 路線代碼） |
 | `StationNoLines.json` | 車站 ID → `{ KIND, DSC }`，用於識別無所屬路線的特殊車站 |
-| `CarKind.json` | 車種代碼對應標籤 |
+| `CarKind.json` | 車種代碼（`CarClass` 欄位值）→ CSS class 名稱（如 `'taroko'`、`'local'`），供路徑樣式渲染使用；中文顯示名稱則在 `diagram_d3.js` 的 `_carKindLabel` 字典 |
 
 ### 每日資料格式（`data/YYYYMMDD.json`）
 
@@ -140,3 +140,21 @@ docker run -p 8080:80 taiwan-railway
 `time_space.js` 中的 `find_passing_stations` 以 `Route.json` 路網圖從起站走訪至終站，並依特殊車站 ID 處理山線/海線、平溪、內灣、集集、沙崙等支線的分岔決策。對於時刻表中未列出的通過車站，`estimate_timeSpace` 以線性插補計算其預估通過時間。
 
 跨午夜車次處理：`estimate_timeSpace` 偵測到 SVG x 值減少（時間跨越午夜歸零）時，對午夜後的各筆資料加上 `NEXT_DAY_AX1`（= 2880，即 24h × 120 ax1/h），使其在 x 軸上繼續向右延伸。
+
+### ax1 到像素座標轉換
+
+SVG x 軸像素公式：`x = time_ax1 * PX_PER_AX1 - PX_PER_HOUR * DiagramHours[0] + MARGIN`
+
+其中 `DiagramHours[0] = 4`（運行圖從凌晨 4 點開始），`MARGIN = 50`，`PX_PER_AX1 = 10`，`PX_PER_HOUR = 1200`。
+
+### `diagram_objects` 全域字典
+
+`config.js` 宣告的 `diagram_objects = {}`，在 `draw_diagram_background` 寫入 `diagram_objects[lineKey] = g`（D3 `<g>` 群組），在 `draw_train_path` 的 `set_path` 讀取，作為兩函式間的渲染目標橋梁。
+
+### 車次路徑分段機制
+
+`draw_train_path` 呼叫 `find_uncontinuous_index(value)` 判斷 `Order` 是否連續，將車次切為 `section_start`（連續段）與 `section_end`（非連續段），後者以 `train_no + '-End'` 為 ID 繪製，避免跨路段的虛假連線。
+
+### 腳本循序載入
+
+`diagram_output.js` 的 `loadDependencies()` 以 `for...of await` 逐一載入 `config.js → util.js → time_space.js → diagram_d3.js`，不可並行。原因：後一支腳本（如 `time_space.js`）依賴前一支（`config.js`）所設定的全域變數（`Route`、`SVG_X_Axis` 等），並行載入會因 `undefined` 全域而失敗。
