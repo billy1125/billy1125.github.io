@@ -12,13 +12,19 @@ function initDisclaimer() {
     Swal.fire({
         title: '本網站聲明',
         icon: 'warning',
-        text: '本站所提供的資料，僅供參考，實際鐵路運行情況，請以現場、各鐵路與軌道系統的管理單位所公布資訊或實際鐵路運作為準',
+        html: `<p>本站所提供的資料，僅供參考，實際鐵路運行情況，請以現場、各鐵路與軌道系統的管理單位所公布資訊或實際鐵路運作為準。</p>
+               <p style="margin-top:1em; font-size:0.9em; color:#555;">
+                   按下「我同意」即表示您已閱讀並同意本站之
+                   <a href="terms.html" target="_blank" rel="noopener">使用者條款</a>
+                   及
+                   <a href="privacy.html" target="_blank" rel="noopener">隱私權政策</a>。
+               </p>`,
         width: 500,
         heightAuto: true,
         padding: '3em',
         backdrop: 'rgba(255, 255, 0, 0.2) no-repeat',
         showDenyButton: true,
-        confirmButtonText: '我了解了',
+        confirmButtonText: '我同意',
         denyButtonText: '我不同意',
     }).then((result) => {
         localStorage.setItem('is_confirmed', result.isConfirmed ? 'ok' : 'nook');

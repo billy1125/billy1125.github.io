@@ -18,13 +18,31 @@
 
 ## 本地執行
 
+### 方式一：Python（無需額外安裝）
+
+系統已安裝 Python 3 即可直接使用：
+
+```bash
+python -m http.server 8080
+```
+
+啟動後開啟 `http://localhost:8080` 即可瀏覽。
+
+若系統預設為 Python 2：
+
+```bash
+python -m SimpleHTTPServer 8080
+```
+
+### 方式二：Docker
+
 需要預先安裝 [Docker](https://www.docker.com/)。
 
 ```bash
 docker-compose up
 ```
 
-啟動後開啟 `http://localhost:8080` 即可瀏覽。
+啟動後同樣開啟 `http://localhost:8080` 即可瀏覽。
 
 > 資料載入使用 XHR／fetch，須在 HTTP 伺服器下執行，不可直接以 `file://` 開啟 HTML 檔案。
 
