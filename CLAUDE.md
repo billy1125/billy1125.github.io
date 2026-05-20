@@ -34,8 +34,8 @@ docker run -p 8080:80 taiwan-railway
 | 函式庫 | 來源 | 使用頁面 |
 |---|---|---|
 | D3.js v7 | CDN | `diagram_output.html` |
-| jQuery | CDN | 除 `diagram_output.html` 外的所有頁面 |
-| Bootstrap 5.3 | CDN | `index.html`、`lines.html`、`trains.html`、`about.html`、`privacy.html` |
+| jQuery | CDN | `index.html`、`lines.html`（業務邏輯需要） |
+| Bootstrap 5.3 | CDN | `index.html`、`lines.html`、`about.html`、`privacy.html`、`terms.html` |
 | Font Awesome 6.5 | CDN | 同上 |
 | SweetAlert2 | CDN | `index.html`（免責聲明對話框、搜尋結果彈窗） |
 | SVG.js | 本地 vendored（`js/svg.js/`） | `diagram_output_old.html`（legacy 路徑） |
@@ -46,7 +46,7 @@ docker run -p 8080:80 taiwan-railway
 
 | 檔案 | 套用頁面 |
 |---|---|
-| `css/web.css` | `index.html`、`lines.html`、`about.html`、`privacy.html` 等一般頁面 |
+| `css/web.css` | `index.html`、`lines.html`、`about.html`、`privacy.html`、`terms.html` 等一般頁面 |
 | `css/diagram.css` | `diagram_output.html`、`diagram_output_old.html` |
 | `css/style.css` | `diagram_output.html`（同上，含 popup 與車次路徑樣式） |
 | `css/trains.css` | `trains.html` |
@@ -104,6 +104,25 @@ docker run -p 8080:80 taiwan-railway
 | `trainNo` | `131` | 反白並移動視角至指定車次 |
 | `stationAxisY` | `350` | 依 SVG Y 座標捲動至指定車站 |
 
+### 共用 Web Components（`js/components/`）
+
+| 檔案 | 自訂標籤 | 說明 |
+|---|---|---|
+| `site-navbar.js` | `<site-navbar>` | 導覽列（Light DOM，依賴 Bootstrap + Font Awesome） |
+| `site-footer.js` | `<site-footer>` | 頁腳免責聲明 + CC 授權（純內容，Bootstrap class 寫在 HTML） |
+
+使用方式（各頁面 `</body>` 前）：
+```html
+<site-navbar></site-navbar>
+...
+<site-footer class="alert alert-warning d-block" role="alert"></site-footer>
+
+<script type="module" src="js/components/site-navbar.js"></script>
+<script type="module" src="js/components/site-footer.js"></script>
+```
+
+`type="module"` 自動 defer，不擋頁面渲染。Bootstrap 下拉選單透過事件委派運作，動態插入的 navbar 內容仍可正常觸發。
+
 ### 各頁面
 
 - `index.html` — 路線選擇卡片 + 搜尋（支援站名或車次號碼）
@@ -113,7 +132,7 @@ docker run -p 8080:80 taiwan-railway
 - `trains.html` — 車次資料瀏覽器；同樣使用 GitHub Contents API
 - `about.html` — 關於本站頁面
 - `privacy.html` — 隱私權保護政策
-- `navbar.html` — 共用導覽列，以 jQuery `.load()` 嵌入各頁
+- `terms.html` — 使用者條款
 
 ### localStorage
 

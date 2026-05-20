@@ -12,7 +12,6 @@ const DiagramHours = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 
 const web_name = "台灣鐵路/軌道運行圖";
 const description = "本站利用政府資料公開資料集，設計並轉換成為以時間與空間描述的鐵路運行圖，可運用於台灣鐵路研究與嗜好用途。由呂卓勳所設計與營運。";
 const keywords = "鐵路運行圖,列車位置,台灣鐵路管理局,台鐵,台灣高鐵,阿里山森林鐵路,台湾鉄道ダイヤグラム,ダイヤグラム,台湾鉄道,台湾高鉄,阿里山森林鉄路,鐵道,鐵路,Railway Time Space Diagram,Railway,Taiwan Railway,Taiwan Hish Speed Railway,Alishan Forest Railway";
-const footer = "<strong>本站所提供的資料，均由<a href='https://data.gov.tw/'>政府資料開放平臺</a>所提供之公開資料集所分析整理繪製，僅供參考。</p><p>實際鐵路運行情況請以現場、各鐵路與軌道系統的管理單位所公布資訊為準。</strong></p><p><a href='privacy.html'>隱私權政策</a> ｜ <a href='terms.html'>使用者條款</a> <img src='https://tw.creativecommons.net/wp-content/uploads/sites/20/2020/11/by-nc-nd-300x105.png' width='100'>";
 
 const dict_line = {
     'LINE_WN': '西部幹線北段',

@@ -17,7 +17,7 @@
 
 <body style="padding-top: 56px;">
 
-    <navbar></navbar>
+    <site-navbar></site-navbar>
 
     <div class="hero-section">
         <div class="container text-center">
@@ -32,7 +32,7 @@
                 <i class="fa-solid fa-spinner fa-spin me-2"></i>載入中…
             </div>
         </div>
-        <footer class="alert alert-warning mt-4" role="alert"></footer>
+        <site-footer class="alert alert-warning d-block mt-4" role="alert"></site-footer>
     </div>
 
 </body>
@@ -40,6 +40,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/config.js"></script>
+<script type="module" src="js/components/site-navbar.js"></script>
+<script type="module" src="js/components/site-footer.js"></script>
 
 <script>
     const owner = 'billy1125';
@@ -158,8 +160,6 @@
 
         $("#main_title").text(dict_line[line_kind]);
         $("#web_name").text(dict_line[line_kind]);
-        $('footer').append(footer);
-        $("navbar").load("navbar.html");
     });
 </script>
 

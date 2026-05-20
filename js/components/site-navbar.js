@@ -1,0 +1,78 @@
+class SiteNavbar extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="./">台鐵運行圖</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
+            aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">今日運行圖</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_WN&scrollToCurrentTime=true">北段 (基隆-竹南)</a></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_WM&scrollToCurrentTime=true">山線 (竹南-彰化)</a></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_WSEA&scrollToCurrentTime=true">海線 (竹南-彰化)</a></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_WS&scrollToCurrentTime=true">南段 (彰化-高雄)</a></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_P&scrollToCurrentTime=true">屏東線 (高雄-枋寮)</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_I&scrollToCurrentTime=true">宜蘭線 (八堵-蘇澳)</a></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_N&scrollToCurrentTime=true">北迴線 (蘇澳新-花蓮)</a></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_T&scrollToCurrentTime=true">台東線 (花蓮-台東)</a></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_S&scrollToCurrentTime=true">南迴線 (台東-枋寮)</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_PX&scrollToCurrentTime=true">平溪深澳線</a></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_NW&scrollToCurrentTime=true">內灣線</a></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_LJ&scrollToCurrentTime=true">六家線</a></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_J&scrollToCurrentTime=true">集集線</a></li>
+                        <li><a class="dropdown-item" href="diagram_output.html?lineKind=LINE_SL&scrollToCurrentTime=true">沙崙線</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">運行圖圖庫</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_WN">北段 (基隆-竹南)</a></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_WM">山線 (竹南-彰化)</a></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_WSEA">海線 (竹南-彰化)</a></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_WS">南段 (彰化-高雄)</a></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_P">屏東線 (高雄-枋寮)</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_I">宜蘭線 (八堵-蘇澳)</a></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_N">北迴線 (蘇澳新-花蓮)</a></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_T">台東線 (花蓮-台東)</a></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_S">南迴線 (台東-枋寮)</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_PX">平溪深澳線</a></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_NW">內灣線</a></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_LJ">六家線</a></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_J">集集線</a></li>
+                        <li><a class="dropdown-item" href="lines.html?lineKind=LINE_SL">沙崙線</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="trains.html" target="_blank"><i class="fa-solid fa-database"></i> 時刻資料瀏覽</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><i class="fa-solid fa-circle-info"></i> 關於</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="about.html"><i class="fa-solid fa-circle-info"></i> 關於本站</a></li>
+                        <li><a class="dropdown-item" href="privacy.html"><i class="fa-solid fa-shield-halved"></i> 隱私權政策</a></li>
+                        <li><a class="dropdown-item" href="terms.html"><i class="fa-solid fa-file-contract"></i> 使用者條款</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>`;
+    }
+}
+
+customElements.define('site-navbar', SiteNavbar);

@@ -40,12 +40,6 @@ hr.dropdown-divider {
     border-color: #e5e5e5;
 }
 
-/* ── Footer alert ── */
-footer.alert-warning {
-    background-color: rgba(252, 163, 17, 0.1);
-    border-color: #fca311;
-    color: #14213d;
-}
 
 /* ── Section heading ── */
 .section-heading {
@@ -208,18 +202,6 @@ footer.alert-warning {
     font-size: 0.88rem;
 }
 
-/* Bootstrap 5 移除了 .jumbotron，補回相同樣式 */
-.jumbotron {
-    padding: 4rem 2rem;
-    margin-bottom: 2rem;
-    background-color: #e9ecef;
-    border-radius: 0.3rem;
-}
-@media (min-width: 576px) {
-    .jumbotron {
-        padding: 6rem 6rem;
-    }
-}
 
 #search_form {
     z-index: 10;

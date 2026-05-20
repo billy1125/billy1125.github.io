@@ -2,11 +2,11 @@
 <html lang="zh-tw">
 
 <head>
-    <title id="web_name"></title>
+    <title>台灣鐵路/軌道運行圖</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="本站利用政府資料公開資料集，設計並轉換成為以時間與空間描述的鐵路運行圖，可運用於台灣鐵路研究與嗜好用途。由呂卓勳所設計與營運。" />
+    <meta name="keywords" content="鐵路運行圖,列車位置,台灣鐵路管理局,台鐵,台灣高鐵,阿里山森林鐵路,台湾鉄道ダイヤグラム,ダイヤグラム,台湾鉄道,台湾高鉄,阿里山森林鉄路,鐵道,鐵路,Railway Time Space Diagram,Railway,Taiwan Railway,Taiwan Hish Speed Railway,Alishan Forest Railway" />
     <meta name="robots" content="index,follow" />
     <meta name="author" content="呂卓勳 Cho-Hsun Lu" />
     <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
@@ -17,7 +17,7 @@
 
 <body style="padding-top: 56px;">
 
-    <navbar></navbar>
+    <site-navbar></site-navbar>
 
     <div class="hero-section">
         <div class="container text-center">
@@ -72,24 +72,13 @@
             </div>
         </div>
         <br>
-        <footer class="alert alert-warning" role="alert"></footer>
+        <site-footer class="alert alert-warning d-block" role="alert"></site-footer>
     </div>
 
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="js/config.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#web_name').append(web_name)
-        $("meta[name='description']").attr("content", description)
-        $("meta[name='keywords']").attr("content", keywords)
-        $('footer').append(footer)
-        $("navbar").load("navbar.html")
-    })
-</script>
+<script type="module" src="js/components/site-navbar.js"></script>
+<script type="module" src="js/components/site-footer.js"></script>
 
 </html>

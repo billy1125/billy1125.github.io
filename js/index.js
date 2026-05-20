@@ -125,8 +125,6 @@ $(document).ready(function () {
     $('#today_date').append(today_date);
     $("meta[name='description']").attr("content", description);
     $("meta[name='keywords']").attr("content", keywords);
-    $('footer').append(footer);
-    $("navbar").load("navbar.html");
 
     initDisclaimer();
 
