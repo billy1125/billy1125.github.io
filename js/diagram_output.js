@@ -74,9 +74,38 @@ async function initial_data() {
         CarKind = carKindData;
 
         execute(trainData, date);
+        _updatePageMeta(line_kind, date);
     } catch (err) {
         console.error("初始化資料時發生錯誤:", err);
     }
+}
+
+function _updatePageMeta(lineKind, dateStr) {
+    const lineName = (OperationLines && OperationLines[lineKind])
+        ? OperationLines[lineKind].NAME
+        : '台灣鐵路/軌道運行圖';
+    const dateDisplay = dateStr
+        ? `${dateStr.slice(0, 4)}/${dateStr.slice(4, 6)}/${dateStr.slice(6, 8)}`
+        : '';
+
+    document.title = dateDisplay
+        ? `${lineName} 運行圖｜${dateDisplay}｜tradiagram.com`
+        : `${lineName} 運行圖｜tradiagram.com`;
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+        metaDesc.setAttribute('content',
+            `${lineName}列車運行圖，以時間空間圖呈現 ${dateDisplay} 的列車運行狀況。涵蓋各次列車停靠時刻、行進路線與車種。`
+        );
+    }
+
+    const canonicalUrl = `https://tradiagram.com/diagram_output.html?lineKind=${lineKind}&formattedDate=${dateStr}`;
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', canonicalUrl);
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', document.title);
 }
 
 // 程式執行函式
