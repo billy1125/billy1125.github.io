@@ -46,6 +46,13 @@
 ## 五、進度紀錄
 
 - 2026-06-20：完成 Phase 0（重寫計劃 + 本盤點檔）。
+- 2026-06-20：完成 Phase 1（robots 明列 AI 爬蟲、sitemap 補齊、修 title、舊頁 noindex）。
+- 2026-06-20：完成 Phase 3（新增 about-diagram / glossary / faq 內容頁、lines/trains 靜態 fallback、navbar 連結）。
+- 2026-06-20：完成 Phase 2（index 加 Organization+WebSite JSON-LD，SearchAction 對應 ?q= 深層搜尋；FAQPage/BreadcrumbList 隨內容頁）。
+- 2026-06-20：完成 Phase 4（新增 llms.txt）。
+- 2026-06-20：完成 Phase 5（站外曝光草稿 OFFSITE_DRAFTS.md、驗證清單）。
+- 2026-06-20：因 Android App 下架，移除全站 App / Google Play 相關資訊，並取消原 SoftwareApplication 結構化資料項。
+- 待維護者：將分支 `seo/geo-aeo-content` 合併、重新提交 sitemap 至 GSC、執行下方驗證清單。
 
 ## 六、驗證清單（上線後可重複執行）
 
