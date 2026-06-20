@@ -24,6 +24,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/web.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://tradiagram.com/#organization",
+                "name": "台灣鐵路/軌道運行圖",
+                "url": "https://tradiagram.com/",
+                "logo": "https://tradiagram.com/images/og-cover.png",
+                "founder": { "@type": "Person", "name": "呂卓勳 Cho-Hsun Lu" }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://tradiagram.com/#website",
+                "name": "台灣鐵路/軌道運行圖",
+                "url": "https://tradiagram.com/",
+                "inLanguage": "zh-TW",
+                "publisher": { "@id": "https://tradiagram.com/#organization" },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://tradiagram.com/?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body style="padding-top: 56px;">
