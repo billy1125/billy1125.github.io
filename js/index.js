@@ -138,4 +138,12 @@ $(document).ready(function () {
             if (query) searchStation(query);
         }
     });
+
+    // 深層連結搜尋（對應 WebSite SearchAction 的 ?q= 參數）。
+    // 僅在已確認免責聲明後自動觸發，避免覆蓋首次造訪的聲明對話框。
+    const _q = (new URLSearchParams(location.search).get('q') || '').trim();
+    if (_q && localStorage.getItem('is_confirmed') === 'ok') {
+        $('#search-input').val(_q);
+        searchStation(_q);
+    }
 });

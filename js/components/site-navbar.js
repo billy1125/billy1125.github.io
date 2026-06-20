@@ -63,6 +63,10 @@ class SiteNavbar extends HTMLElement {
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><i class="fa-solid fa-circle-info"></i> 關於</a>
                     <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="about-diagram.html"><i class="fa-solid fa-chart-line"></i> 運行圖怎麼看</a></li>
+                        <li><a class="dropdown-item" href="glossary.html"><i class="fa-solid fa-book"></i> 名詞解釋</a></li>
+                        <li><a class="dropdown-item" href="faq.html"><i class="fa-solid fa-circle-question"></i> 常見問題</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="about.html"><i class="fa-solid fa-circle-info"></i> 關於本站</a></li>
                         <li><a class="dropdown-item" href="privacy.html"><i class="fa-solid fa-shield-halved"></i> 隱私權政策</a></li>
                         <li><a class="dropdown-item" href="terms.html"><i class="fa-solid fa-file-contract"></i> 使用者條款</a></li>
