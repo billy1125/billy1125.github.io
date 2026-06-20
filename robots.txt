@@ -1,3 +1,31 @@
+# robots.txt for tradiagram.com
+
 User-agent: *
 Allow: /
+
+# 明確歡迎 AI 爬蟲（公開內容皆可爬）
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://tradiagram.com/sitemap.xml

@@ -6,139 +6,167 @@
   <!-- 首頁 -->
   <url>
     <loc>https://tradiagram.com/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+
+  <!-- 當日運行圖 / 歷史運行圖（基準頁） -->
+  <url>
+    <loc>https://tradiagram.com/diagram_output.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://tradiagram.com/lines.html</loc>
+    <lastmod>2026-06-20</lastmod>
   </url>
 
   <!-- 車次瀏覽 -->
   <url>
     <loc>https://tradiagram.com/trains.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
 
-  <!-- 關於 / 隱私 -->
+  <!-- 內容說明頁 -->
+  <url>
+    <loc>https://tradiagram.com/about-diagram.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://tradiagram.com/glossary.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://tradiagram.com/faq.html</loc>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+
+  <!-- 關於 / 隱私 / 條款 -->
   <url>
     <loc>https://tradiagram.com/about.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/privacy.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
+  </url>
+  <url>
+    <loc>https://tradiagram.com/terms.html</loc>
+    <lastmod>2026-06-20</lastmod>
   </url>
 
   <!-- 歷史運行圖日曆（各路線） -->
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_WN</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_WS</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_WM</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_WSEA</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_P</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_S</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_T</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_I</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_N</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_PX</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_NW</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_LJ</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_J</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/lines.html?lineKind=LINE_SL</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
 
   <!-- 當日運行圖（各路線） -->
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_WN</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_WS</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_WM</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_WSEA</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_P</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_S</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_T</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_I</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_N</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_PX</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_NW</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_LJ</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_J</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
   <url>
     <loc>https://tradiagram.com/diagram_output.html?lineKind=LINE_SL</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-20</lastmod>
   </url>
 
 </urlset>
