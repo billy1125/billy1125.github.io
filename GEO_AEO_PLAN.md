@@ -9,7 +9,7 @@
 ## 0. 專案背景（Context）
 
 - **網站**：https://tradiagram.com/
-- **性質**：以台鐵 / 交通部公共運輸整合資訊平臺 open data，繪製台灣鐵路「列車運行圖」的工具站。另有 Android App。
+- **性質**：以台鐵 / 交通部公共運輸整合資訊平臺 open data，繪製台灣鐵路「列車運行圖」的工具站。
 - **核心特徵**：主要價值是**互動式圖形（運行圖）**，由 JavaScript 在前端繪製。
 - **對 GEO 的關鍵影響**：**AI 爬蟲讀不到圖裡的資訊**。因此重心是
   1. 讓爬蟲能順利抓到頁面，且
@@ -69,9 +69,10 @@
 > 以 `<script type="application/ld+json">` 注入各頁 `<head>`，純靜態、不依賴 JS。
 
 - 2.1 `[ ]` `index.html`：`Organization` + `WebSite`（含 `SearchAction`，對應站內搜尋）。
-- 2.2 `[ ]` `about.html`：`SoftwareApplication`（連結 Google Play App）。
-- 2.3 `[ ]` `faq.html`：`FAQPage`，與 Q&A 內容一一對應。
-- 2.4 `[ ]` 各內容頁：`BreadcrumbList`。
+- 2.2 `[ ]` `faq.html`：`FAQPage`，與 Q&A 內容一一對應。
+- 2.3 `[ ]` 各內容頁：`BreadcrumbList`。
+
+> 註：Android App 已下架，全站不再呈現 App / Google Play 相關資訊，故移除原 `SoftwareApplication` 項目。
 - 驗收：Google Rich Results Test 無錯誤。
 
 ---
@@ -95,7 +96,7 @@
 ---
 
 ## Phase 5：站外曝光與成效追蹤（多為人工，Claude 只產草稿）
-- 5.1 `[ ]` 草擬站外簡介文字（維基外部連結、鐵道論壇介紹、FB 粉專置頂）—**只產草稿，不自動發布**。
+- 5.1 `[ ]` 草擬站外簡介文字（維基外部連結、鐵道論壇介紹、FB 粉專置頂）—**只產草稿，不自動發布**。（App 已下架，不含 Google Play 相關曝光。）
 - 5.2 `[ ]` 確認 Google Search Console 已提交更新後的 sitemap。
 - 5.3 `[ ]` 在 `SEO_AUDIT.md` 補可重複執行的驗證清單（AI 實測查詢、server log 觀察 AI bot）。
 

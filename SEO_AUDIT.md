@@ -22,7 +22,7 @@
 | diagram_output.html | ✅ | ✅ | ✅ | ✅ | ❌ | （有 noscript fallback，OK） |
 | lines.html | ✅唯一 | ✅ | ✅ | ✅(動態) | ❌ | 補靜態 fallback（3.4） |
 | trains.html | ✅唯一 | ✅ | ✅ | ✅ | ❌ | 補靜態 fallback（3.4） |
-| about.html | ⚠️通用 | ✅ | ✅ | ✅ | ❌ | 修 title（1.3）+ SoftwareApplication（2.2） |
+| about.html | ⚠️通用 | ✅ | ✅ | ✅ | ❌ | 修 title（1.3）。註：App 已下架，不加 SoftwareApplication |
 | privacy.html | ⚠️通用 | ✅ | ✅ | ✅ | ❌ | 修 title（1.3） |
 | terms.html | ⚠️通用 | ✅ | ✅ | ✅ | ❌ | 修 title（1.3）+ 加入 sitemap（1.2） |
 | diagram_output_old.html | ❌無 | ❌ | ❌ | ❌ | ❌ | 加 noindex（1.4） |
